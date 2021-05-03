@@ -27,3 +27,16 @@ void command_requester(DefineUnits units)
         command_requester(units);
     }
 }
+
+void input_data(DefineUnits units)
+{
+    printf("Unit category: ");
+    scanf("%s", units.category);
+    printf("You have: ");
+    scanf("%lf", &units.have_value);
+    scanf("%s", units.have_unit);
+    printf("You want: ");
+    scanf("%s", units.want_unit);
+    printf("So, what should we do next? Enter the command for further actions: ");
+    command_requester(units);
+}
