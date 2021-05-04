@@ -11,3 +11,4 @@ typedef struct {
 
 void command_requester(DefineUnits units);
 void input_data(DefineUnits units);
+int file_reader(DefineUnits units, const char* in_file_name, const char* out_file_name);
