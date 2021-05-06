@@ -77,7 +77,8 @@ static void get_name_of_units(char** array, int size, FILE* units_name)
             printf("Failed to allocate memory\n");
             exit(EXIT_FAILURE);
         }
-        fscanf(units_name, "%s", array[i]);
+        // fscanf(units_name, "%s", array[i]);
+        fgets(array[i], size, units_name);
     }
 }
 
@@ -95,21 +96,25 @@ static struct bstree* add_units_to_list(const char* list_file_path, int num_of_u
     for (int i = 1; i < num_of_units; ++i) {
         bstree_add(tree, i, array[i]);
     }
+    fclose(list);
     return tree;
 }
 
 DefineUnits* convert_units(DefineUnits* units)
 {
     struct bstree* tree;
-    struct bstree* node;
     char* category = to_lower_string(units->category);
     if (strcmp(category, "length\n") == 0) {
         const char* list_file_path = "../src/libconverter/units/list_of_length_units.txt";
         tree = add_units_to_list(list_file_path, NUMBER_OF_LENGTH_UNITS);
-        // node = bstree_lookup(tree, 2);
-        // printf("%s\n", node->value);
+        if (is_category_compliance(tree, units->have_unit, NUMBER_OF_LENGTH_UNITS) != is_category_compliance(tree, units->want_unit, NUMBER_OF_LENGTH_UNITS)) {
+            printf("Units must be of the same category! To find out which units correspond to which category, enter the command 'syntax'.\n");
+            return units;
+        }
         // from_length_unit(have_value, have_unit, want_unit);
     } else if (strcmp(category, "time\n") == 0) {
+        const char* list_file_path = "../src/libconverter/units/list_of_time_units.txt";
+        tree = add_units_to_list(list_file_path, NUMBER_OF_TIME_UNITS);
         // from_time_unit(have_value, have_unit, want_unit);
     } else if (strcmp(category, "rate\n") == 0) {
         // from_rate_unit(have_value, have_unit, want_unit);
@@ -119,4 +124,16 @@ DefineUnits* convert_units(DefineUnits* units)
         // from_data_rate_unit(have_value, have_unit, want_unit);
     }
     return units;
+}
+
+bool is_category_compliance(struct bstree* tree, char* unit, int num_of_units)
+{
+    struct bstree* node;
+    for (int i = 0; i < num_of_units; ++i) {
+        node = bstree_lookup(tree, i);
+        if (strcmp(unit, node->value) == 0) {
+            return true;
+        }
+    }
+    return false;
 }

@@ -11,7 +11,7 @@ const char* HELP_CALL_ARG = "Welcome to Unit Converter!\nUsage:\n\t./converter.e
 
 int main(int argc, char *argv[])
 {
-    DefineUnits* units = malloc(sizeof(DefineUnits));
+    DefineUnits* units = malloc(sizeof(DefineUnits*));
     if (units == NULL) {
         printf("Failed to allocate memory\n");
         return -1;

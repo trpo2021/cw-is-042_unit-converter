@@ -1,5 +1,6 @@
 #include <libconverter/converter.h>
 #include <libconverter/input.h>
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -53,6 +54,21 @@ static char* set_unit_parameter(char* parameter)
     return parameter;
 }
 
+static void remove_space(char* string)
+{
+    int end = 0;
+    int len = strlen(string);
+    for (int i = 0; i < len; ++i) {
+        if (string[i] != ' ') {
+            if (i != end) {
+                string[end] = string[i];
+            }
+            end++;
+        }
+    }
+    string[end] = '\0';
+}
+
 void input_data(DefineUnits* units)
 {
     printf("Unit category: ");
@@ -60,6 +76,7 @@ void input_data(DefineUnits* units)
     printf("You have: ");
     scanf("%lf", &units->have_value);
     units->have_unit = set_unit_parameter(units->have_unit);
+    remove_space(units->have_unit);
     printf("You want: ");
     units->want_unit = set_unit_parameter(units->want_unit);
     units = convert_units(units);
