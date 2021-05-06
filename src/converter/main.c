@@ -1,5 +1,6 @@
 #include <libconverter/input.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 const char* HELP_CALL_ARG = "Welcome to Unit Converter!\nUsage:\n\t./converter.exe (The input data is read from the keyboard, the output data is output to the terminal)"
@@ -10,7 +11,11 @@ const char* HELP_CALL_ARG = "Welcome to Unit Converter!\nUsage:\n\t./converter.e
 
 int main(int argc, char *argv[])
 {
-    DefineUnits units;
+    DefineUnits* units = malloc(sizeof(DefineUnits));
+    if (units == NULL) {
+        printf("Failed to allocate memory\n");
+        return -1;
+    }
     if (argc == 1) {
         printf("Welcome to Unit Converter! Enter the command for further actions: ");
         command_requester(units);
@@ -29,5 +34,6 @@ int main(int argc, char *argv[])
     } else {
         printf("Unexpected command line argument!\nTry using \'./converter.exe --help\' to find out how to successfully launch the application.\n");
     }
+    free(units);
     return 0;
 }
