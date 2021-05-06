@@ -1,3 +1,4 @@
+#include <libconverter/converter.h>
 #include <libconverter/input.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -61,6 +62,7 @@ void input_data(DefineUnits* units)
     units->have_unit = set_unit_parameter(units->have_unit);
     printf("You want: ");
     units->want_unit = set_unit_parameter(units->want_unit);
+    units = convert_units(units);
     printf("So, what should we do next? Enter the command for further actions: ");
     command_requester(units);
 }

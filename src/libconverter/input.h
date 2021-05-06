@@ -4,6 +4,7 @@
 
 typedef struct {
     double have_value;    // Числовое значение имеющейся единицы
+    double want_value;    // Числовое значение переведенной единицы
     char* category;    // Категория единиц измерения
     char* have_unit;    // Имеющаяся единица
     char* want_unit;    // Единица, в которую хотим перевести значение
