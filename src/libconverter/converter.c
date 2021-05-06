@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char* to_lower_string(char* string)
+static char* to_lower_string(char* string)
 {
     size_t len = strlen(string);
     char* tmp = malloc(len * sizeof(char));

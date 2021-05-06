@@ -23,8 +23,8 @@ const char* SYNTAX_CALL = "There's a syntax of Unit Converter. In brackets you c
 
 void command_requester(DefineUnits* units)
 {
-    char* command = malloc(MAXSIZE * sizeof(char));
-    fgets(command, MAXSIZE, stdin);
+    char* command = malloc(MAX_STRING_LENGTH * sizeof(char));
+    fgets(command, MAX_STRING_LENGTH, stdin);
     //scanf("%s", command);
     if (strcmp(command, "start\n") == 0) {
         input_data(units);
@@ -42,13 +42,13 @@ void command_requester(DefineUnits* units)
     }
 }
 
-char* set_unit_parameter(char* parameter)
+static char* set_unit_parameter(char* parameter)
 {
-    parameter = malloc(MAXSIZE * sizeof(char));
+    parameter = malloc(MAX_STRING_LENGTH * sizeof(char));
     if (parameter == NULL) {
         return NULL;
     }
-    parameter = fgets(parameter, MAXSIZE, stdin);
+    parameter = fgets(parameter, MAX_STRING_LENGTH, stdin);
 
     return parameter;
 }
@@ -67,7 +67,7 @@ void input_data(DefineUnits* units)
     command_requester(units);
 }
 
-char* getfield(char* line, int num) {
+static char* getfield(char* line, int num) {
     char* tok;
     for (tok = strtok(line, ";"); tok && *tok; tok = strtok(NULL, ";\n")) {
         if (!--num) {
@@ -91,8 +91,8 @@ int file_reader(DefineUnits* units, const char* in_file_name, const char* out_fi
         return -1;
     }
 
-    char line[MAXSIZE];
-    while (fgets(line, MAXSIZE, in_file)) {
+    char line[MAX_STRING_LENGTH];
+    while (fgets(line, MAX_STRING_LENGTH, in_file)) {
         char* tmp = strdup(line);
         units->category = getfield(tmp, 1);
         char* val = getfield(tmp, 2);
@@ -100,10 +100,10 @@ int file_reader(DefineUnits* units, const char* in_file_name, const char* out_fi
         units->have_unit = getfield(tmp, 3);
         units->want_unit = getfield(tmp, 4);
     }
-    printf("%s\n", units->category);
-    printf("%lf\n", units->have_value);
-    printf("%s\n", units->have_unit);
-    printf("%s\n", units->want_unit);
+    printf("%s", units->category);
+    printf("%lf", units->have_value);
+    printf("%s", units->have_unit);
+    printf("%s", units->want_unit);
 
     return 0;
 }
