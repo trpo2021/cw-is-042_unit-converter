@@ -1,6 +1,6 @@
 #pragma once
 
-#define MAXSIZE 50
+#define MAX_STRING_LENGTH 50
 
 typedef struct {
     double have_value;    // Числовое значение имеющейся единицы
