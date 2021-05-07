@@ -18,7 +18,7 @@ const char* SYNTAX_CALL = "There's a syntax of Unit Converter. In brackets you c
     "\n2. Time ----> nanosecond(ns), microsecond(us), millisecond(ms), second(sec), minute(min), hour(hour), day(day), week(week), "
     "month(month), year(year), decade(decade), century(century)"
     "\n3. Rate ---->"
-    "\n4. Data size ---->"
+    "\n4. Data size ----> bit(bit), kilobit(kbit), megabit(mbit), gigabit(gbit), terabit(tbit), petabit(pbit), byte(b), kilobyte(kb), megabyte(mb), gigabyte(gb), terabyte(tb), petabyte(pb)"
     "\n5. Data-rate ---->"
     "\nSo, what should we do next? Enter the command for further actions: ";
 
@@ -117,10 +117,6 @@ int file_reader(DefineUnits* units, const char* in_file_name, const char* out_fi
         units->have_unit = getfield(tmp, 3);
         units->want_unit = getfield(tmp, 4);
     }
-    printf("%s", units->category);
-    printf("%lf", units->have_value);
-    printf("%s", units->have_unit);
-    printf("%s", units->want_unit);
 
     return 0;
 }
