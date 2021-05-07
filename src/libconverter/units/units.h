@@ -1,4 +1,3 @@
 #pragma once
 
-double from_time_unit(double value, char* have_unit, char* want_unit);
-double to_time_unit(double value, char* want_unit);
+DefineUnits* from_one_unit(DefineUnits* units, struct bstree* unit_list, int num_of_units, const char* coef_list_path)
