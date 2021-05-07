@@ -1,13 +1,13 @@
 #include <libconverter/converter.h>
 #include <libconverter/input.h>
-#include <libconverter/units/units.h>
+#include <libconverter/units.h>
 
 #include <string.h>
 
 DefineUnits* from_one_unit(DefineUnits* units, struct bstree* unit_list, int num_of_units, const char* coef_list_path)
 {
     if (strcmp(units->have_unit, units->want_unit) == 0) {
-        return units->have_value;
+        return units;
     }
 
     struct bstree* coefficient_list;
