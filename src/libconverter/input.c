@@ -80,13 +80,13 @@ int file_reader(DefineUnits* units, const char* in_file_name, const char* out_fi
 {
     FILE* in_file = fopen(in_file_name, "rt");
     if (in_file == NULL) {
-        printf("Failed to open file located at %s\n", in_file_name);
+        file_error(in_file);
         return -1;
     }
 
     FILE* out_file = fopen(out_file_name, "w");
     if (out_file == NULL) {
-        printf("Failed to open file located at %s\n", out_file_name);
+        file_error(out_file_name);
         return -1;
     }
 

@@ -24,10 +24,12 @@ int main(int argc, char *argv[])
             command_requester(units);
         }
     } else if ((argc == 4) && (strcmp(argv[1], "--start") == 0) && (strcmp(argv[2], "--path") == 0)) {
+        printf("Coming soon...\n");
         input_data(units);
         // output_file(argv[3])
     } else if ((argc == 6) && (strcmp(argv[1], "--start") == 0) && (strcmp(argv[2], "--path") == 0) && (strcmp(argv[4], "--path") == 0)) {
-        file_reader(units, argv[3], argv[5]);
+        printf("Coming soon...\n");
+        // file_reader(units, argv[3], argv[5]);
     } else {
         printf("Unexpected command line argument!\nTry using \'./converter.exe --help\' to find out how to successfully launch the application.\n");
     }

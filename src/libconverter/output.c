@@ -56,3 +56,8 @@ void memory_error(void)
 {
     printf("Failed to allocate memory\n");
 }
+
+void file_error(char* file_path)
+{
+    printf("Failed to open file located at %s\n", file_path);
+}
