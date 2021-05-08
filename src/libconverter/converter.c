@@ -1,4 +1,5 @@
 #include <libconverter/converter.h>
+#include <libconverter/output.h>
 #include <libconverter/units.h>
 
 #include <ctype.h>
@@ -76,7 +77,7 @@ static void get_file_content(char** array, int size, FILE* units_name)
     for (int i = 0; i < size; ++i) {
         array[i] = malloc(20);
         if (array[i] == NULL) {
-            printf("Failed to allocate memory\n");
+            memory_error();
             exit(EXIT_FAILURE);
         }
         fgets(array[i], size, units_name);
@@ -88,7 +89,7 @@ struct bstree* add_strings_to_tree(const char* data_file_path, int num_of_units)
     struct bstree* tree;
     FILE* list = fopen(data_file_path, "r");
     if (list == NULL) {
-        printf("Failed to open file located at %s\n", data_file_path);
+        file_error(data_file_path);
         return NULL;
     }
     char* array[num_of_units];
@@ -110,7 +111,7 @@ DefineUnits* convert_units(DefineUnits* units)
         const char* coef_list_path = "../src/libconverter/units/conversion_coefficient_of_length.txt";
         tree = add_strings_to_tree(list_file_path, NUMBER_OF_LENGTH_UNITS);
         if (is_appropriate(tree, units->have_unit, NUMBER_OF_LENGTH_UNITS) != is_appropriate(tree, units->want_unit, NUMBER_OF_LENGTH_UNITS)) {
-            printf("Units must be of the same category! To find out which units correspond to which category, enter the command 'syntax'.\n");
+            helper_message("category");
             return units;
         }
         units = from_one_unit(units, tree, NUMBER_OF_LENGTH_UNITS, coef_list_path);
@@ -119,7 +120,7 @@ DefineUnits* convert_units(DefineUnits* units)
         const char* coef_list_path = "../src/libconverter/units/conversion_coefficient_of_time.txt";
         tree = add_strings_to_tree(list_file_path, NUMBER_OF_TIME_UNITS);
         if (is_appropriate(tree, units->have_unit, NUMBER_OF_TIME_UNITS) != is_appropriate(tree, units->want_unit, NUMBER_OF_TIME_UNITS)) {
-            printf("Units must be of the same category! To find out which units correspond to which category, enter the command 'syntax'.\n");
+            helper_message("category");
             return units;
         }
         units = from_one_unit(units, tree, NUMBER_OF_TIME_UNITS, coef_list_path);
@@ -128,7 +129,7 @@ DefineUnits* convert_units(DefineUnits* units)
         const char* coef_list_path = "../src/libconverter/units/conversion_coefficient_of_rate.txt";
         tree = add_strings_to_tree(list_file_path, NUMBER_OF_RATE_UNITS);
         if (is_appropriate(tree, units->have_unit, NUMBER_OF_RATE_UNITS) != is_appropriate(tree,units->want_unit, NUMBER_OF_RATE_UNITS)) {
-            printf("Units must be of the same category! To find out which units correspond ro which category, enter the cpmmand 'syntax'. \n");
+            helper_message("category");
             return units;
         }
         units = from_one_unit(units, tree, NUMBER_OF_RATE_UNITS, coef_list_path);
@@ -137,7 +138,7 @@ DefineUnits* convert_units(DefineUnits* units)
         const char* coef_list_path = "../src/libconverter/units/conversion_coefficient_of_data_size.txt";
         tree = add_strings_to_tree(list_file_path, NUMBER_OF_DATA_SIZE_UNITS);
         if (is_appropriate(tree, units->have_unit, NUMBER_OF_DATA_SIZE_UNITS) != is_appropriate(tree, units->want_unit, NUMBER_OF_DATA_SIZE_UNITS)) {
-            printf("Units must be of the same category! To find out which units correspond to which category, enter the command 'syntax'.\n");
+            helper_message("category");
             return units;
         }
         units = from_one_unit(units, tree, NUMBER_OF_DATA_SIZE_UNITS, coef_list_path);
@@ -146,7 +147,7 @@ DefineUnits* convert_units(DefineUnits* units)
         const char* coef_list_path = "../src/libconverter/units/conversion_coefficient_of_data_rate.txt";
         tree = add_strings_to_tree(list_file_path, NUMBER_OF_DATA_RATE_UNITS);
         if (is_appropriate(tree, units->have_unit, NUMBER_OF_DATA_RATE_UNITS) != is_appropriate(tree, units->want_unit, NUMBER_OF_DATA_RATE_UNITS)) {
-            printf("Units must be of the same category! To find out which units correspond to which category, enter the command 'syntax'.\n");
+            helper_message("category");
             return units;
         }
         units = from_one_unit(units, tree, NUMBER_OF_DATA_RATE_UNITS, coef_list_path);
