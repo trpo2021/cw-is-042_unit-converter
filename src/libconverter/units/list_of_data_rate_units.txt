@@ -1,0 +1,12 @@
+bit/s
+kbit/s
+mbit/s
+gbit/s
+tbit/s
+pbit/s
+b/s
+kb/s
+mb/s
+gb/s
+tb/s
+pb/s
