@@ -76,8 +76,8 @@ void call_help(char* help)
 
 void what_next(void)
 {
-     printf("So, what should we do next? Enter the command for further "
-           "actions: ");
+    printf("So, what should we do next? Enter the command for further "
+            "actions: ");
 }
 
 void memory_error(void)
