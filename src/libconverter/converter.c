@@ -105,53 +105,51 @@ struct bstree* add_strings_to_tree(const char* data_file_path, int num_of_units)
 DefineUnits* convert_units(DefineUnits* units)
 {
     struct bstree* tree;
+    int unit_num = -1;
     char* category = to_lower_string(units->category);
-    if (strcmp(category, "length\n") == 0) {
-        const char* list_file_path = "../src/libconverter/units/list_of_length_units.txt";
-        const char* coef_list_path = "../src/libconverter/units/conversion_coefficient_of_length.txt";
-        tree = add_strings_to_tree(list_file_path, NUMBER_OF_LENGTH_UNITS);
-        if (is_appropriate(tree, units->have_unit, NUMBER_OF_LENGTH_UNITS) != is_appropriate(tree, units->want_unit, NUMBER_OF_LENGTH_UNITS)) {
-            helper_message("category");
-            return units;
-        }
-        units = from_one_unit(units, tree, NUMBER_OF_LENGTH_UNITS, coef_list_path);
-    } else if (strcmp(category, "time\n") == 0) {
-        const char* list_file_path = "../src/libconverter/units/list_of_time_units.txt";
-        const char* coef_list_path = "../src/libconverter/units/conversion_coefficient_of_time.txt";
-        tree = add_strings_to_tree(list_file_path, NUMBER_OF_TIME_UNITS);
-        if (is_appropriate(tree, units->have_unit, NUMBER_OF_TIME_UNITS) != is_appropriate(tree, units->want_unit, NUMBER_OF_TIME_UNITS)) {
-            helper_message("category");
-            return units;
-        }
-        units = from_one_unit(units, tree, NUMBER_OF_TIME_UNITS, coef_list_path);
-    } else if (strcmp(category, "rate\n") == 0) {
-        const char* list_file_path = "../src/libconverter/units/list_of_rate_units.txt";
-        const char* coef_list_path = "../src/libconverter/units/conversion_coefficient_of_rate.txt";
-        tree = add_strings_to_tree(list_file_path, NUMBER_OF_RATE_UNITS);
-        if (is_appropriate(tree, units->have_unit, NUMBER_OF_RATE_UNITS) != is_appropriate(tree,units->want_unit, NUMBER_OF_RATE_UNITS)) {
-            helper_message("category");
-            return units;
-        }
-        units = from_one_unit(units, tree, NUMBER_OF_RATE_UNITS, coef_list_path);
-    } else if (strcmp(category, "data size\n") == 0) {
-        const char* list_file_path = "../src/libconverter/units/list_of_data_size_units.txt";
-        const char* coef_list_path = "../src/libconverter/units/conversion_coefficient_of_data_size.txt";
-        tree = add_strings_to_tree(list_file_path, NUMBER_OF_DATA_SIZE_UNITS);
-        if (is_appropriate(tree, units->have_unit, NUMBER_OF_DATA_SIZE_UNITS) != is_appropriate(tree, units->want_unit, NUMBER_OF_DATA_SIZE_UNITS)) {
-            helper_message("category");
-            return units;
-        }
-        units = from_one_unit(units, tree, NUMBER_OF_DATA_SIZE_UNITS, coef_list_path);
-    } else if (strcmp(category, "data-rate\n") == 0) {
-        const char* list_file_path = "../src/libconverter/units/list_of_data_rate_units.txt";
-        const char* coef_list_path = "../src/libconverter/units/conversion_coefficient_of_data_rate.txt";
-        tree = add_strings_to_tree(list_file_path, NUMBER_OF_DATA_RATE_UNITS);
-        if (is_appropriate(tree, units->have_unit, NUMBER_OF_DATA_RATE_UNITS) != is_appropriate(tree, units->want_unit, NUMBER_OF_DATA_RATE_UNITS)) {
-            helper_message("category");
-            return units;
-        }
-        units = from_one_unit(units, tree, NUMBER_OF_DATA_RATE_UNITS, coef_list_path);
+    char* unit_file_path = malloc(2 * MAX_STRING_LENGTH * sizeof(char));
+    if (unit_file_path == NULL) {
+        memory_error();
+        return units;
     }
+    char* factor_file_path = malloc(2 * MAX_STRING_LENGTH * sizeof(char));
+    if (factor_file_path == NULL) {
+        memory_error();
+        return units;
+    }
+
+    if (strcmp(category, "length\n") == 0) {
+        unit_file_path = "../src/libconverter/units/list_of_length_units.txt";
+        factor_file_path = "../src/libconverter/units/conversion_coefficient_of_length.txt";
+        unit_num = NUMBER_OF_LENGTH_UNITS;
+    } else if (strcmp(category, "time\n") == 0) {
+        unit_file_path = "../src/libconverter/units/list_of_time_units.txt";
+        factor_file_path = "../src/libconverter/units/conversion_coefficient_of_time.txt";
+        unit_num = NUMBER_OF_TIME_UNITS;
+    } else if (strcmp(category, "rate\n") == 0) {
+        unit_file_path = "../src/libconverter/units/list_of_rate_units.txt";
+        factor_file_path = "../src/libconverter/units/conversion_coefficient_of_rate.txt";
+        unit_num = NUMBER_OF_RATE_UNITS;
+    } else if (strcmp(category, "data size\n") == 0) {
+        unit_file_path = "../src/libconverter/units/list_of_data_size_units.txt";
+        factor_file_path = "../src/libconverter/units/conversion_coefficient_of_data_size.txt";
+        unit_num = NUMBER_OF_DATA_SIZE_UNITS;
+    } else if (strcmp(category, "data-rate\n") == 0) {
+        unit_file_path = "../src/libconverter/units/list_of_data_rate_units.txt";
+        factor_file_path = "../src/libconverter/units/conversion_coefficient_of_data_rate.txt";
+        unit_num = NUMBER_OF_DATA_RATE_UNITS;
+    }
+
+    if (unit_num == -1) {
+        return units;
+    }
+    tree = add_strings_to_tree(unit_file_path, unit_num);
+    if (is_appropriate(tree, units->have_unit, unit_num) != is_appropriate(tree, units->want_unit, unit_num)) {
+        helper_message("category");
+        return units;
+    }
+    units = from_one_unit(units, tree, unit_num, factor_file_path);
+
     return units;
 }
 
