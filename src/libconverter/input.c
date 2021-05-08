@@ -80,7 +80,7 @@ int file_reader(DefineUnits* units, const char* in_file_name, const char* out_fi
 {
     FILE* in_file = fopen(in_file_name, "rt");
     if (in_file == NULL) {
-        file_error(in_file);
+        file_error(in_file_name);
         return -1;
     }
 
