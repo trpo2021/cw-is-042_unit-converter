@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
         printf("Coming soon...\n");
         // file_reader(units, argv[3], argv[5]);
     } else {
-        printf("Unexpected command line argument!\nTry using \'./converter.exe --help\' to find out how to successfully launch the application.\n");
+        helper_message("argument");
     }
     free(units);
     return 0;

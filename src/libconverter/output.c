@@ -61,3 +61,12 @@ void file_error(char* file_path)
 {
     printf("Failed to open file located at %s\n", file_path);
 }
+
+void helper_message(char* difficulty)
+{
+    if (strcmp(difficulty, "argument") == 0) {
+        printf("Unexpected command line argument!\nTry using \'./converter.exe --help\' to find out how to successfully launch the application.\n");
+    } else if (strcmp(difficulty, "command\n") == 0) {
+        printf("Oh, I see you don't know any command. Write \'help\' to learn more about commands: ");
+    }
+}

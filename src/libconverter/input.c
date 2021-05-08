@@ -22,7 +22,7 @@ void command_requester(DefineUnits* units)
     } else if (strcmp(command, "finish\n") == 0) {
         return;
     } else {
-        printf("Oh, I see you don't know any command. Write \'help\' to learn more about commands: ");
+        helper_message("command");
     }
     command_requester(units);
 }
