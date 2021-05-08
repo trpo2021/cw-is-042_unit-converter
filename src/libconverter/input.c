@@ -19,7 +19,7 @@ const char* SYNTAX_CALL = "There's a syntax of Unit Converter. In brackets you c
     "month(month), year(year), decade(decade), century(century)"
     "\n3. Rate ---->kilometer per hour(km/h), meter per second (m/s), mile per hour(m/h), foot per second(ft/s), knot(kt)"
     "\n4. Data size ----> bit(bit), kilobit(kbit), megabit(mbit), gigabit(gbit), terabit(tbit), petabit(pbit), byte(b), kilobyte(kb), megabyte(mb), gigabyte(gb), terabyte(tb), petabyte(pb)"
-    "\n5. Data-rate ---->bit per second(bit/s), kilobit p.s.(kbit), megabit p.s.(mbit/s), gigabit p.s.(gbit/s), terabit p.s.(tbit/s), petabit p.s.(pbit/s), byte p.s.(b/s), kilobyte p.s.(kb/s), megabyte p.s.(mb/s), gigabyte p.s.(gb/s), terabyte p.s.(tb/s), petabyte p.s.(pb/s)"
+    "\n5. Data-rate ---->bit per second(bit/s), kilobit per second (kbit),kebibit per second(kbbit/s), megabit per second(mbit/s) mebibit per second(mbbit/s), gigabit per second(gbit/s), gebibit per second(gbbit), terabit per second(tbit/s), tebibit per second(tbbit/s), petabit per second(pbit/s), pebibit per second(pbbit/s), kilobyte per second(kb/s), megabyte per second(mb/s), gigabyte per second(gb/s), terabyte per second(tb/s), petabyte per second(pb/s)"
     "\nSo, what should we do next? Enter the command for further actions: ";
 
 void command_requester(DefineUnits* units)
