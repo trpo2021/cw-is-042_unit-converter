@@ -66,7 +66,9 @@ void helper_message(char* difficulty)
 {
     if (strcmp(difficulty, "argument") == 0) {
         printf("Unexpected command line argument!\nTry using \'./converter.exe --help\' to find out how to successfully launch the application.\n");
-    } else if (strcmp(difficulty, "command\n") == 0) {
+    } else if (strcmp(difficulty, "command") == 0) {
         printf("Oh, I see you don't know any command. Write \'help\' to learn more about commands: ");
+    } else if (strcmp(difficulty, "category") == 0) {
+        printf("Units must be of the same category! To find out which units correspond to which category, enter the command 'syntax'.\n");
     }
 }
