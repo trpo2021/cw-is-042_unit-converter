@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 {
     DefineUnits* units = malloc(sizeof(DefineUnits*));
     if (units == NULL) {
-        printf("Failed to allocate memory\n");
+        memory_error();
         return -1;
     }
     if (argc == 1) {

@@ -51,3 +51,8 @@ void what_next(void)
 {
     printf("So, what should we do next? Enter the command for further actions: ");
 }
+
+void memory_error(void)
+{
+    printf("Failed to allocate memory\n");
+}
