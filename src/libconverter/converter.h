@@ -17,7 +17,6 @@ typedef struct BSTree {
     struct BSTree* right;
 } BSTree;
 
-
 DefineUnits* convert_units(DefineUnits* units);
 bool is_appropriate(BSTree* tree, char* unit, int num_of_units);
 BSTree* add_strings_to_tree(const char* data_file_path, int num_of_units);
