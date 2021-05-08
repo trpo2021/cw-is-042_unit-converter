@@ -140,7 +140,7 @@ DefineUnits* convert_units(DefineUnits* units)
             printf("Units must be of the same category! To find out which units correspond to which category, enter the command 'syntax'.\n");
             return units;
         }
-        units = from_one_unit(units, tree, NUMBER_OF_DATA_RATE_UNITS, coef_list_path);
+        units = from_one_unit(tree, units, NUMBER_OF_DATA_SIZE_UNITS, coef_list_path);
     } else if (strcmp(category, "data-rate\n") == 0) {
         const char* list_file_path = "../src/libconverter/units/list_of_data_rate_units.txt";
         const char* coef_list_path = "../src/libconverter/units/conversion_coefficient_of_data_rate.txt";
