@@ -59,6 +59,9 @@ void input_data(DefineUnits* units)
     units->category = set_unit_parameter(units->category);
     printf("You have: ");
     scanf("%lf", &units->have_value);
+    if (units->have_value < 0) {
+        exit(EXIT_FAILURE);
+    }
     units->have_unit = set_unit_parameter(units->have_unit);
     remove_space(units->have_unit);
     printf("You want: ");

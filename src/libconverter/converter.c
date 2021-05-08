@@ -7,9 +7,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-static struct bstree* bstree_create(int key, char* value)
+static BSTree* bstree_create(int key, char* value)
 {
-    struct bstree* node;
+    BSTree* node;
 
     node = malloc(sizeof(*node));
     if (node != NULL) {
@@ -21,13 +21,13 @@ static struct bstree* bstree_create(int key, char* value)
     return node;
 }
 
-static void bstree_add(struct bstree* tree, int key, char* value)
+static void bstree_add(BSTree* tree, int key, char* value)
 {
     if (tree == NULL) {
         return;
     }
-    struct bstree* parent;
-    struct bstree* node;
+    BSTree* parent;
+    BSTree* node;
     while (tree != NULL) {
         parent = tree;
         if (key < tree->key) {
@@ -46,7 +46,7 @@ static void bstree_add(struct bstree* tree, int key, char* value)
     }
 }
 
-struct bstree* bstree_lookup(struct bstree* tree, int key)
+BSTree* bstree_lookup(BSTree* tree, int key)
 {
     while (tree != NULL) {
         if (key == tree->key) {
@@ -84,9 +84,9 @@ static void get_file_content(char** array, int size, FILE* units_name)
     }
 }
 
-struct bstree* add_strings_to_tree(const char* data_file_path, int num_of_units)
+BSTree* add_strings_to_tree(const char* data_file_path, int num_of_units)
 {
-    struct bstree* tree;
+    BSTree* tree;
     FILE* list = fopen(data_file_path, "r");
     if (list == NULL) {
         file_error(data_file_path);
@@ -104,7 +104,7 @@ struct bstree* add_strings_to_tree(const char* data_file_path, int num_of_units)
 
 DefineUnits* convert_units(DefineUnits* units)
 {
-    struct bstree* tree;
+    BSTree* tree;
     int unit_num = -1;
     char* category = to_lower_string(units->category);
     char* unit_file_path = malloc(2 * MAX_STRING_LENGTH * sizeof(char));
@@ -166,9 +166,9 @@ DefineUnits* convert_units(DefineUnits* units)
     return units;
 }
 
-bool is_appropriate(struct bstree* tree, char* unit, int num_of_units)
+bool is_appropriate(BSTree* tree, char* unit, int num_of_units)
 {
-    struct bstree* node;
+    BSTree* node;
     for (int i = 0; i < num_of_units; ++i) {
         node = bstree_lookup(tree, i);
         if (strcmp(unit, node->value) == 0) {

@@ -7,11 +7,11 @@
 
 static void to_another_unit(
         DefineUnits* units,
-        struct bstree* unit_list,
-        struct bstree* coefficient_list,
+        BSTree* unit_list,
+        BSTree* coefficient_list,
         int num_of_units)
 {
-    struct bstree* coefficient_node;
+    BSTree* coefficient_node;
     int key = -1;
     for (int i = 0; i < num_of_units; ++i) {
         if (is_appropriate(unit_list, units->want_unit, i) == true) {
@@ -28,7 +28,7 @@ static void to_another_unit(
 
 DefineUnits* from_one_unit(
         DefineUnits* units,
-        struct bstree* unit_list,
+        BSTree* unit_list,
         int num_of_units,
         const char* coef_list_path)
 {
@@ -36,8 +36,8 @@ DefineUnits* from_one_unit(
         return units;
     }
 
-    struct bstree* coefficient_list;
-    struct bstree* coefficient_node;
+    BSTree* coefficient_list;
+    BSTree* coefficient_node;
     coefficient_list = add_strings_to_tree(coef_list_path, num_of_units);
 
     int key = -1;
