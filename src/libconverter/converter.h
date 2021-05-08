@@ -9,16 +9,15 @@
 #define NUMBER_OF_DATA_SIZE_UNITS 13
 #define NUMBER_OF_DATA_RATE_UNITS 14
 
-struct bstree {
+typedef struct BSTree {
     int key;
     char* value;
 
-    struct bstree* left;
-    struct bstree* right;
-};
-
+    struct BSTree* left;
+    struct BSTree* right;
+} BSTree;
 
 DefineUnits* convert_units(DefineUnits* units);
-bool is_appropriate(struct bstree* tree, char* unit, int num_of_units);
-struct bstree* add_strings_to_tree(const char* data_file_path, int num_of_units);
-struct bstree* bstree_lookup(struct bstree* tree, int key);
+bool is_appropriate(BSTree* tree, char* unit, int num_of_units);
+BSTree* add_strings_to_tree(const char* data_file_path, int num_of_units);
+BSTree* bstree_lookup(BSTree* tree, int key);

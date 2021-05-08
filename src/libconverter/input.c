@@ -59,6 +59,10 @@ void input_data(DefineUnits* units)
     units->category = set_unit_parameter(units->category);
     printf("You have: ");
     scanf("%lf", &units->have_value);
+    if (units->have_value < 0) {
+        printf("Negative numbers aren't allowed for this category!\n");
+        exit(EXIT_FAILURE);
+    }
     units->have_unit = set_unit_parameter(units->have_unit);
     remove_space(units->have_unit);
     printf("You want: ");
@@ -66,7 +70,8 @@ void input_data(DefineUnits* units)
     units = convert_units(units);
 }
 
-static char* getfield(char* line, int num) {
+static char* getfield(char* line, int num)
+{
     char* tok;
     for (tok = strtok(line, ";"); tok && *tok; tok = strtok(NULL, ";\n")) {
         if (!--num) {
@@ -76,7 +81,8 @@ static char* getfield(char* line, int num) {
     return NULL;
 }
 
-int file_reader(DefineUnits* units, const char* in_file_name, const char* out_file_name)
+int file_reader(
+        DefineUnits* units, const char* in_file_name, const char* out_file_name)
 {
     FILE* in_file = fopen(in_file_name, "rt");
     if (in_file == NULL) {

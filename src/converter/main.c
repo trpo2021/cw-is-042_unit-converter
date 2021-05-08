@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
     DefineUnits* units = malloc(sizeof(DefineUnits*));
     if (units == NULL) {
@@ -23,11 +23,16 @@ int main(int argc, char *argv[])
             call_help(argv[1]);
             command_requester(units);
         }
-    } else if ((argc == 4) && (strcmp(argv[1], "--start") == 0) && (strcmp(argv[2], "--path") == 0)) {
+    } else if (
+            (argc == 4) && (strcmp(argv[1], "--start") == 0)
+            && (strcmp(argv[2], "--path") == 0)) {
         printf("Coming soon...\n");
-        input_data(units);
+        // input_data(units);
         // output_file(argv[3])
-    } else if ((argc == 6) && (strcmp(argv[1], "--start") == 0) && (strcmp(argv[2], "--path") == 0) && (strcmp(argv[4], "--path") == 0)) {
+    } else if (
+            (argc == 6) && (strcmp(argv[1], "--start") == 0)
+            && (strcmp(argv[2], "--path") == 0)
+            && (strcmp(argv[4], "--path") == 0)) {
         printf("Coming soon...\n");
         // file_reader(units, argv[3], argv[5]);
     } else {
