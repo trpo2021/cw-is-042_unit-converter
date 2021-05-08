@@ -3,3 +3,5 @@
 #include <libconverter/input.h>
 
 void output_data(DefineUnits* units);
+void welcomer(void);
+void call_help(char* help);

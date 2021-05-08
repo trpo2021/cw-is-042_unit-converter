@@ -5,12 +5,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-const char* HELP_CALL_ARG = "Welcome to Unit Converter!\nUsage:\n\t./converter.exe (The input data is read from the keyboard, the output data is output to the terminal)"
-    "\n\t./converter.exe --start (Essentially the same as ./converter, but in this case, you enter the data immediately)"
-    "\n\t./converter.exe --start --path <input-file-path> --path <output-file-path> (The input and output data are files)"
-    "\n\t./converter.exe --start --path <output-file-path> (The input data is read from the keyboard, the output data is a file)"
-    "\nNow enter the command for further actions: ";
-
 int main(int argc, char *argv[])
 {
     DefineUnits* units = malloc(sizeof(DefineUnits*));
@@ -19,14 +13,14 @@ int main(int argc, char *argv[])
         return -1;
     }
     if (argc == 1) {
-        printf("Welcome to Unit Converter! Enter the command for further actions: ");
+        welcomer();
         command_requester(units);
     } else if (argc == 2) {
         if (strcmp(argv[1], "--start") == 0) {
             input_data(units);
             output_data(units);
         } else if (strcmp(argv[1], "--help") == 0) {
-            printf("%s", HELP_CALL_ARG);
+            call_help(argv[1]);
             command_requester(units);
         }
     } else if ((argc == 4) && (strcmp(argv[1], "--start") == 0) && (strcmp(argv[2], "--path") == 0)) {
