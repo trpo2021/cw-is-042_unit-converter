@@ -14,7 +14,7 @@ void command_requester(DefineUnits* units)
     if (strcmp(command, "start\n") == 0) {
         input_data(units);
         output_data(units);
-        printf("So, what should we do next? Enter the command for further actions: ");
+        what_next();
     } else if (strcmp(command, "help\n") == 0) {
         call_help(command);
     } else if (strcmp(command, "syntax\n") == 0) {
