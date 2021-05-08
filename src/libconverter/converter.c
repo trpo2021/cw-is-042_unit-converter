@@ -123,7 +123,6 @@ DefineUnits* convert_units(DefineUnits* units)
         }
         units = from_one_unit(units, tree, NUMBER_OF_TIME_UNITS, coef_list_path);
     } else if (strcmp(category, "rate\n") == 0) {
-        // from_rate_unit(have_value, have_unit, want_unit);
         const char* list_file_path = "../src/libconverter/units/list_of_rate_units.txt";
         const char* coef_list_path = "../src/libconverter/units/conversion_coefficient_of_rate.txt";
         tree = add_strings_ti_tree(list_file_path, NUMBER_OF_RATE_UNITS);

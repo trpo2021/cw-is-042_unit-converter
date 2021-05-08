@@ -1,5 +1,5 @@
-mph
-ftps
-mps
-kph
+m/h
+ft/s
+mp/s
+km/h
 kt

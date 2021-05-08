@@ -17,7 +17,7 @@ const char* SYNTAX_CALL = "There's a syntax of Unit Converter. In brackets you c
     "yard(yard), inch(inch), nautical mile(nmi)"
     "\n2. Time ----> nanosecond(ns), microsecond(us), millisecond(ms), second(sec), minute(min), hour(hour), day(day), week(week), "
     "month(month), year(year), decade(decade), century(century)"
-    "\n3. Rate ---->"
+    "\n3. Rate ---->kilometer per hour(km/h), meter per second (m/s), mile per hour(m/h), foot per second(ft/s), knot(kt)"
     "\n4. Data size ----> bit(bit), kilobit(kbit), megabit(mbit), gigabit(gbit), terabit(tbit), petabit(pbit), byte(b), kilobyte(kb), megabyte(mb), gigabyte(gb), terabyte(tb), petabyte(pb)"
     "\n5. Data-rate ---->"
     "\nSo, what should we do next? Enter the command for further actions: ";
