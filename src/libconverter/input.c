@@ -30,18 +30,18 @@ void command_requester(DefineUnits* units)
     fgets(command, MAX_STRING_LENGTH, stdin);
     if (strcmp(command, "start\n") == 0) {
         input_data(units);
+        output_data(units);
+        printf("So, what should we do next? Enter the command for further actions: ");
     } else if (strcmp(command, "help\n") == 0) {
         printf("%s", HELP_CALL);
-        command_requester(units);
     } else if (strcmp(command, "syntax\n") == 0) {
         printf("%s", SYNTAX_CALL);
-        command_requester(units);
     } else if (strcmp(command, "finish\n") == 0) {
         return;
     } else {
         printf("Oh, I see you don't know any command. Write \'help\' to learn more about commands: ");
-        command_requester(units);
     }
+    command_requester(units);
 }
 
 static char* set_unit_parameter(char* parameter)
@@ -81,9 +81,6 @@ void input_data(DefineUnits* units)
     printf("You want: ");
     units->want_unit = set_unit_parameter(units->want_unit);
     units = convert_units(units);
-    output_data(units);
-    printf("So, what should we do next? Enter the command for further actions: ");
-    command_requester(units);
 }
 
 static char* getfield(char* line, int num) {

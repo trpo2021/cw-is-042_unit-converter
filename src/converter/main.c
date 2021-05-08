@@ -1,4 +1,6 @@
 #include <libconverter/input.h>
+#include <libconverter/output.h>
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -22,6 +24,7 @@ int main(int argc, char *argv[])
     } else if (argc == 2) {
         if (strcmp(argv[1], "--start") == 0) {
             input_data(units);
+            output_data(units);
         } else if (strcmp(argv[1], "--help") == 0) {
             printf("%s", HELP_CALL_ARG);
             command_requester(units);
