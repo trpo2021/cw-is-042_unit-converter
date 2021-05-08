@@ -71,7 +71,7 @@ static char* to_lower_string(char* string)
     return tmp;
 }
 
-static void get_name_of_units(char** array, int size, FILE* units_name)
+static void get_file_content(char** array, int size, FILE* units_name)
 {
     for (int i = 0; i < size; ++i) {
         array[i] = malloc(20);
@@ -79,21 +79,20 @@ static void get_name_of_units(char** array, int size, FILE* units_name)
             printf("Failed to allocate memory\n");
             exit(EXIT_FAILURE);
         }
-        // fscanf(units_name, "%s", array[i]);
         fgets(array[i], size, units_name);
     }
 }
 
-struct bstree* add_units_to_list(const char* list_file_path, int num_of_units)
+struct bstree* add_strings_to_tree(const char* data_file_path, int num_of_units)
 {
     struct bstree* tree;
-    FILE* list = fopen(list_file_path, "r");
+    FILE* list = fopen(data_file_path, "r");
     if (list == NULL) {
-        printf("Failed to open file located at %s\n", list_file_path);
+        printf("Failed to open file located at %s\n", data_file_path);
         return NULL;
     }
     char* array[num_of_units];
-    get_name_of_units(array, num_of_units, list);
+    get_file_content(array, num_of_units, list);
     tree = bstree_create(0, array[0]);
     for (int i = 1; i < num_of_units; ++i) {
         bstree_add(tree, i, array[i]);
@@ -109,16 +108,16 @@ DefineUnits* convert_units(DefineUnits* units)
     if (strcmp(category, "length\n") == 0) {
         const char* list_file_path = "../src/libconverter/units/list_of_length_units.txt";
         // const char* coef_list_path = "../src/libconverter/units/conversion_coefficient_of_length.txt";
-        tree = add_units_to_list(list_file_path, NUMBER_OF_LENGTH_UNITS);
-        if (is_category_compliance(tree, units->have_unit, NUMBER_OF_LENGTH_UNITS) != is_category_compliance(tree, units->want_unit, NUMBER_OF_LENGTH_UNITS)) {
+        tree = add_strings_to_tree(list_file_path, NUMBER_OF_LENGTH_UNITS);
+        if (is_appropriate(tree, units->have_unit, NUMBER_OF_LENGTH_UNITS) != is_appropriate(tree, units->want_unit, NUMBER_OF_LENGTH_UNITS)) {
             printf("Units must be of the same category! To find out which units correspond to which category, enter the command 'syntax'.\n");
             return units;
         }
     } else if (strcmp(category, "time\n") == 0) {
         const char* list_file_path = "../src/libconverter/units/list_of_time_units.txt";
         const char* coef_list_path = "../src/libconverter/units/conversion_coefficient_of_time.txt";
-        tree = add_units_to_list(list_file_path, NUMBER_OF_TIME_UNITS);
-        if (is_category_compliance(tree, units->have_unit, NUMBER_OF_TIME_UNITS) != is_category_compliance(tree, units->want_unit, NUMBER_OF_TIME_UNITS)) {
+        tree = add_strings_to_tree(list_file_path, NUMBER_OF_TIME_UNITS);
+        if (is_appropriate(tree, units->have_unit, NUMBER_OF_TIME_UNITS) != is_appropriate(tree, units->want_unit, NUMBER_OF_TIME_UNITS)) {
             printf("Units must be of the same category! To find out which units correspond to which category, enter the command 'syntax'.\n");
             return units;
         }
@@ -128,8 +127,8 @@ DefineUnits* convert_units(DefineUnits* units)
     } else if (strcmp(category, "data size\n") == 0) {
         const char* list_file_path = "../src/libconverter/units/list_of_data_size_units.txt";
         const char* coef_list_path = "../src/libconverter/units/conversion_coefficient_of_data_size.txt";
-        tree = add_units_to_list(list_file_path, NUMBER_OF_DATA_SIZE_UNITS);
-        if (is_category_compliance(tree, units->have_unit, NUMBER_OF_DATA_SIZE_UNITS) != is_category_compliance(tree, units->want_unit, NUMBER_OF_DATA_SIZE_UNITS)) {
+        tree = add_strings_to_tree(list_file_path, NUMBER_OF_DATA_SIZE_UNITS);
+        if (is_appropriate(tree, units->have_unit, NUMBER_OF_DATA_SIZE_UNITS) != is_appropriate(tree, units->want_unit, NUMBER_OF_DATA_SIZE_UNITS)) {
             printf("Units must be of the same category! To find out which units correspond to which category, enter the command 'syntax'.\n");
             return units;
         }
@@ -140,7 +139,7 @@ DefineUnits* convert_units(DefineUnits* units)
     return units;
 }
 
-bool is_category_compliance(struct bstree* tree, char* unit, int num_of_units)
+bool is_appropriate(struct bstree* tree, char* unit, int num_of_units)
 {
     struct bstree* node;
     for (int i = 0; i < num_of_units; ++i) {
