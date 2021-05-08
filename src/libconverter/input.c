@@ -1,5 +1,7 @@
 #include <libconverter/converter.h>
 #include <libconverter/input.h>
+#include <libconverter/output.h>
+
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -26,7 +28,6 @@ void command_requester(DefineUnits* units)
 {
     char* command = malloc(MAX_STRING_LENGTH * sizeof(char));
     fgets(command, MAX_STRING_LENGTH, stdin);
-    //scanf("%s", command);
     if (strcmp(command, "start\n") == 0) {
         input_data(units);
     } else if (strcmp(command, "help\n") == 0) {
@@ -80,6 +81,7 @@ void input_data(DefineUnits* units)
     printf("You want: ");
     units->want_unit = set_unit_parameter(units->want_unit);
     units = convert_units(units);
+    output_data(units);
     printf("So, what should we do next? Enter the command for further actions: ");
     command_requester(units);
 }
