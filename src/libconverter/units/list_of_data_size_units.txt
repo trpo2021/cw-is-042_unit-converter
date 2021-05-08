@@ -1,0 +1,12 @@
+bit
+kbit
+mbit
+gbit
+tbit
+pbit
+b
+kb
+mb
+gb
+tb
+pb
