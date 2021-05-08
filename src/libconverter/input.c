@@ -60,6 +60,7 @@ void input_data(DefineUnits* units)
     printf("You have: ");
     scanf("%lf", &units->have_value);
     if (units->have_value < 0) {
+        printf("Negative numbers aren't allowed for this category!\n");
         exit(EXIT_FAILURE);
     }
     units->have_unit = set_unit_parameter(units->have_unit);
