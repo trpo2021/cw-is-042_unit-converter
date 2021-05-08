@@ -110,7 +110,7 @@ DefineUnits* convert_units(DefineUnits* units)
         const char* list_file_path = "../src/libconverter/units/list_of_length_units.txt";
         // const char* coef_list_path = "../src/libconverter/units/conversion_coefficient_of_length.txt";
         tree = add_units_to_list(list_file_path, NUMBER_OF_LENGTH_UNITS);
-        if (is_category_compliance(tree, units->have_unit, NUMBER_OF_LENGTH_UNITS) != is_category_compliance(tree, units->want_unit, NUMBER_OF_LENGTH_UNITS)) {
+        if (is_appropriate(tree, units->have_unit, NUMBER_OF_LENGTH_UNITS) != is_appropriate(tree, units->want_unit, NUMBER_OF_LENGTH_UNITS)) {
             printf("Units must be of the same category! To find out which units correspond to which category, enter the command 'syntax'.\n");
             return units;
         }
@@ -118,7 +118,7 @@ DefineUnits* convert_units(DefineUnits* units)
         const char* list_file_path = "../src/libconverter/units/list_of_time_units.txt";
         const char* coef_list_path = "../src/libconverter/units/conversion_coefficient_of_time.txt";
         tree = add_units_to_list(list_file_path, NUMBER_OF_TIME_UNITS);
-        if (is_category_compliance(tree, units->have_unit, NUMBER_OF_TIME_UNITS) != is_category_compliance(tree, units->want_unit, NUMBER_OF_TIME_UNITS)) {
+        if (is_appropriate(tree, units->have_unit, NUMBER_OF_TIME_UNITS) != is_appropriate(tree, units->want_unit, NUMBER_OF_TIME_UNITS)) {
             printf("Units must be of the same category! To find out which units correspond to which category, enter the command 'syntax'.\n");
             return units;
         }
@@ -129,7 +129,7 @@ DefineUnits* convert_units(DefineUnits* units)
         const char* list_file_path = "../src/libconverter/units/list_of_data_size_units.txt";
         const char* coef_list_path = "../src/libconverter/units/conversion_coefficient_of_data_size.txt";
         tree = add_units_to_list(list_file_path, NUMBER_OF_DATA_SIZE_UNITS);
-        if (is_category_compliance(tree, units->have_unit, NUMBER_OF_DATA_SIZE_UNITS) != is_category_compliance(tree, units->want_unit, NUMBER_OF_DATA_SIZE_UNITS)) {
+        if (is_appropriate(tree, units->have_unit, NUMBER_OF_DATA_SIZE_UNITS) != is_appropriate(tree, units->want_unit, NUMBER_OF_DATA_SIZE_UNITS)) {
             printf("Units must be of the same category! To find out which units correspond to which category, enter the command 'syntax'.\n");
             return units;
         }
@@ -140,7 +140,7 @@ DefineUnits* convert_units(DefineUnits* units)
     return units;
 }
 
-bool is_category_compliance(struct bstree* tree, char* unit, int num_of_units)
+bool is_appropriate(struct bstree* tree, char* unit, int num_of_units)
 {
     struct bstree* node;
     for (int i = 0; i < num_of_units; ++i) {

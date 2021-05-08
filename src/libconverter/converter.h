@@ -19,6 +19,6 @@ struct bstree {
 
 
 DefineUnits* convert_units(DefineUnits* units);
-bool is_category_compliance(struct bstree* tree, char* unit, int num_of_units);
+bool is_appropriate(struct bstree* tree, char* unit, int num_of_units);
 struct bstree* add_units_to_list(const char* list_file_path, int num_of_units);
 struct bstree* bstree_lookup(struct bstree* tree, int key);

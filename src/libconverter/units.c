@@ -10,8 +10,9 @@ static void to_another_unit(DefineUnits* units, struct bstree* unit_list, struct
     struct bstree* coefficient_node;
     int key = -1;
     for (int i = 0; i < num_of_units; ++i) {
-        if (is_category_compliance(unit_list, units->want_unit, i) == 0) {
-            key = i;
+        if (is_appropriate(unit_list, units->want_unit, i) == true) {
+            key = i - 1;
+            break;
         }
     }
     if (key == -1) {
@@ -34,7 +35,7 @@ DefineUnits* from_one_unit(DefineUnits* units, struct bstree* unit_list, int num
 
     int key = -1;
     for (int i = 0; i < num_of_units; ++i) {
-        if (is_category_compliance(unit_list, units->have_unit, i) == true) {
+        if (is_appropriate(unit_list, units->have_unit, i) == true) {
             key = i - 1;
             break;
         }
