@@ -71,7 +71,7 @@ static char* to_lower_string(char* string)
     return tmp;
 }
 
-static void get_name_of_units(char** array, int size, FILE* units_name)
+static void get_file_content(char** array, int size, FILE* units_name)
 {
     for (int i = 0; i < size; ++i) {
         array[i] = malloc(20);
@@ -79,7 +79,6 @@ static void get_name_of_units(char** array, int size, FILE* units_name)
             printf("Failed to allocate memory\n");
             exit(EXIT_FAILURE);
         }
-        // fscanf(units_name, "%s", array[i]);
         fgets(array[i], size, units_name);
     }
 }
@@ -93,7 +92,7 @@ struct bstree* add_units_to_list(const char* list_file_path, int num_of_units)
         return NULL;
     }
     char* array[num_of_units];
-    get_name_of_units(array, num_of_units, list);
+    get_file_content(array, num_of_units, list);
     tree = bstree_create(0, array[0]);
     for (int i = 1; i < num_of_units; ++i) {
         bstree_add(tree, i, array[i]);
