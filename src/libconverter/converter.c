@@ -83,12 +83,12 @@ static void get_file_content(char** array, int size, FILE* units_name)
     }
 }
 
-struct bstree* add_units_to_list(const char* list_file_path, int num_of_units)
+struct bstree* add_strings_to_tree(const char* data_file_path, int num_of_units)
 {
     struct bstree* tree;
-    FILE* list = fopen(list_file_path, "r");
+    FILE* list = fopen(data_file_path, "r");
     if (list == NULL) {
-        printf("Failed to open file located at %s\n", list_file_path);
+        printf("Failed to open file located at %s\n", data_file_path);
         return NULL;
     }
     char* array[num_of_units];
@@ -108,7 +108,7 @@ DefineUnits* convert_units(DefineUnits* units)
     if (strcmp(category, "length\n") == 0) {
         const char* list_file_path = "../src/libconverter/units/list_of_length_units.txt";
         // const char* coef_list_path = "../src/libconverter/units/conversion_coefficient_of_length.txt";
-        tree = add_units_to_list(list_file_path, NUMBER_OF_LENGTH_UNITS);
+        tree = add_strings_to_tree(list_file_path, NUMBER_OF_LENGTH_UNITS);
         if (is_appropriate(tree, units->have_unit, NUMBER_OF_LENGTH_UNITS) != is_appropriate(tree, units->want_unit, NUMBER_OF_LENGTH_UNITS)) {
             printf("Units must be of the same category! To find out which units correspond to which category, enter the command 'syntax'.\n");
             return units;
@@ -116,7 +116,7 @@ DefineUnits* convert_units(DefineUnits* units)
     } else if (strcmp(category, "time\n") == 0) {
         const char* list_file_path = "../src/libconverter/units/list_of_time_units.txt";
         const char* coef_list_path = "../src/libconverter/units/conversion_coefficient_of_time.txt";
-        tree = add_units_to_list(list_file_path, NUMBER_OF_TIME_UNITS);
+        tree = add_strings_to_tree(list_file_path, NUMBER_OF_TIME_UNITS);
         if (is_appropriate(tree, units->have_unit, NUMBER_OF_TIME_UNITS) != is_appropriate(tree, units->want_unit, NUMBER_OF_TIME_UNITS)) {
             printf("Units must be of the same category! To find out which units correspond to which category, enter the command 'syntax'.\n");
             return units;
@@ -127,7 +127,7 @@ DefineUnits* convert_units(DefineUnits* units)
     } else if (strcmp(category, "data size\n") == 0) {
         const char* list_file_path = "../src/libconverter/units/list_of_data_size_units.txt";
         const char* coef_list_path = "../src/libconverter/units/conversion_coefficient_of_data_size.txt";
-        tree = add_units_to_list(list_file_path, NUMBER_OF_DATA_SIZE_UNITS);
+        tree = add_strings_to_tree(list_file_path, NUMBER_OF_DATA_SIZE_UNITS);
         if (is_appropriate(tree, units->have_unit, NUMBER_OF_DATA_SIZE_UNITS) != is_appropriate(tree, units->want_unit, NUMBER_OF_DATA_SIZE_UNITS)) {
             printf("Units must be of the same category! To find out which units correspond to which category, enter the command 'syntax'.\n");
             return units;

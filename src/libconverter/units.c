@@ -30,7 +30,7 @@ DefineUnits* from_one_unit(DefineUnits* units, struct bstree* unit_list, int num
 
     struct bstree* coefficient_list;
     struct bstree* coefficient_node;
-    coefficient_list = add_units_to_list(coef_list_path, num_of_units);
+    coefficient_list = add_strings_to_tree(coef_list_path, num_of_units);
     printf("I have: %lf %s", units->have_value, units->have_unit);
 
     int key = -1;
