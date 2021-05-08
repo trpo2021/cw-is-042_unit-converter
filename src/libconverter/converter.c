@@ -123,7 +123,14 @@ DefineUnits* convert_units(DefineUnits* units)
         }
         units = from_one_unit(units, tree, NUMBER_OF_TIME_UNITS, coef_list_path);
     } else if (strcmp(category, "rate\n") == 0) {
-        // from_rate_unit(have_value, have_unit, want_unit);
+        const char* list_file_path = "../src/libconverter/units/list_of_rate_units.txt";
+        const char* coef_list_path = "../src/libconverter/units/conversion_coefficient_of_rate.txt";
+        tree = add_strings_ti_tree(list_file_path, NUMBER_OF_RATE_UNITS);
+        if (is_appropriate(tree, units->have_unit, NUMBER_OF_RATE_UNITS) != is_appripriate(tree,units->want_unit, NUMBER_OF_RATE_UNITS)) {
+            printf("Units must be of the same category! To find out which units correspond ro which category, enter the cpmmand 'syntax'. \n");
+            return units;
+        }
+        units = from_one_unit(units, tree, NUMBER_OF_RATE_UNITS, coef_list_path);
     } else if (strcmp(category, "data size\n") == 0) {
         const char* list_file_path = "../src/libconverter/units/list_of_data_size_units.txt";
         const char* coef_list_path = "../src/libconverter/units/conversion_coefficient_of_data_size.txt";
