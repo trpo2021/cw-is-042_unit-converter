@@ -3,11 +3,11 @@
 #include <libconverter/input.h>
 #include <stdbool.h>
 
-#define NUMBER_OF_LENGTH_UNITS 11
-#define NUMBER_OF_TIME_UNITS 12
-#define NUMBER_OF_RATE_UNITS 0
-#define NUMBER_OF_DATA_SIZE_UNITS 12
-#define NUMBER_OF_DATA_RATE_UNITS 0
+#define NUMBER_OF_LENGTH_UNITS 12
+#define NUMBER_OF_TIME_UNITS 13
+#define NUMBER_OF_RATE_UNITS 6
+#define NUMBER_OF_DATA_SIZE_UNITS 13
+#define NUMBER_OF_DATA_RATE_UNITS 14
 
 struct bstree {
     int key;
