@@ -5,7 +5,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-static void to_another_unit(DefineUnits* units, struct bstree* unit_list, struct bstree* coefficient_list, int num_of_units)
+static void to_another_unit(
+        DefineUnits* units,
+        struct bstree* unit_list,
+        struct bstree* coefficient_list,
+        int num_of_units)
 {
     struct bstree* coefficient_node;
     int key = -1;
@@ -22,7 +26,11 @@ static void to_another_unit(DefineUnits* units, struct bstree* unit_list, struct
     units->want_value /= atof(coefficient_node->value);
 }
 
-DefineUnits* from_one_unit(DefineUnits* units, struct bstree* unit_list, int num_of_units, const char* coef_list_path)
+DefineUnits* from_one_unit(
+        DefineUnits* units,
+        struct bstree* unit_list,
+        int num_of_units,
+        const char* coef_list_path)
 {
     if (strcmp(units->have_unit, units->want_unit) == 0) {
         return units;

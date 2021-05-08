@@ -66,7 +66,8 @@ void input_data(DefineUnits* units)
     units = convert_units(units);
 }
 
-static char* getfield(char* line, int num) {
+static char* getfield(char* line, int num)
+{
     char* tok;
     for (tok = strtok(line, ";"); tok && *tok; tok = strtok(NULL, ";\n")) {
         if (!--num) {
@@ -76,7 +77,8 @@ static char* getfield(char* line, int num) {
     return NULL;
 }
 
-int file_reader(DefineUnits* units, const char* in_file_name, const char* out_file_name)
+int file_reader(
+        DefineUnits* units, const char* in_file_name, const char* out_file_name)
 {
     FILE* in_file = fopen(in_file_name, "rt");
     if (in_file == NULL) {
