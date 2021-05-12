@@ -10,7 +10,6 @@ typedef struct {
     char* want_unit; // Единица, в которую хотим перевести значение
 } DefineUnits;
 
-void command_requester(DefineUnits* units);
 void input_data(DefineUnits* units);
 int file_reader(
         DefineUnits* units,
