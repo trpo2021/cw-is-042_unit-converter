@@ -3,27 +3,15 @@
 #include <stdio.h>
 #include <string.h>
 
-const char* HELP_CALL_ARG
-        = "Welcome to Unit Converter!\nUsage:\n\t./converter.exe (The input "
+const char* HELP_CALL
+        = "Welcome to Unit Converter!\nUsage:\n\t./converter.exe <category> "
+          "<double> <have-unit> <want-unit> (The input "
           "data is read from the keyboard, the output data is output to the "
           "terminal)"
-          "\n\t./converter.exe --start (Essentially the same as ./converter, "
-          "but in this case, you enter the data immediately)"
+          "\n\t./converter.exe --syntax (Information about categories and "
+          "units of measurement is issued)"
           "\n\t./converter.exe --start --path <input-file-path> --path "
-          "<output-file-path> (The input and output data are files)"
-          "\n\t./converter.exe --start --path <output-file-path> (The input "
-          "data is read from the keyboard, the output data is a file)"
-          "\nNow enter the command for further actions: ";
-
-const char* HELP_CALL
-        = "Usage:\n\t./converter.exe (The input data is read from the "
-          "keyboard, the output data is output to the terminal)"
-          "\n\t./converter.exe --start (Essentially the same as ./converter, "
-          "but in this case, you enter the data immediately)"
-          "\n\t./converter.exe --start --path <input-file-path> --path "
-          "<output-file-path> (The input and output data are files)"
-          "\n\t./converter.exe --start --path <output-file-path> (The input "
-          "data is read from the keyboard, the output data is a file)\n";
+          "<output-file-path> (The input and output data are files)\n";
 
 const char* SYNTAX_CALL
         = "There's a syntax of Unit Converter. In brackets you can see the "
@@ -55,29 +43,13 @@ void output_data(DefineUnits* units)
     printf("Result: %lf %s", units->want_value, units->want_unit);
 }
 
-void welcomer(void)
-{
-    printf("Welcome to Unit Converter! Enter the command for further "
-           "actions: ");
-}
-
 void call_help(char* help)
 {
     if (strcmp(help, "--help") == 0) {
-        printf("%s", HELP_CALL_ARG);
-    } else if (strcmp(help, "help\n") == 0) {
         printf("%s", HELP_CALL);
-        what_next();
-    } else if (strcmp(help, "syntax\n") == 0) {
+    } else if (strcmp(help, "--syntax") == 0) {
         printf("%s", SYNTAX_CALL);
-        what_next();
     }
-}
-
-void what_next(void)
-{
-    printf("So, what should we do next? Enter the command for further "
-           "actions: ");
 }
 
 void memory_error(void)
@@ -96,11 +68,9 @@ void helper_message(char* difficulty)
         printf("Unexpected command line argument!\nTry using \'./converter.exe "
                "--help\' to find out how to successfully launch the "
                "application.\n");
-    } else if (strcmp(difficulty, "command") == 0) {
-        printf("Oh, I see you don't know any command. Write \'help\' to learn "
-               "more about commands: ");
     } else if (strcmp(difficulty, "category") == 0) {
         printf("Units must be of the same category! To find out which units "
-               "correspond to which category, enter the command 'syntax'.\n");
+               "correspond to which category, enter \'./converter.exe "
+               "--syntax\'.\n");
     }
 }

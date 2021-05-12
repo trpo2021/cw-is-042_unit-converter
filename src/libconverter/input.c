@@ -7,26 +7,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-void command_requester(DefineUnits* units)
-{
-    char* command = malloc(MAX_STRING_LENGTH * sizeof(char));
-    fgets(command, MAX_STRING_LENGTH, stdin);
-    if (strcmp(command, "start\n") == 0) {
-        input_data(units);
-        output_data(units);
-        what_next();
-    } else if (strcmp(command, "help\n") == 0) {
-        call_help(command);
-    } else if (strcmp(command, "syntax\n") == 0) {
-        call_help(command);
-    } else if (strcmp(command, "finish\n") == 0) {
-        return;
-    } else {
-        helper_message("command");
-    }
-    command_requester(units);
-}
-
 static char* set_unit_parameter(char* parameter)
 {
     parameter = malloc(MAX_STRING_LENGTH * sizeof(char));

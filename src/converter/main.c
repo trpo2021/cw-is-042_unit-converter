@@ -1,6 +1,7 @@
 #include <libconverter/input.h>
 #include <libconverter/output.h>
 
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -12,31 +13,28 @@ int main(int argc, char* argv[])
         memory_error();
         return -1;
     }
-    if (argc == 1) {
-        welcomer();
-        command_requester(units);
-    } else if (argc == 2) {
-        if (strcmp(argv[1], "--start") == 0) {
-            input_data(units);
-            output_data(units);
-        } else if (strcmp(argv[1], "--help") == 0) {
-            call_help(argv[1]);
-            command_requester(units);
-        }
+    if (argc == 2
+        && (strcmp(argv[1], "--help") == 0
+            || strcmp(argv[1], "--syntax") == 0)) {
+        call_help(argv[1]);
     } else if (
-            (argc == 4) && (strcmp(argv[1], "--start") == 0)
-            && (strcmp(argv[2], "--path") == 0)) {
-        printf("Coming soon...\n");
+            argc == 4 && isalpha(*argv[1]) && isalpha(*argv[2])
+            && isalpha(*argv[3])) {
+        printf("category have-unit want-unit\n");
+    } else if (
+            argc == 5 && isalpha(*argv[1]) && isdigit(*argv[2])
+            && isalpha(*argv[3]) && isalpha(*argv[4])) {
+        printf("category <double> have-unit want-unit\n");
         // input_data(units);
-        // output_file(argv[3])
+        // output_data(units);
     } else if (
-            (argc == 6) && (strcmp(argv[1], "--start") == 0)
-            && (strcmp(argv[2], "--path") == 0)
-            && (strcmp(argv[4], "--path") == 0)) {
+            argc == 5 && strcmp(argv[1], "--path") == 0
+            && strcmp(argv[3], "--path") == 0) {
         printf("Coming soon...\n");
-        // file_reader(units, argv[3], argv[5]);
+        // file_reader(units, argv[2], argv[4]);
     } else {
         helper_message("argument");
+        return -1;
     }
     free(units);
     return 0;
