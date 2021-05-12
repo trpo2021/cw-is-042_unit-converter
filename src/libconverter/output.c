@@ -4,10 +4,12 @@
 #include <string.h>
 
 const char* HELP_CALL
-        = "Welcome to Unit Converter!\nUsage:\n\t./converter.exe <category> <double> <have-unit> <want-unit> (The input "
+        = "Welcome to Unit Converter!\nUsage:\n\t./converter.exe <category> "
+          "<double> <have-unit> <want-unit> (The input "
           "data is read from the keyboard, the output data is output to the "
           "terminal)"
-          "\n\t./converter.exe --syntax (Information about categories and units of measurement is issued)"
+          "\n\t./converter.exe --syntax (Information about categories and "
+          "units of measurement is issued)"
           "\n\t./converter.exe --start --path <input-file-path> --path "
           "<output-file-path> (The input and output data are files)\n";
 
@@ -68,6 +70,7 @@ void helper_message(char* difficulty)
                "application.\n");
     } else if (strcmp(difficulty, "category") == 0) {
         printf("Units must be of the same category! To find out which units "
-               "correspond to which category, enter \'./converter.exe --syntax\'.\n");
+               "correspond to which category, enter \'./converter.exe "
+               "--syntax\'.\n");
     }
 }
