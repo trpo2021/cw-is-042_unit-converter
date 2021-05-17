@@ -25,8 +25,6 @@ int main(int argc, char* argv[])
             argc == 5 && isalpha(*argv[1]) && isdigit(*argv[2])
             && isalpha(*argv[3]) && isalpha(*argv[4])) {
         printf("category <double> have-unit want-unit\n");
-        // input_data(units);
-        // output_data(units);
     } else if (
             argc == 5 && strcmp(argv[1], "--path") == 0
             && strcmp(argv[3], "--path") == 0) {

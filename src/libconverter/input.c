@@ -45,7 +45,6 @@ int file_reader(
         units->have_unit = getfield(tmp, 3);
         units->want_unit = getfield(tmp, 4);
     }
-    remove_space(units->category);
 
     return 0;
 }
