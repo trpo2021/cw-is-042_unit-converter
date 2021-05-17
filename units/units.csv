@@ -1,0 +1,53 @@
+length;km;1000
+length;m;1
+length;cm;0.01
+length;mm;0.001
+length;um;1.0e-6
+length;nm;1.0e-9
+length;mile;1609
+length;ft;0.3048
+length;yard;0.9144
+length;inch;0.0254
+length;nmi;1852
+time;ns;1.0e-9
+time;us;1.0e-6
+time;ms;0.001
+time;sec;1
+time;min;60
+time;hour;3600
+time;day;86400
+time;week;604800
+time;month;2678400
+time;year;31536000
+time;decade;315360000
+time;century;3153600000
+rate;m/h;0.44704
+rate;ft/s;0.3048
+rate;mp/s;1
+rate;km/h;0.277778
+rate;kt;0.514444
+data size;bit;0.125
+data size;kbit;125
+data size;mbit;1.25e5
+data size;gbit;1.25e8
+data size;tbit;1.25e11
+data size;pbit;1.25e14
+data size;b;1
+data size;kb;1.0e3
+data size;mb;1.0e6
+data size;gb;1.0e9
+data size;tb;1.0e12
+data size;pb;1.0e15
+data-rate;bit/s;1
+data-rate;kbit/s;1000
+data-rate;kb/s;8000
+data-rate;kbbit/s;1024
+data-rate;mbit/s;1e6
+data-rate;mb/s;8e6
+data-rate;mbbit/s;1.049e6
+data-rate;gbit/s;1e9
+data-rate;gb/s;8e9
+data-rate;gbbit/s;1.074e9
+data-rate;tbit/s;1e12
+data-rate;tb/s;8e12
+data-rate;tbbit/s;1.1e12
