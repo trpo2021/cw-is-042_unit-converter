@@ -8,15 +8,6 @@
 
 const char* units_data_file_path = "units/units.csv";
 
-static int get_num_of_units(FILE* stream) {
-    char tmp[MAX_STRING_LENGTH];
-    int num = 0;
-    while (fgets(tmp, MAX_STRING_LENGTH, stream)) {
-        num++;
-    }
-    return num;
-}
-
 static char* to_lower_string(char* string)
 {
     size_t len = strlen(string);
@@ -29,40 +20,64 @@ static char* to_lower_string(char* string)
     return tmp;
 }
 
-static void get_file_content(char** array, int position, FILE* stream)
+static char* get_file_content(char** array, int position, FILE* stream)
 {
+    int column;
+    int row = 0;
     char line[MAX_STRING_LENGTH];
-    for (int i = 0; fgets(line, MAX_STRING_LENGTH, stream); ++i)
-    {
-        char* tmp = strdup(line);
-        array[i] = getfield(tmp, position);
-        free(tmp);
-    }
-}
-
-
-
-char* getfield(char* line, int position)
-{
-    char* tok;
-    for (tok = strtok(line, ";"); tok && *tok; tok = strtok(NULL, ";\n")) {
-        if (!--position) {
-            return tok;
+    printf("POSITION IS %d\n", position);
+    while (fgets(line, MAX_STRING_LENGTH, stream)) {
+        array[row] = malloc(MAX_STRING_LENGTH * sizeof(char));
+        column = 0;
+        row++;
+        if (row == 1) {
+            continue;
+        }
+        char* value = strtok(line, ";");
+        while (value) {
+            if (column == position - 1) {
+                printf("a\n");
+                strcpy(array[row - 2], value);
+            }
+            value = strtok(NULL, ";");
+            column++;
         }
     }
-    return NULL;
+    fclose(stream);
+    return *array;
+}
+
+DefineUnits* init_units_struct(DefineUnits* units, int argc, char* argv[])
+{
+    units->category = argv[1];
+    if (argc == 5) {
+        units->have_value = atof(argv[2]);
+        units->have_unit = argv[3];
+        units->want_unit = argv[4];
+    } else {
+        units->have_value = 1;
+        units->have_unit = argv[2];
+        units->want_unit = argv[3];
+    }
+    return units;
 }
 
 BSTree* add_strings_to_tree(int position, FILE* stream)
 {
     BSTree* tree;
-    int num = get_num_of_units(stream);
-    char* array[num];
-    get_file_content(array, position, stream);
-    tree = bstree_create(0, array[0]);
-    for (int i = 1; i < num; ++i) {
-        bstree_add(tree, i, array[i]);
+    char* array[UNITS_NUM];
+    *array = get_file_content(array, position, stream);
+    if (array == NULL) {
+        return NULL;
     }
+    tree = bstree_create(0, array[0]);
+    BSTree* node;
+    for (int i = 1; i < UNITS_NUM; ++i) {
+        bstree_add(tree, i, array[i]);
+        node = bstree_lookup(tree, i);
+        printf("%s\n", node->value);
+    }
+    free(*array);
     return tree;
 }
 
@@ -72,13 +87,14 @@ int convert_units(DefineUnits* units)
     BSTree* unit;
     FILE* units_data = fopen(units_data_file_path, "r");
     if (units_data == NULL) {
-        file_error(units_data_file_path);
-        return -1;
+        return -2;
     }
     category = add_strings_to_tree(CATEGORY_POS, units_data);
-    unit = add_strings_to_tree(UNIT_POS, units_data);
-    if (is_appropriate(category, unit, units->category, units->have_unit, units_data) != is_appropriate(category, unit, units->category, units->want_unit, units_data)) {
-        helper_message("category");
+    unit = add_strings_to_tree(UNIT_POS + 1, units_data);
+    if (category == NULL || unit == NULL) {
+        return -1;
+    }
+    if (is_appropriate(category, unit, units->category, units->have_unit) == false || is_appropriate(category, unit, units->category, units->want_unit) == false) {
         return -1;
     }
     printf("WOW!\n");
@@ -86,12 +102,12 @@ int convert_units(DefineUnits* units)
     return 0;
 }
 
-bool is_appropriate(BSTree* cat_tree, BSTree* unit_tree, char* cat, char* unit, FILE* stream)
+bool is_appropriate(BSTree* cat_tree, BSTree* unit_tree, char* cat, char* unit)
 {
     BSTree* cat_node;
     BSTree* unit_node;
-    int num = get_num_of_units(stream);
-    for (int i = 0; i < num; ++i) {
+    printf("%s %s\n", cat, unit);
+    for (int i = 0; i < UNITS_NUM; ++i) {
         cat_node = bstree_lookup(cat_tree, i);
         unit_node = bstree_lookup(unit_tree, i);
         if (strcmp(to_lower_string(cat), cat_node->value) == 0 && strcmp(to_lower_string(unit), unit_node->value) == 0) {
