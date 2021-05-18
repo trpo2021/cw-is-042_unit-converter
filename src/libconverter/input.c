@@ -21,6 +21,17 @@ static void remove_space(char* string)
     string[end] = '\0';
 }
 
+static char* get_field(char* line, int position)
+{
+    char* tok;
+    for (tok = strtok(line, ";"); tok && *tok; tok = strtok(NULL, ";\n")) {
+        if (!--position) {
+            return tok;
+        }
+    }
+    return NULL;
+}
+
 int file_reader(
         DefineUnits* units, const char* in_file_name, const char* out_file_name)
 {
@@ -39,12 +50,13 @@ int file_reader(
     char line[MAX_STRING_LENGTH];
     while (fgets(line, MAX_STRING_LENGTH, in_file)) {
         char* tmp = strdup(line);
-        units->category = getfield(tmp, 1);
-        char* val = getfield(tmp, 2);
+        units->category = get_field(tmp, 1);
+        char* val = get_field(tmp, 2);
         units->have_value = atof(val);
-        units->have_unit = getfield(tmp, 3);
-        units->want_unit = getfield(tmp, 4);
+        units->have_unit = get_field(tmp, 3);
+        units->want_unit = get_field(tmp, 4);
     }
+    remove_space(units->category);
 
     return 0;
 }
