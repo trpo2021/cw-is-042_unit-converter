@@ -1,3 +1,4 @@
+category;unit;factor
 length;km;1000
 length;m;1
 length;cm;0.01
@@ -26,18 +27,18 @@ rate;ft/s;0.3048
 rate;mp/s;1
 rate;km/h;0.277778
 rate;kt;0.514444
-data size;bit;0.125
-data size;kbit;125
-data size;mbit;1.25e5
-data size;gbit;1.25e8
-data size;tbit;1.25e11
-data size;pbit;1.25e14
-data size;b;1
-data size;kb;1.0e3
-data size;mb;1.0e6
-data size;gb;1.0e9
-data size;tb;1.0e12
-data size;pb;1.0e15
+data-size;bit;0.125
+data-size;kbit;125
+data-size;mbit;1.25e5
+data-size;gbit;1.25e8
+data-size;tbit;1.25e11
+data-size;pbit;1.25e14
+data-size;b;1
+data-size;kb;1.0e3
+data-size;mb;1.0e6
+data-size;gb;1.0e9
+data-size;tb;1.0e12
+data-size;pb;1.0e15
 data-rate;bit/s;1
 data-rate;kbit/s;1000
 data-rate;kb/s;8000
