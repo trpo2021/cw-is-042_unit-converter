@@ -4,11 +4,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 
-#define NUMBER_OF_LENGTH_UNITS 12
-#define NUMBER_OF_TIME_UNITS 13
-#define NUMBER_OF_RATE_UNITS 6
-#define NUMBER_OF_DATA_SIZE_UNITS 13
-#define NUMBER_OF_DATA_RATE_UNITS 14
+#define UNITS_NUM 53
 
 #define CATEGORY_POS 1
 #define UNIT_POS 2
@@ -22,7 +18,7 @@ typedef struct {
     char* want_unit; // Единица, в которую хотим перевести значение
 } DefineUnits;
 
-char* getfield(char* line, int position);
+DefineUnits* init_units_struct(DefineUnits* units, int argc, char* argv[]);
 int convert_units(DefineUnits* units);
-bool is_appropriate(BSTree* cat_tree, BSTree* unit_tree, char* cat, char* unit, FILE* stream);
+bool is_appropriate(BSTree* cat_tree, BSTree* unit_tree, char* cat, char* unit);
 BSTree* add_strings_to_tree(int position, FILE* stream);
