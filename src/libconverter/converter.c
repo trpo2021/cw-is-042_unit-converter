@@ -1,12 +1,11 @@
 #include <libconverter/converter.h>
 #include <libconverter/output.h>
-// #include <libconverter/units.h>
 
 #include <ctype.h>
 #include <stdlib.h>
 #include <string.h>
 
-const char* units_data_file_path = "units/units.csv";
+const char* units_data_file_path = "../units/units.csv";
 
 static char* to_lower_string(char* string)
 {
@@ -20,14 +19,20 @@ static char* to_lower_string(char* string)
     return tmp;
 }
 
-static char* get_file_content(char** array, int position, FILE* stream)
+static ListNode* data_file_parser()
 {
+    FILE* data_file = fopen(units_data_file_path, "rt");
+    if (data_file == NULL) {
+        return NULL;
+    }
     int column;
     int row = 0;
     char line[MAX_STRING_LENGTH];
-    printf("POSITION IS %d\n", position);
-    while (fgets(line, MAX_STRING_LENGTH, stream)) {
-        array[row] = malloc(MAX_STRING_LENGTH * sizeof(char));
+
+    Parser parser[UNITS_NUM];
+    ListNode* head;
+
+    while (fgets(line, MAX_STRING_LENGTH, data_file)) {
         column = 0;
         row++;
         if (row == 1) {
@@ -35,16 +40,25 @@ static char* get_file_content(char** array, int position, FILE* stream)
         }
         char* value = strtok(line, ";");
         while (value) {
-            if (column == position - 1) {
-                printf("a\n");
-                strcpy(array[row - 2], value);
+            if (column == 0) {
+                strcpy(parser[row - 2].category, value);
+            }
+            if (column == 1) {
+                strcpy(parser[row - 2].unit, value);
+            }
+            if (column == 2) {
+                parser[row - 2].factor = atof(value);
             }
             value = strtok(NULL, ";");
             column++;
         }
+        if (row == 2) {
+            head = list_addfront(NULL, 0, parser[0].category, parser[0].unit, parser[0].factor);
+        }
+        head = list_addfront(head, row - 2, parser[row - 2].category, parser[row - 2].unit, parser[row - 2].factor);
     }
-    fclose(stream);
-    return *array;
+    fclose(data_file);
+    return head;
 }
 
 DefineUnits* init_units_struct(DefineUnits* units, int argc, char* argv[])
@@ -62,57 +76,28 @@ DefineUnits* init_units_struct(DefineUnits* units, int argc, char* argv[])
     return units;
 }
 
-BSTree* add_strings_to_tree(int position, FILE* stream)
-{
-    BSTree* tree;
-    char* array[UNITS_NUM];
-    *array = get_file_content(array, position, stream);
-    if (array == NULL) {
-        return NULL;
-    }
-    tree = bstree_create(0, array[0]);
-    BSTree* node;
-    for (int i = 1; i < UNITS_NUM; ++i) {
-        bstree_add(tree, i, array[i]);
-        node = bstree_lookup(tree, i);
-        printf("%s\n", node->value);
-    }
-    free(*array);
-    return tree;
-}
-
 int convert_units(DefineUnits* units)
 {
-    BSTree* category;
-    BSTree* unit;
-    FILE* units_data = fopen(units_data_file_path, "r");
-    if (units_data == NULL) {
-        return -2;
-    }
-    category = add_strings_to_tree(CATEGORY_POS, units_data);
-    unit = add_strings_to_tree(UNIT_POS + 1, units_data);
-    if (category == NULL || unit == NULL) {
+    ListNode* list;
+    list = data_file_parser();
+    if (list == NULL) {
+        printf("a\n");
         return -1;
     }
-    if (is_appropriate(category, unit, units->category, units->have_unit) == false || is_appropriate(category, unit, units->category, units->want_unit) == false) {
+    if (is_appropriate(list, units->category, units->have_unit) == false || is_appropriate(list, units->category, units->want_unit) == false) {
         return -1;
     }
     printf("WOW!\n");
-    fclose(units_data);
     return 0;
 }
 
-bool is_appropriate(BSTree* cat_tree, BSTree* unit_tree, char* cat, char* unit)
+bool is_appropriate(ListNode* head, char* category, char* unit)
 {
-    BSTree* cat_node;
-    BSTree* unit_node;
-    printf("%s %s\n", cat, unit);
-    for (int i = 0; i < UNITS_NUM; ++i) {
-        cat_node = bstree_lookup(cat_tree, i);
-        unit_node = bstree_lookup(unit_tree, i);
-        if (strcmp(to_lower_string(cat), cat_node->value) == 0 && strcmp(to_lower_string(unit), unit_node->value) == 0) {
-            return true;
-        }
+    ListNode* node;
+    node = list_lookup(head, to_lower_string(category), to_lower_string(unit));
+    printf("%s %s\n", category, unit);
+    if (node != NULL) {
+        return true;
     }
     return false;
 }

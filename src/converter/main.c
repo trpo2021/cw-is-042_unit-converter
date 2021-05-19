@@ -21,12 +21,10 @@ int main(int argc, char* argv[])
     } else if (
             argc == 4 && isalpha(*argv[1]) && isalpha(*argv[2])
             && isalpha(*argv[3])) {
-        printf("category have-unit want-unit\n");
         units = init_units_struct(units, argc, argv);
     } else if (
             argc == 5 && isalpha(*argv[1]) && isdigit(*argv[2])
             && isalpha(*argv[3]) && isalpha(*argv[4])) {
-        printf("category <double> have-unit want-unit\n");
         units = init_units_struct(units, argc, argv);
     } else if (
             argc == 5 && strcmp(argv[1], "--path") == 0
@@ -37,9 +35,11 @@ int main(int argc, char* argv[])
         helper_message("argument");
         return -1;
     }
-    if (convert_units(units) == -1) {
+    printf("%s %lf %s --> ? %s\n", units->category, units->have_value, units->have_unit, units->want_unit);
+    int tmp = convert_units(units);
+    if (tmp == -1) {
         helper_message("category");
-    } else if (convert_units(units) == -2) {
+    } else if (tmp == -2) {
         file_error("units/units.csv");
     }
     free(units);

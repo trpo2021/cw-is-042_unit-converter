@@ -1,14 +1,17 @@
 #pragma once
 
-#include <libconverter/bstree.h>
+#include <libconverter/listnode.h>
 #include <stdbool.h>
 #include <stdio.h>
 
+#define MAX_STRING_LENGTH 128
 #define UNITS_NUM 53
 
-#define CATEGORY_POS 1
-#define UNIT_POS 2
-#define FACTOR_POS 3
+typedef struct {
+    char category[MAX_STRING_LENGTH];
+    char unit[MAX_STRING_LENGTH];
+    double factor;
+} Parser;
 
 typedef struct {
     double have_value; // Числовое значение имеющейся единицы
@@ -20,5 +23,4 @@ typedef struct {
 
 DefineUnits* init_units_struct(DefineUnits* units, int argc, char* argv[]);
 int convert_units(DefineUnits* units);
-bool is_appropriate(BSTree* cat_tree, BSTree* unit_tree, char* cat, char* unit);
-BSTree* add_strings_to_tree(int position, FILE* stream);
+bool is_appropriate(ListNode* head, char* category, char* unit);
