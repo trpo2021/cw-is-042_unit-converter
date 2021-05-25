@@ -1,64 +1,11 @@
 #include <libconverter/converter.h>
 #include <libconverter/output.h>
-#include <libconverter/units.h>
 
 #include <ctype.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-static BSTree* bstree_create(int key, char* value)
-{
-    BSTree* node;
-
-    node = malloc(sizeof(*node));
-    if (node != NULL) {
-        node->key = key;
-        node->value = value;
-        node->left = NULL;
-        node->right = NULL;
-    }
-    return node;
-}
-
-static void bstree_add(BSTree* tree, int key, char* value)
-{
-    if (tree == NULL) {
-        return;
-    }
-    BSTree* parent;
-    BSTree* node;
-    while (tree != NULL) {
-        parent = tree;
-        if (key < tree->key) {
-            tree = tree->left;
-        } else if (key > tree->key) {
-            tree = tree->right;
-        } else {
-            return;
-        }
-    }
-    node = bstree_create(key, value);
-    if (key < parent->key) {
-        parent->left = node;
-    } else {
-        parent->right = node;
-    }
-}
-
-BSTree* bstree_lookup(BSTree* tree, int key)
-{
-    while (tree != NULL) {
-        if (key == tree->key) {
-            return tree;
-        } else if (key < tree->key) {
-            tree = tree->left;
-        } else {
-            tree = tree->right;
-        }
-    }
-    return tree;
-}
+const char* units_data_file_path = "units/units.csv";
 
 static char* to_lower_string(char* string)
 {
@@ -72,108 +19,104 @@ static char* to_lower_string(char* string)
     return tmp;
 }
 
-static void get_file_content(char** array, int size, FILE* units_name)
+static ListNode* data_file_parser()
 {
-    for (int i = 0; i < size; ++i) {
-        array[i] = malloc(20);
-        if (array[i] == NULL) {
-            memory_error();
-            exit(EXIT_FAILURE);
-        }
-        fgets(array[i], size, units_name);
-    }
-}
-
-BSTree* add_strings_to_tree(const char* data_file_path, int num_of_units)
-{
-    BSTree* tree;
-    FILE* list = fopen(data_file_path, "r");
-    if (list == NULL) {
-        file_error(data_file_path);
+    FILE* data_file = fopen(units_data_file_path, "rt");
+    if (data_file == NULL) {
+        perror("fopen");
         return NULL;
     }
-    char* array[num_of_units];
-    get_file_content(array, num_of_units, list);
-    tree = bstree_create(0, array[0]);
-    for (int i = 1; i < num_of_units; ++i) {
-        bstree_add(tree, i, array[i]);
+    int column;
+    int row = 0;
+    char line[MAX_STRING_LENGTH];
+
+    Parser parser[UNITS_NUM];
+    ListNode* head;
+
+    while (fgets(line, MAX_STRING_LENGTH, data_file)) {
+        column = 0;
+        row++;
+        if (row == 1) {
+            continue;
+        }
+        char* value = strtok(line, ";");
+        while (value) {
+            if (column == 0) {
+                strcpy(parser[row - 2].category, value);
+            }
+            if (column == 1) {
+                strcpy(parser[row - 2].unit, value);
+            }
+            if (column == 2) {
+                parser[row - 2].factor = atof(value);
+            }
+            value = strtok(NULL, ";");
+            column++;
+        }
+        if (row == 2) {
+            head = list_addfront(
+                    NULL,
+                    0,
+                    parser[0].category,
+                    parser[0].unit,
+                    parser[0].factor);
+        } else {
+            head = list_addfront(
+                    head,
+                    row - 2,
+                    parser[row - 2].category,
+                    parser[row - 2].unit,
+                    parser[row - 2].factor);
+        }
     }
-    fclose(list);
-    return tree;
+    fclose(data_file);
+    return head;
 }
 
-DefineUnits* convert_units(DefineUnits* units)
+DefineUnits* init_units_struct(DefineUnits* units, int argc, char* argv[])
 {
-    BSTree* tree;
-    int unit_num = -1;
-    char* category = to_lower_string(units->category);
-    char* unit_file_path = malloc(2 * MAX_STRING_LENGTH * sizeof(char));
-    if (unit_file_path == NULL) {
-        memory_error();
-        return units;
+    units->category = argv[1];
+    if (argc == 5) {
+        units->have_value = atof(argv[2]);
+        units->have_unit = argv[3];
+        units->want_unit = argv[4];
+    } else {
+        units->have_value = 1;
+        units->have_unit = argv[2];
+        units->want_unit = argv[3];
     }
-    char* factor_file_path = malloc(2 * MAX_STRING_LENGTH * sizeof(char));
-    if (factor_file_path == NULL) {
-        memory_error();
-        return units;
-    }
-
-    if (strcmp(category, "length\n") == 0) {
-        unit_file_path = "../src/libconverter/units/list_of_length_units.txt";
-        factor_file_path
-                = "../src/libconverter/units/"
-                  "conversion_coefficient_of_length.txt";
-        unit_num = NUMBER_OF_LENGTH_UNITS;
-    } else if (strcmp(category, "time\n") == 0) {
-        unit_file_path = "../src/libconverter/units/list_of_time_units.txt";
-        factor_file_path
-                = "../src/libconverter/units/"
-                  "conversion_coefficient_of_time.txt";
-        unit_num = NUMBER_OF_TIME_UNITS;
-    } else if (strcmp(category, "rate\n") == 0) {
-        unit_file_path = "../src/libconverter/units/list_of_rate_units.txt";
-        factor_file_path
-                = "../src/libconverter/units/"
-                  "conversion_coefficient_of_rate.txt";
-        unit_num = NUMBER_OF_RATE_UNITS;
-    } else if (strcmp(category, "data size\n") == 0) {
-        unit_file_path
-                = "../src/libconverter/units/list_of_data_size_units.txt";
-        factor_file_path
-                = "../src/libconverter/units/"
-                  "conversion_coefficient_of_data_size.txt";
-        unit_num = NUMBER_OF_DATA_SIZE_UNITS;
-    } else if (strcmp(category, "data-rate\n") == 0) {
-        unit_file_path
-                = "../src/libconverter/units/list_of_data_rate_units.txt";
-        factor_file_path
-                = "../src/libconverter/units/"
-                  "conversion_coefficient_of_data_rate.txt";
-        unit_num = NUMBER_OF_DATA_RATE_UNITS;
-    }
-
-    if (unit_num == -1) {
-        return units;
-    }
-    tree = add_strings_to_tree(unit_file_path, unit_num);
-    if (is_appropriate(tree, units->have_unit, unit_num)
-        != is_appropriate(tree, units->want_unit, unit_num)) {
-        helper_message("category");
-        return units;
-    }
-    units = from_one_unit(units, tree, unit_num, factor_file_path);
-
     return units;
 }
 
-bool is_appropriate(BSTree* tree, char* unit, int num_of_units)
+int convert_units(DefineUnits* units)
 {
-    BSTree* node;
-    for (int i = 0; i < num_of_units; ++i) {
-        node = bstree_lookup(tree, i);
-        if (strcmp(unit, node->value) == 0) {
-            return true;
-        }
+    ListNode* list;
+    list = data_file_parser();
+    if (list == NULL) {
+        return -2;
+    }
+    if (is_appropriate(list, units) == 0) {
+        free(list);
+        return -1;
+    }
+    free(list);
+    return 0;
+}
+
+bool is_appropriate(ListNode* head, DefineUnits* units)
+{
+    ListNode* first_node;
+    ListNode* second_node;
+    first_node = list_lookup(
+            head,
+            to_lower_string(units->category),
+            to_lower_string(units->have_unit));
+    second_node = list_lookup(
+            head,
+            to_lower_string(units->category),
+            to_lower_string(units->want_unit));
+    if ((first_node != NULL) && (second_node != NULL)) {
+        return true;
     }
     return false;
 }

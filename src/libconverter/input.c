@@ -1,4 +1,3 @@
-#include <libconverter/converter.h>
 #include <libconverter/input.h>
 #include <libconverter/output.h>
 
@@ -6,17 +5,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-static char* set_unit_parameter(char* parameter)
-{
-    parameter = malloc(MAX_STRING_LENGTH * sizeof(char));
-    if (parameter == NULL) {
-        return NULL;
-    }
-    parameter = fgets(parameter, MAX_STRING_LENGTH, stdin);
-
-    return parameter;
-}
 
 static void remove_space(char* string)
 {
@@ -33,28 +21,11 @@ static void remove_space(char* string)
     string[end] = '\0';
 }
 
-void input_data(DefineUnits* units)
-{
-    printf("Unit category: ");
-    units->category = set_unit_parameter(units->category);
-    printf("You have: ");
-    scanf("%lf", &units->have_value);
-    if (units->have_value < 0) {
-        printf("Negative numbers aren't allowed for this category!\n");
-        exit(EXIT_FAILURE);
-    }
-    units->have_unit = set_unit_parameter(units->have_unit);
-    remove_space(units->have_unit);
-    printf("You want: ");
-    units->want_unit = set_unit_parameter(units->want_unit);
-    units = convert_units(units);
-}
-
-static char* getfield(char* line, int num)
+static char* get_field(char* line, int position)
 {
     char* tok;
     for (tok = strtok(line, ";"); tok && *tok; tok = strtok(NULL, ";\n")) {
-        if (!--num) {
+        if (!--position) {
             return tok;
         }
     }
@@ -79,12 +50,13 @@ int file_reader(
     char line[MAX_STRING_LENGTH];
     while (fgets(line, MAX_STRING_LENGTH, in_file)) {
         char* tmp = strdup(line);
-        units->category = getfield(tmp, 1);
-        char* val = getfield(tmp, 2);
+        units->category = get_field(tmp, 1);
+        char* val = get_field(tmp, 2);
         units->have_value = atof(val);
-        units->have_unit = getfield(tmp, 3);
-        units->want_unit = getfield(tmp, 4);
+        units->have_unit = get_field(tmp, 3);
+        units->want_unit = get_field(tmp, 4);
     }
+    remove_space(units->category);
 
     return 0;
 }

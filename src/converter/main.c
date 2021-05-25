@@ -1,3 +1,4 @@
+#include <libconverter/converter.h>
 #include <libconverter/input.h>
 #include <libconverter/output.h>
 
@@ -20,13 +21,11 @@ int main(int argc, char* argv[])
     } else if (
             argc == 4 && isalpha(*argv[1]) && isalpha(*argv[2])
             && isalpha(*argv[3])) {
-        printf("category have-unit want-unit\n");
+        units = init_units_struct(units, argc, argv);
     } else if (
             argc == 5 && isalpha(*argv[1]) && isdigit(*argv[2])
             && isalpha(*argv[3]) && isalpha(*argv[4])) {
-        printf("category <double> have-unit want-unit\n");
-        // input_data(units);
-        // output_data(units);
+        units = init_units_struct(units, argc, argv);
     } else if (
             argc == 5 && strcmp(argv[1], "--path") == 0
             && strcmp(argv[3], "--path") == 0) {
@@ -35,6 +34,17 @@ int main(int argc, char* argv[])
     } else {
         helper_message("argument");
         return -1;
+    }
+    printf("%s %lf %s --> ? %s\n",
+           units->category,
+           units->have_value,
+           units->have_unit,
+           units->want_unit);
+    int num_of_result = convert_units(units);
+    if (num_of_result == -1) {
+        helper_message("category");
+    } else if (num_of_result == -2) {
+        file_error("a =)");
     }
     free(units);
     return 0;

@@ -1,23 +1,26 @@
 #pragma once
 
-#include <libconverter/input.h>
+#include <libconverter/listnode.h>
 #include <stdbool.h>
+#include <stdio.h>
 
-#define NUMBER_OF_LENGTH_UNITS 12
-#define NUMBER_OF_TIME_UNITS 13
-#define NUMBER_OF_RATE_UNITS 6
-#define NUMBER_OF_DATA_SIZE_UNITS 13
-#define NUMBER_OF_DATA_RATE_UNITS 14
+#define MAX_STRING_LENGTH 128
+#define UNITS_NUM 53
 
-typedef struct BSTree {
-    int key;
-    char* value;
+typedef struct {
+    char category[MAX_STRING_LENGTH];
+    char unit[MAX_STRING_LENGTH];
+    double factor;
+} Parser;
 
-    struct BSTree* left;
-    struct BSTree* right;
-} BSTree;
+typedef struct {
+    double have_value; // Числовое значение имеющейся единицы
+    double want_value; // Числовое значение переведенной единицы
+    char* category;  // Категория единиц измерения
+    char* have_unit; // Имеющаяся единица
+    char* want_unit; // Единица, в которую хотим перевести значение
+} DefineUnits;
 
-DefineUnits* convert_units(DefineUnits* units);
-bool is_appropriate(BSTree* tree, char* unit, int num_of_units);
-BSTree* add_strings_to_tree(const char* data_file_path, int num_of_units);
-BSTree* bstree_lookup(BSTree* tree, int key);
+DefineUnits* init_units_struct(DefineUnits* units, int argc, char* argv[]);
+int convert_units(DefineUnits* units);
+bool is_appropriate(ListNode* head, DefineUnits* units);
