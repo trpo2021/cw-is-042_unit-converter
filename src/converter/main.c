@@ -36,11 +36,11 @@ int main(int argc, char* argv[])
         return -1;
     }
     printf("%s %lf %s --> ? %s\n", units->category, units->have_value, units->have_unit, units->want_unit);
-    int tmp = convert_units(units);
-    if (tmp == -1) {
+    int num_of_result = convert_units(units);
+    if (num_of_result == -1) {
         helper_message("category");
-    } else if (tmp == -2) {
-        file_error("units/units.csv");
+    } else if (num_of_result == -2) {
+        file_error("a =)");
     }
     free(units);
     return 0;
