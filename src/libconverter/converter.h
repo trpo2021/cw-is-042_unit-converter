@@ -23,4 +23,4 @@ typedef struct {
 
 DefineUnits* init_units_struct(DefineUnits* units, int argc, char* argv[]);
 int convert_units(DefineUnits* units);
-bool is_appropriate(ListNode* head, char* category, char* unit);
+bool is_appropriate(ListNode* head, DefineUnits* units);

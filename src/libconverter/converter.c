@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-const char* units_data_file_path = "../units/units.csv";
+const char* units_data_file_path = "units/units.csv";
 
 static char* to_lower_string(char* string)
 {
@@ -23,6 +23,7 @@ static ListNode* data_file_parser()
 {
     FILE* data_file = fopen(units_data_file_path, "rt");
     if (data_file == NULL) {
+        perror("fopen");
         return NULL;
     }
     int column;
@@ -54,8 +55,9 @@ static ListNode* data_file_parser()
         }
         if (row == 2) {
             head = list_addfront(NULL, 0, parser[0].category, parser[0].unit, parser[0].factor);
+        } else {
+            head = list_addfront(head, row - 2, parser[row - 2].category, parser[row - 2].unit, parser[row - 2].factor);
         }
-        head = list_addfront(head, row - 2, parser[row - 2].category, parser[row - 2].unit, parser[row - 2].factor);
     }
     fclose(data_file);
     return head;
@@ -81,22 +83,23 @@ int convert_units(DefineUnits* units)
     ListNode* list;
     list = data_file_parser();
     if (list == NULL) {
-        printf("a\n");
+        return -2;
+    }
+    if (is_appropriate(list, units) == 0) {
+        free(list);
         return -1;
     }
-    if (is_appropriate(list, units->category, units->have_unit) == false || is_appropriate(list, units->category, units->want_unit) == false) {
-        return -1;
-    }
-    printf("WOW!\n");
+    free(list);
     return 0;
 }
 
-bool is_appropriate(ListNode* head, char* category, char* unit)
+bool is_appropriate(ListNode* head, DefineUnits* units)
 {
-    ListNode* node;
-    node = list_lookup(head, to_lower_string(category), to_lower_string(unit));
-    printf("%s %s\n", category, unit);
-    if (node != NULL) {
+    ListNode* first_node;
+    ListNode* second_node;
+    first_node = list_lookup(head, to_lower_string(units->category), to_lower_string(units->have_unit));
+    second_node = list_lookup(head, to_lower_string(units->category), to_lower_string(units->want_unit));
+    if ((first_node != NULL) && (second_node != NULL)) {
         return true;
     }
     return false;
