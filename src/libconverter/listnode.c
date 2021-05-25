@@ -36,6 +36,7 @@ ListNode* list_lookup(ListNode* list, char* category, char* unit)
         if (strcmp(list->category, category) == 0 && strcmp(list->unit, unit) == 0) {
             return list;
         }
+        list = list->next;
     }
     return NULL;
 }
@@ -62,4 +63,23 @@ ListNode* list_lookup_by_key(ListNode* head, int key)
         p2 = p2->next;
     }
     return p1;
+}
+
+ListNode* list_delete(ListNode* list, char* category, char* unit)
+{
+    ListNode* p;
+    ListNode* prev = NULL;
+    for (p = list; p != NULL; p = p->next) {
+        if (strcmp(p->category, category) == 0 && strcmp(p->unit, unit) == 0) {
+            if (prev == NULL) {
+                list = p->next;
+            } else {
+                prev->next = p->next;
+            }
+            free(p);
+            return list;
+        }
+        prev = p;
+    }
+    return NULL;
 }
