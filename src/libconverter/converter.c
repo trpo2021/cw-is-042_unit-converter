@@ -54,9 +54,19 @@ static ListNode* data_file_parser()
             column++;
         }
         if (row == 2) {
-            head = list_addfront(NULL, 0, parser[0].category, parser[0].unit, parser[0].factor);
+            head = list_addfront(
+                    NULL,
+                    0,
+                    parser[0].category,
+                    parser[0].unit,
+                    parser[0].factor);
         } else {
-            head = list_addfront(head, row - 2, parser[row - 2].category, parser[row - 2].unit, parser[row - 2].factor);
+            head = list_addfront(
+                    head,
+                    row - 2,
+                    parser[row - 2].category,
+                    parser[row - 2].unit,
+                    parser[row - 2].factor);
         }
     }
     fclose(data_file);
@@ -97,8 +107,14 @@ bool is_appropriate(ListNode* head, DefineUnits* units)
 {
     ListNode* first_node;
     ListNode* second_node;
-    first_node = list_lookup(head, to_lower_string(units->category), to_lower_string(units->have_unit));
-    second_node = list_lookup(head, to_lower_string(units->category), to_lower_string(units->want_unit));
+    first_node = list_lookup(
+            head,
+            to_lower_string(units->category),
+            to_lower_string(units->have_unit));
+    second_node = list_lookup(
+            head,
+            to_lower_string(units->category),
+            to_lower_string(units->want_unit));
     if ((first_node != NULL) && (second_node != NULL)) {
         return true;
     }

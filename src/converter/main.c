@@ -35,7 +35,11 @@ int main(int argc, char* argv[])
         helper_message("argument");
         return -1;
     }
-    printf("%s %lf %s --> ? %s\n", units->category, units->have_value, units->have_unit, units->want_unit);
+    printf("%s %lf %s --> ? %s\n",
+           units->category,
+           units->have_value,
+           units->have_unit,
+           units->want_unit);
     int num_of_result = convert_units(units);
     if (num_of_result == -1) {
         helper_message("category");

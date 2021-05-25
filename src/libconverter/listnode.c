@@ -3,7 +3,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-static ListNode* list_createnode(int key, char* category, char* unit, double factor)
+static ListNode*
+list_createnode(int key, char* category, char* unit, double factor)
 {
     ListNode* p;
 
@@ -18,7 +19,8 @@ static ListNode* list_createnode(int key, char* category, char* unit, double fac
     return p;
 }
 
-ListNode* list_addfront(ListNode* list, int key, char* category, char* unit, double factor)
+ListNode* list_addfront(
+        ListNode* list, int key, char* category, char* unit, double factor)
 {
     ListNode* newnode;
     newnode = list_createnode(key, category, unit, factor);
@@ -33,7 +35,8 @@ ListNode* list_addfront(ListNode* list, int key, char* category, char* unit, dou
 ListNode* list_lookup(ListNode* list, char* category, char* unit)
 {
     while (list != NULL) {
-        if (strcmp(list->category, category) == 0 && strcmp(list->unit, unit) == 0) {
+        if (strcmp(list->category, category) == 0
+            && strcmp(list->unit, unit) == 0) {
             return list;
         }
         list = list->next;
