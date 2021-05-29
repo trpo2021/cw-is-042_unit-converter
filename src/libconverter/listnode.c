@@ -86,3 +86,13 @@ ListNode* list_delete(ListNode* list, char* category, char* unit)
     }
     return NULL;
 }
+
+void freelist(ListNode* head)
+{
+    ListNode* tmp;
+    while (head != NULL) {
+        tmp = head;
+        head = head->next;
+        free(tmp);
+    }
+}
