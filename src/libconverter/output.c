@@ -72,10 +72,11 @@ void output_error(int n)
                "--help\' to find out how to successfully launch the "
                "application.\n");
         break;
+    case -4:
+        printf("Could not open or create file. Make sure to enter the correct path!\n");
+        break;
     default:
-        printf("Units must be of the same category! To find out which units "
-               "correspond to which category, enter \'./converter.exe "
-               "--syntax\'.\n");
+        printf("Unable to open file with unit data. Try to run the app from the root of the repository with \'./bin/converter.exe\'\n");
         break;
     }
 }

@@ -42,7 +42,6 @@ static ListNode* data_file_parser()
 {
     FILE* data_file = fopen(units_data_file_path, "rt");
     if (data_file == NULL) {
-        perror("fopen");
         return NULL;
     }
     int column;
@@ -112,7 +111,7 @@ int convert_units(DefineUnits* units)
     ListNode* list;
     list = data_file_parser();
     if (list == NULL) {
-        return -2;
+        return 1;
     }
     if (is_appropriate(list, units) == 0) {
         free(list);
