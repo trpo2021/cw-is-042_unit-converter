@@ -49,7 +49,7 @@ static ListNode* data_file_parser()
     int row = 0;
     char line[MAX_STRING_LENGTH];
 
-    Parser parser[UNITS_NUM];
+    Parser parser[MAX_STRING_LENGTH];
     ListNode* head;
 
     while (fgets(line, MAX_STRING_LENGTH, data_file)) {
