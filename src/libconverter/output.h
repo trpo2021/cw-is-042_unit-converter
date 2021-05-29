@@ -10,5 +10,4 @@ typedef enum {
 
 void output_data(DefineUnits* units);
 void call_help(char* help);
-void file_error(const char* file_path);
 void output_error(int n);

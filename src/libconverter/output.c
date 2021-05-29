@@ -39,7 +39,7 @@ const char* SYNTAX_CALL
 
 void output_data(DefineUnits* units)
 {
-    printf("Result: %lf %s\n", units->want_value, units->want_unit);
+    printf("Result: %0.8lf %s\n", units->want_value, units->want_unit);
 }
 
 void call_help(char* help)
@@ -49,11 +49,6 @@ void call_help(char* help)
     } else if (strcmp(help, "--syntax") == 0) {
         printf("%s", SYNTAX_CALL);
     }
-}
-
-void file_error(const char* file_path)
-{
-    printf("Failed to open file located at %s\n", file_path);
 }
 
 void output_error(int n)
@@ -73,10 +68,12 @@ void output_error(int n)
                "application.\n");
         break;
     case -4:
-        printf("Could not open or create file. Make sure to enter the correct path!\n");
+        printf("Could not open or create file. Make sure to enter the correct "
+               "path!\n");
         break;
     default:
-        printf("Unable to open file with unit data. Try to run the app from the root of the repository with \'./bin/converter.exe\'\n");
+        printf("Unable to open file with unit data. Try to run the app from "
+               "the root of the repository with \'./bin/converter.exe\'\n");
         break;
     }
 }

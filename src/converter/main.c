@@ -33,6 +33,7 @@ int main(int argc, char* argv[])
         // file_reader(units, argv[2], argv[4]);
     } else {
         output_error(ErrorTypeArgument);
+        free(units);
         return -1;
     }
     int convert_status = convert_units(units);
