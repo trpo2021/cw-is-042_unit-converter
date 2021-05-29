@@ -51,33 +51,14 @@ void call_help(char* help)
     }
 }
 
-void memory_error(void)
-{
-    printf("Failed to allocate memory\n");
-}
-
 void file_error(const char* file_path)
 {
     printf("Failed to open file located at %s\n", file_path);
 }
 
-void helper_message(char* difficulty)
-{
-    if (strcmp(difficulty, "argument") == 0) {
-        printf("Unexpected command line argument!\nTry using \'./converter.exe "
-               "--help\' to find out how to successfully launch the "
-               "application.\n");
-    } else if (strcmp(difficulty, "category") == 0) {
-        printf("Units must be of the same category! To find out which units "
-               "correspond to which category, enter \'./converter.exe "
-               "--syntax\'.\n");
-    }
-}
-
 void output_error(int n)
 {
-    switch (n)
-    {
+    switch (n) {
     case -1:
         printf("Units must be of the same category! To find out which units "
                "correspond to which category, enter \'./converter.exe "
