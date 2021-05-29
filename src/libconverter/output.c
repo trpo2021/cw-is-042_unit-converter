@@ -24,19 +24,17 @@ const char* SYNTAX_CALL
           "\n2. Time ----> nanosecond(ns), microsecond(us), millisecond(ms), "
           "second(sec), minute(min), hour(hour), day(day), week(week), "
           "month(month), year(year), decade(decade), century(century)"
-          "\n3. Rate ----> kilometer per hour(km/h), meter per second (m/s), "
-          "mile per hour(m/h), foot per second(ft/s), knot(kt)"
+          "\n3. Rate ----> kilometer per hour(kmph), meter per second(mps), "
+          "mile per hour(mph), foot per second(fps), knot(kt)"
           "\n4. Data size ----> bit(bit), kilobit(kbit), megabit(mbit), "
           "gigabit(gbit), terabit(tbit), petabit(pbit), byte(b), kilobyte(kb), "
           "megabyte(mb), gigabyte(gb), terabyte(tb), petabyte(pb)"
-          "\n5. Data-rate ----> bit per second(bit/s), kilobit per second "
-          "(kbit),kebibit per second(kbbit/s), megabit per second(mbit/s) "
-          "mebibit per second(mbbit/s), gigabit per second(gbit/s), gebibit "
-          "per second(gbbit), terabit per second(tbit/s), tebibit per "
-          "second(tbbit/s), petabit per second(pbit/s), pebibit per "
-          "second(pbbit/s), kilobyte per second(kb/s), megabyte per "
-          "second(mb/s), gigabyte per second(gb/s), terabyte per second(tb/s), "
-          "petabyte per second(pb/s)\n";
+          "\n5. Data-rate ----> bit per second(bitps), kilobit per second "
+          "(kbitps),kebibit per second(kbbitps), megabit per second(mbitps) "
+          "mebibit per second(mbbitps), gigabit per second(gbitps), gebibit "
+          "per second(gbbitps), terabit per second(tbitps), tebibit per "
+          "second(tbbitps), kilobyte per second(kbps), megabyte per "
+          "second(mbps), gigabyte per second(gbps), terabyte per second(tbps)\n";
 
 void output_data(DefineUnits* units)
 {
