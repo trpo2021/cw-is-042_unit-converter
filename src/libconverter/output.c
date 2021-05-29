@@ -24,23 +24,22 @@ const char* SYNTAX_CALL
           "\n2. Time ----> nanosecond(ns), microsecond(us), millisecond(ms), "
           "second(sec), minute(min), hour(hour), day(day), week(week), "
           "month(month), year(year), decade(decade), century(century)"
-          "\n3. Rate ----> kilometer per hour(km/h), meter per second (m/s), "
-          "mile per hour(m/h), foot per second(ft/s), knot(kt)"
+          "\n3. Rate ----> kilometer per hour(kmph), meter per second(mps), "
+          "mile per hour(mph), foot per second(fps), knot(kt)"
           "\n4. Data size ----> bit(bit), kilobit(kbit), megabit(mbit), "
           "gigabit(gbit), terabit(tbit), petabit(pbit), byte(b), kilobyte(kb), "
           "megabyte(mb), gigabyte(gb), terabyte(tb), petabyte(pb)"
-          "\n5. Data-rate ----> bit per second(bit/s), kilobit per second "
-          "(kbit),kebibit per second(kbbit/s), megabit per second(mbit/s) "
-          "mebibit per second(mbbit/s), gigabit per second(gbit/s), gebibit "
-          "per second(gbbit), terabit per second(tbit/s), tebibit per "
-          "second(tbbit/s), petabit per second(pbit/s), pebibit per "
-          "second(pbbit/s), kilobyte per second(kb/s), megabyte per "
-          "second(mb/s), gigabyte per second(gb/s), terabyte per second(tb/s), "
-          "petabyte per second(pb/s)\n";
+          "\n5. Data-rate ----> bit per second(bitps), kilobit per second "
+          "(kbitps),kebibit per second(kbbitps), megabit per second(mbitps) "
+          "mebibit per second(mbbitps), gigabit per second(gbitps), gebibit "
+          "per second(gbbitps), terabit per second(tbitps), tebibit per "
+          "second(tbbitps), kilobyte per second(kbps), megabyte per "
+          "second(mbps), gigabyte per second(gbps), terabyte per "
+          "second(tbps)\n";
 
 void output_data(DefineUnits* units)
 {
-    printf("Result: %lf %s", units->want_value, units->want_unit);
+    printf("Result: %0.8lf %s\n", units->want_value, units->want_unit);
 }
 
 void call_help(char* help)
@@ -52,25 +51,29 @@ void call_help(char* help)
     }
 }
 
-void memory_error(void)
+void output_error(int n)
 {
-    printf("Failed to allocate memory\n");
-}
-
-void file_error(const char* file_path)
-{
-    printf("Failed to open file located at %s\n", file_path);
-}
-
-void helper_message(char* difficulty)
-{
-    if (strcmp(difficulty, "argument") == 0) {
-        printf("Unexpected command line argument!\nTry using \'./converter.exe "
-               "--help\' to find out how to successfully launch the "
-               "application.\n");
-    } else if (strcmp(difficulty, "category") == 0) {
+    switch (n) {
+    case -1:
         printf("Units must be of the same category! To find out which units "
                "correspond to which category, enter \'./converter.exe "
                "--syntax\'.\n");
+        break;
+    case -2:
+        printf("Failed to allocate memory\n");
+        break;
+    case -3:
+        printf("Unexpected command line argument!\nTry using \'./converter.exe "
+               "--help\' to find out how to successfully launch the "
+               "application.\n");
+        break;
+    case -4:
+        printf("Could not open or create file. Make sure to enter the correct "
+               "path!\n");
+        break;
+    default:
+        printf("Unable to open file with unit data. Try to run the app from "
+               "the root of the repository with \'./bin/converter.exe\'\n");
+        break;
     }
 }

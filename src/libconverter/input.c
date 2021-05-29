@@ -37,13 +37,11 @@ int file_reader(
 {
     FILE* in_file = fopen(in_file_name, "rt");
     if (in_file == NULL) {
-        file_error(in_file_name);
         return -1;
     }
 
     FILE* out_file = fopen(out_file_name, "w");
     if (out_file == NULL) {
-        file_error(out_file_name);
         return -1;
     }
 

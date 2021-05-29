@@ -42,14 +42,13 @@ static ListNode* data_file_parser()
 {
     FILE* data_file = fopen(units_data_file_path, "rt");
     if (data_file == NULL) {
-        perror("fopen");
         return NULL;
     }
     int column;
     int row = 0;
     char line[MAX_STRING_LENGTH];
 
-    Parser parser[UNITS_NUM];
+    Parser parser[MAX_STRING_LENGTH];
     ListNode* head;
 
     while (fgets(line, MAX_STRING_LENGTH, data_file)) {
@@ -112,7 +111,7 @@ int convert_units(DefineUnits* units)
     ListNode* list;
     list = data_file_parser();
     if (list == NULL) {
-        return -2;
+        return 1;
     }
     if (is_appropriate(list, units) == 0) {
         free(list);
@@ -120,7 +119,6 @@ int convert_units(DefineUnits* units)
     }
     double factor = get_factor(list, units);
     units->want_value = units->have_value * factor;
-    printf("%lf & %lf\n", factor, units->want_value);
     free(list);
     return 0;
 }
