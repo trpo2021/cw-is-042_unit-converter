@@ -19,6 +19,25 @@ static char* to_lower_string(char* string)
     return tmp;
 }
 
+static double get_factor(ListNode* list, DefineUnits* units)
+{
+    ListNode* first_node;
+    ListNode* second_node;
+    double factor;
+
+    first_node = list_lookup(list, units->category, units->have_unit);
+    second_node = list_lookup(list, units->category, units->want_unit);
+    if (first_node == NULL || second_node == NULL) {
+        return -1;
+    }
+    factor = first_node->factor / second_node->factor;
+
+    freelist(first_node);
+    freelist(second_node);
+
+    return factor;
+}
+
 static ListNode* data_file_parser()
 {
     FILE* data_file = fopen(units_data_file_path, "rt");
@@ -99,6 +118,9 @@ int convert_units(DefineUnits* units)
         free(list);
         return -1;
     }
+    double factor = get_factor(list, units);
+    units->want_value = units->have_value * factor;
+    printf("%lf & %lf\n", factor, units->want_value);
     free(list);
     return 0;
 }

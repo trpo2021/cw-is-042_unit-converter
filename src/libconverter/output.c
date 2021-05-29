@@ -10,7 +10,7 @@ const char* HELP_CALL
           "terminal)"
           "\n\t./converter.exe --syntax (Information about categories and "
           "units of measurement is issued)"
-          "\n\t./converter.exe --start --path <input-file-path> --path "
+          "\n\t./converter.exe --path <input-file-path> --path "
           "<output-file-path> (The input and output data are files)\n";
 
 const char* SYNTAX_CALL
