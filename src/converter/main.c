@@ -11,7 +11,7 @@ int main(int argc, char* argv[])
 {
     DefineUnits* units = malloc(sizeof(DefineUnits*));
     if (units == NULL) {
-        memory_error();
+        output_error(ErrorTypeMemory);
         return -1;
     }
     if (argc == 2
@@ -32,19 +32,14 @@ int main(int argc, char* argv[])
         printf("Coming soon...\n");
         // file_reader(units, argv[2], argv[4]);
     } else {
-        helper_message("argument");
+        output_error(ErrorTypeArgument);
         return -1;
     }
-    printf("%s %lf %s --> ? %s\n",
-           units->category,
-           units->have_value,
-           units->have_unit,
-           units->want_unit);
-    int num_of_result = convert_units(units);
-    if (num_of_result == -1) {
-        helper_message("category");
-    } else if (num_of_result == -2) {
-        file_error("a =)");
+    int convert_status = convert_units(units);
+    if (convert_status == 0) {
+        output_data(units);
+    } else {
+        output_error(convert_status);
     }
     free(units);
     return 0;

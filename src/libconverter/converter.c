@@ -120,7 +120,6 @@ int convert_units(DefineUnits* units)
     }
     double factor = get_factor(list, units);
     units->want_value = units->have_value * factor;
-    printf("%lf & %lf\n", factor, units->want_value);
     free(list);
     return 0;
 }

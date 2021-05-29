@@ -39,7 +39,7 @@ const char* SYNTAX_CALL
 
 void output_data(DefineUnits* units)
 {
-    printf("Result: %lf %s", units->want_value, units->want_unit);
+    printf("Result: %lf %s\n", units->want_value, units->want_unit);
 }
 
 void call_help(char* help)
@@ -71,5 +71,30 @@ void helper_message(char* difficulty)
         printf("Units must be of the same category! To find out which units "
                "correspond to which category, enter \'./converter.exe "
                "--syntax\'.\n");
+    }
+}
+
+void output_error(int n)
+{
+    switch (n)
+    {
+    case -1:
+        printf("Units must be of the same category! To find out which units "
+               "correspond to which category, enter \'./converter.exe "
+               "--syntax\'.\n");
+        break;
+    case -2:
+        printf("Failed to allocate memory\n");
+        break;
+    case -3:
+        printf("Unexpected command line argument!\nTry using \'./converter.exe "
+               "--help\' to find out how to successfully launch the "
+               "application.\n");
+        break;
+    default:
+        printf("Units must be of the same category! To find out which units "
+               "correspond to which category, enter \'./converter.exe "
+               "--syntax\'.\n");
+        break;
     }
 }
