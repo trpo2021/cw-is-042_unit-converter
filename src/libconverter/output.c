@@ -34,7 +34,8 @@ const char* SYNTAX_CALL
           "mebibit per second(mbbitps), gigabit per second(gbitps), gebibit "
           "per second(gbbitps), terabit per second(tbitps), tebibit per "
           "second(tbbitps), kilobyte per second(kbps), megabyte per "
-          "second(mbps), gigabyte per second(gbps), terabyte per second(tbps)\n";
+          "second(mbps), gigabyte per second(gbps), terabyte per "
+          "second(tbps)\n";
 
 void output_data(DefineUnits* units)
 {
