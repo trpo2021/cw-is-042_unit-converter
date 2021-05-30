@@ -2,6 +2,7 @@
 
 #include <ctype.h>
 #include <stdlib.h>
+#include <string.h>
 
 static char* to_lower_string(char* string)
 {
@@ -56,12 +57,15 @@ bool is_digit(char* string)
 {
     int i = 0;
     int count = 0;
+    int point_count = 0;
     for (; string[i]; ++i) {
-        if ((isdigit(string[i]) != 0) || (string[i] == '.')) {
+        if (isdigit(string[i]) != 0) {
             ++count;
+        } else if (string[i] == '.') {
+            ++point_count;
         }
     }
-    if (i == count) {
+    if ((i == count + point_count) && (point_count <= 1)) {
         return true;
     }
     return false;
