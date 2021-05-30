@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include <stdio.h>
+
 static char* to_lower_string(char* string)
 {
     for (int i = 0; string[i]; ++i) {
@@ -69,4 +71,23 @@ bool is_digit(char* string)
         return true;
     }
     return false;
+}
+
+static size_t get_number_length(char* number)
+{
+    size_t length = strlen(number);
+    char* p = strchr(number, '.');
+    if (p != NULL) {
+        length -= strlen(p);
+    }
+    return length;
+}
+
+int check_number_length(char* number)
+{
+    size_t length = get_number_length(number);
+    if (length > 20) {
+        return -1;
+    }
+    return 0;
 }

@@ -26,6 +26,12 @@ int main(int argc, char* argv[])
     } else if (
             argc == 5 && is_alpha(argv[1]) && is_digit(argv[2])
             && is_alpha(argv[3]) && is_alpha(argv[4])) {
+        int length_status = check_number_length(argv[2]);
+        if (length_status == -1) {
+            output_error(ErrorTypeLargeValue);
+            free(units);
+            return -1;
+        }
         units = init_units_struct(units, argc, argv);
     } else if (
             argc == 5 && strcmp(argv[1], "--path") == 0
