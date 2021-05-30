@@ -7,3 +7,4 @@
 
 bool is_appropriate(ListNode* head, DefineUnits* units);
 bool is_positive(double value);
+bool is_alpha(char* string);

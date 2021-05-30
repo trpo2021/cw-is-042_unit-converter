@@ -1,3 +1,4 @@
+#include <libconverter/check.h>
 #include <libconverter/converter.h>
 #include <libconverter/input.h>
 #include <libconverter/output.h>
@@ -19,12 +20,12 @@ int main(int argc, char* argv[])
             || strcmp(argv[1], "--syntax") == 0)) {
         call_help(argv[1]);
     } else if (
-            argc == 4 && isalpha(*argv[1]) && isalpha(*argv[2])
-            && isalpha(*argv[3])) {
+            argc == 4 && is_alpha(argv[1]) && is_alpha(argv[2])
+            && is_alpha(argv[3])) {
         units = init_units_struct(units, argc, argv);
     } else if (
-            argc == 5 && isalpha(*argv[1]) && isdigit(*argv[2])
-            && isalpha(*argv[3]) && isalpha(*argv[4])) {
+            argc == 5 && is_alpha(argv[1]) && isdigit(*argv[2])
+            && is_alpha(argv[3]) && is_alpha(argv[4])) {
         units = init_units_struct(units, argc, argv);
     } else if (
             argc == 5 && strcmp(argv[1], "--path") == 0

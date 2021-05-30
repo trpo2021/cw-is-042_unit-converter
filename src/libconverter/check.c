@@ -36,3 +36,18 @@ bool is_positive(double value)
     }
     return true;
 }
+
+bool is_alpha(char* string)
+{
+    int i = 0;
+    int count = 0;
+    for (; string[i]; ++i) {
+        if ((isalpha(string[i]) != 0) || (string[i] == '-')) {
+            ++count;
+        }
+    }
+    if (i == count) {
+        return true;
+    }
+    return false;
+}
