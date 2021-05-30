@@ -68,7 +68,8 @@ void output_error(int n)
                "application.\n");
         break;
     case -4:
-        printf("The value you entered is too large. Try to enter a value less!\n");
+        printf("The value you entered is too large. Try to enter a value "
+               "less!\n");
         break;
     case -5:
         printf("Could not open or create file. Make sure to enter the correct "
