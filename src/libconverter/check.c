@@ -1,0 +1,38 @@
+#include <libconverter/check.h>
+
+#include <ctype.h>
+#include <stdlib.h>
+
+static char* to_lower_string(char* string)
+{
+    for (int i = 0; string[i]; ++i) {
+        string[i] = tolower(string[i]);
+    }
+    return string;
+}
+
+bool is_appropriate(ListNode* head, DefineUnits* units)
+{
+    ListNode* first_node;
+    ListNode* second_node;
+    first_node = list_lookup(
+            head,
+            to_lower_string(units->category),
+            to_lower_string(units->have_unit));
+    second_node = list_lookup(
+            head,
+            to_lower_string(units->category),
+            to_lower_string(units->want_unit));
+    if ((first_node != NULL) && (second_node != NULL)) {
+        return true;
+    }
+    return false;
+}
+
+bool is_positive(double value)
+{
+    if (value < 0) {
+        return false;
+    }
+    return true;
+}
