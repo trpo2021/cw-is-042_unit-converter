@@ -51,3 +51,18 @@ bool is_alpha(char* string)
     }
     return false;
 }
+
+bool is_digit(char* string)
+{
+    int i = 0;
+    int count = 0;
+    for (; string[i]; ++i) {
+        if ((isdigit(string[i]) != 0) || (string[i] == '.')) {
+            ++count;
+        }
+    }
+    if (i == count) {
+        return true;
+    }
+    return false;
+}

@@ -96,9 +96,6 @@ DefineUnits* init_units_struct(DefineUnits* units, int argc, char* argv[])
 
 int convert_units(DefineUnits* units)
 {
-    if (is_positive(units->have_value) == 0) {
-        return -5;
-    }
     ListNode* list;
     list = data_file_parser();
     if (list == NULL) {
