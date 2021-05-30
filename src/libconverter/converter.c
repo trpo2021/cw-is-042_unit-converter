@@ -1,23 +1,11 @@
+#include <libconverter/check.h>
 #include <libconverter/converter.h>
-#include <libconverter/output.h>
 
-#include <ctype.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 const char* units_data_file_path = "units/units.csv";
-
-static char* to_lower_string(char* string)
-{
-    size_t len = strlen(string);
-    char* tmp = malloc(len * sizeof(char));
-    tmp = strcpy(tmp, string);
-    for (int i = 0; tmp[i]; ++i) {
-        tmp[i] = tolower(tmp[i]);
-    }
-
-    return tmp;
-}
 
 static double get_factor(ListNode* list, DefineUnits* units)
 {
@@ -108,6 +96,9 @@ DefineUnits* init_units_struct(DefineUnits* units, int argc, char* argv[])
 
 int convert_units(DefineUnits* units)
 {
+    if (is_positive(units->have_value) == 0) {
+        return -5;
+    }
     ListNode* list;
     list = data_file_parser();
     if (list == NULL) {
@@ -118,25 +109,11 @@ int convert_units(DefineUnits* units)
         return -1;
     }
     double factor = get_factor(list, units);
+    if (is_positive(factor) == 0) {
+        free(list);
+        return -1;
+    }
     units->want_value = units->have_value * factor;
     free(list);
     return 0;
-}
-
-bool is_appropriate(ListNode* head, DefineUnits* units)
-{
-    ListNode* first_node;
-    ListNode* second_node;
-    first_node = list_lookup(
-            head,
-            to_lower_string(units->category),
-            to_lower_string(units->have_unit));
-    second_node = list_lookup(
-            head,
-            to_lower_string(units->category),
-            to_lower_string(units->want_unit));
-    if ((first_node != NULL) && (second_node != NULL)) {
-        return true;
-    }
-    return false;
 }

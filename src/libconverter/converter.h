@@ -1,8 +1,6 @@
 #pragma once
 
 #include <libconverter/listnode.h>
-#include <stdbool.h>
-#include <stdio.h>
 
 #define MAX_STRING_LENGTH 128
 #define UNITS_NUM 53
@@ -23,4 +21,3 @@ typedef struct {
 
 DefineUnits* init_units_struct(DefineUnits* units, int argc, char* argv[]);
 int convert_units(DefineUnits* units);
-bool is_appropriate(ListNode* head, DefineUnits* units);
