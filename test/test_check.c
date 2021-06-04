@@ -26,9 +26,17 @@ CTEST(is_alpha, correct_string_3)
     ASSERT_TRUE(real);
 }
 
-CTEST(is_alpha, incorrect_string)
+CTEST(is_alpha, incorrect_string_1)
 {
     char* string = "Dat.A-rA2tE";
+    const bool real = is_alpha(string);
+
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_alpha, incorrect_string_2)
+{
+    char* string = "";
     const bool real = is_alpha(string);
 
     ASSERT_FALSE(real);
