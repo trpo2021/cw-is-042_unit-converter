@@ -42,6 +42,10 @@ bool is_positive(double value)
 
 bool is_alpha(char* string)
 {
+    int tmp = strlen(string);
+    if (tmp == 0) {
+        return false;
+    }
     int i = 0;
     int count = 0;
     for (; string[i]; ++i) {
