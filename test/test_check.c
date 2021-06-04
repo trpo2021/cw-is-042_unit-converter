@@ -34,6 +34,13 @@ CTEST(is_alpha, correct_string_4)
     ASSERT_TRUE(real);
 }
 
+CTEST(is_alpha, correct_string_5)
+{
+    char* string = "Meterss";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
 
 CTEST(is_alpha, incorrect_string_1)
 {
