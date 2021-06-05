@@ -757,6 +757,30 @@ CTEST(is_digit, correct_string_2)
     ASSERT_TRUE(real);
 }
 
+CTEST(is_digit, correct_string_3)
+{
+    char* string = "+129.012030132";
+    const bool real = is_digit(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_digit, correct_string_4)
+{
+    char* string = "+.56765";
+    const bool real = is_digit(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_digit, correct_string_5)
+{
+    char* string = "+0.56473";
+    const bool real = is_digit(string);
+
+    ASSERT_TRUE(real);
+}
+
 CTEST(is_digit, incorrect_string_1)
 {
     char* string = "";
@@ -772,3 +796,218 @@ CTEST(is_digit, incorrect_string_2)
 
     ASSERT_FALSE(real);
 }
+
+CTEST(is_digit, incorrect_string_3)
+{
+    char* string = "-1.000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
+    const bool real = is_digit(string);
+
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_digit, incorrect_string_4)
+{
+    char* string = "343.0982$";
+    const bool real = is_digit(string);
+
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_digit, incorrect_string_5)
+{
+    char* string = "$";
+    const bool real = is_digit(string);
+
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_digit, incorrect_string_6)
+{
+    char* string = "3425*";
+    const bool real = is_digit(string);
+
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_digit, incorrect_string_7)
+{
+    char* string = "/2.030132";
+    const bool real = is_digit(string);
+
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_digit, incorrect_string_8)
+{
+    char* string = "++129.012030132";
+    const bool real = is_digit(string);
+
+    ASSERT_FALSE(real);
+}
+
+
+CTEST(is_digit, incorrect_string_9)
+{
+    char* string = "23@,929839283";
+    const bool real = is_digit(string);
+
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_digit, incorrect_string_10)
+{
+    char* string = "(129.012030132";
+    const bool real = is_digit(string);
+
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_digit, incorrect_string_11)
+{
+    char* string = ")129.012030132";
+    const bool real = is_digit(string);
+
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_digit, incorrect_string_12)
+{
+    char* string = "&32";
+    const bool real = is_digit(string);
+
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_digit, incorrect_string_13)
+{
+    char* string = "?1637253932.32";
+    const bool real = is_digit(string);
+
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_digit, incorrect_string_14)
+{
+    char* string = "3129..012030132";
+    const bool real = is_digit(string);
+
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_digit, incorrect_string_15)
+{
+    char* string = "^248374639845794.384739289463294";
+    const bool real = is_digit(string);
+
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_digit, incorrect_string_16)
+{
+    char* string = "!658736585.74638464";
+    const bool real = is_digit(string);
+
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_digit, incorrect_string_17)
+{
+    char* string = "@658365834.746846483";
+    const bool real = is_digit(string);
+
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_digit, incorrect_string_18)
+{
+    char* string = "-31\32";
+    const bool real = is_digit(string);
+
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_digit, incorrect_string_19)
+{
+    char* string = "=3129.012030132";
+    const bool real = is_digit(string);
+
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_digit, incorrect_string_20)
+{
+    char* string = "_3129.012030132";
+    const bool real = is_digit(string);
+
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_digit, incorrect_string_21)
+{
+    char* string = ";3129.012030132";
+    const bool real = is_digit(string);
+
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_digit, incorrect_string_22)
+{
+    char* string = ":3129.012030132";
+    const bool real = is_digit(string);
+
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_digit, incorrect_string_23)
+{
+    char* string = "><3129.012030132";
+    const bool real = is_digit(string);
+
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_digit, incorrect_string_24)
+{
+    char* string = "+.129.012030132";
+    const bool real = is_digit(string);
+
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_digit, incorrect_string_25)
+{
+    char* string = "+.";
+    const bool real = is_digit(string);
+
+    ASSERT_FALSE(real);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
