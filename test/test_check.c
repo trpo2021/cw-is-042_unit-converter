@@ -242,6 +242,142 @@ CTEST(is_alpha, correct_string_30)
     ASSERT_TRUE(real);
 }
 
+CTEST(is_alpha, correct_string_31)
+{
+    char* string = "mPh";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_32)
+{
+    char* string = "FPS";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_33)
+{
+    char* string = "mpS";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_34)
+{
+    char* string = "kmph";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_35)
+{
+    char* string = "KT";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_36)
+{
+    char* string = "BIT";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_37)
+{
+    char* string = "Kbit";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_38)
+{
+    char* string = "mBit";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_39)
+{
+    char* string = "GBIt";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_40)
+{
+    char* string = "tbit";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_41)
+{
+    char* string = "pBiT";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_42)
+{
+    char* string = "b";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_43)
+{
+    char* string = "kb";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_44)
+{
+    char* string = "MB";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_45)
+{
+    char* string = "gB";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_46)
+{
+    char* string = "TB";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_47)
+{
+    char* string = "pb";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
 CTEST(is_alpha, incorrect_string_1)
 {
     char* string = "Dat.A-rA2tE";
