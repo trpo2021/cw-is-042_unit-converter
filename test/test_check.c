@@ -740,3 +740,35 @@ CTEST(is_positive, incorrect_value_4)
 
     ASSERT_FALSE(real);
 }
+
+CTEST(is_digit, correct_string_1)
+{
+    char* string = "0";
+    const bool real = is_digit(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_digit, correct_string_2)
+{
+    char* string = "3129312132132.132931291239132923929123";
+    const bool real = is_digit(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_digit, incorrect_string_1)
+{
+    char* string = "";
+    const bool real = is_digit(string);
+
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_digit, incorrect_string_2)
+{
+    char* string = "-3129.012030132";
+    const bool real = is_digit(string);
+
+    ASSERT_FALSE(real);
+}

@@ -61,6 +61,10 @@ bool is_alpha(char* string)
 
 bool is_digit(char* string)
 {
+    int tmp = strlen(string);
+    if (tmp == 0) {
+        return false;
+    }
     int i = 0;
     int count = 0;
     int point_count = 0;
