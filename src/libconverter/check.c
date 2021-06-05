@@ -77,20 +77,10 @@ bool is_digit(char* string)
     return false;
 }
 
-static size_t get_number_length(char* number)
-{
-    size_t length = strlen(number);
-    char* p = strchr(number, '.');
-    if (p != NULL) {
-        length -= strlen(p);
-    }
-    return length;
-}
-
 int check_number_length(char* number)
 {
-    size_t length = get_number_length(number);
-    if (length > 20) {
+    double num = atof(number);
+    if (num >= 100000000000000000000) {
         return -1;
     }
     return 0;
