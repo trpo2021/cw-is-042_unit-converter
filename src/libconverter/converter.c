@@ -1,11 +1,20 @@
 #include <libconverter/check.h>
 #include <libconverter/converter.h>
 
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 const char* units_data_file_path = "units/units.csv";
+
+static char* to_lower_string(char* string)
+{
+    for (int i = 0; string[i]; ++i) {
+        string[i] = tolower(string[i]);
+    }
+    return string;
+}
 
 static double get_factor(ListNode* list, DefineUnits* units)
 {
@@ -26,7 +35,7 @@ static double get_factor(ListNode* list, DefineUnits* units)
     return factor;
 }
 
-static ListNode* data_file_parser()
+ListNode* data_file_parser()
 {
     FILE* data_file = fopen(units_data_file_path, "rt");
     if (data_file == NULL) {
@@ -81,15 +90,15 @@ static ListNode* data_file_parser()
 
 DefineUnits* init_units_struct(DefineUnits* units, int argc, char* argv[])
 {
-    units->category = argv[1];
+    units->category = to_lower_string(argv[1]);
     if (argc == 5) {
         units->have_value = atof(argv[2]);
-        units->have_unit = argv[3];
-        units->want_unit = argv[4];
+        units->have_unit = to_lower_string(argv[3]);
+        units->want_unit = to_lower_string(argv[4]);
     } else {
         units->have_value = 1;
-        units->have_unit = argv[2];
-        units->want_unit = argv[3];
+        units->have_unit = to_lower_string(argv[2]);
+        units->want_unit = to_lower_string(argv[3]);
     }
     return units;
 }
