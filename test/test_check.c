@@ -127,7 +127,7 @@ CTEST(is_alpha, incorrect_string_11)
     char* string = "M3t3r$";
     const bool real = is_alpha(string);
 
-    ASSERT_FALSE(real); 
+    ASSERT_FALSE(real);
 }
 
 CTEST(is_alpha, incorrect_string_12)
@@ -161,7 +161,6 @@ CTEST(is_alpha, incorrect_string_15)
 
     ASSERT_FALSE(real);
 }
-
 
 CTEST(is_alpha, incorrect_string_16)
 {
