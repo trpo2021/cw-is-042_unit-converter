@@ -80,7 +80,7 @@ bool is_digit(char* string)
 int check_number_length(char* number)
 {
     double num = atof(number);
-    if (num >= 100000000000000000000) {
+    if (num >= 100000000000000000000.) {
         return -1;
     }
     return 0;
