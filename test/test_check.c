@@ -845,7 +845,6 @@ CTEST(is_digit, incorrect_string_8)
     ASSERT_FALSE(real);
 }
 
-
 CTEST(is_digit, incorrect_string_9)
 {
     char* string = "23@,929839283";
@@ -981,33 +980,3 @@ CTEST(is_digit, incorrect_string_25)
 
     ASSERT_FALSE(real);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
