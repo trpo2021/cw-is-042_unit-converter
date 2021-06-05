@@ -78,7 +78,8 @@ bool is_digit(char* string)
             ++plus_count;
         }
     }
-    if ((i == count + point_count + plus_count) && (point_count <= 1) && (plus_count <= 1) && (count != 0)) {
+    if ((i == count + point_count + plus_count) && (point_count <= 1)
+        && (plus_count <= 1) && (count != 0)) {
         return true;
     }
     return false;
