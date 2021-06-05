@@ -1029,17 +1029,18 @@ CTEST(check_number_length, incorrect_string_2)
 
 CTEST(is_appropriate, correct_units_1)
 {
-    DefineUnits* units = malloc(sizeof(DefineUnits*));
-    ASSERT_NOT_NULL(units);
-    units->category = "time";
-    units->have_unit = "day";
-    units->want_unit = "sec";
+    // DefineUnits* units = malloc(sizeof(DefineUnits*));
+    // ASSERT_NOT_NULL(units);
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "day";
+    units.want_unit = "sec";
 
     ListNode* list;
     list = data_file_parser();
     ASSERT_NOT_NULL(list);
 
-    const bool real = is_appropriate(list, units);
-    free(units);
+    const bool real = is_appropriate(list, &units);
+    // free(units);
     ASSERT_TRUE(real);
 }
