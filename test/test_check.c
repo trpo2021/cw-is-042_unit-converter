@@ -378,6 +378,110 @@ CTEST(is_alpha, correct_string_47)
     ASSERT_TRUE(real);
 }
 
+CTEST(is_alpha, correct_string_48)
+{
+    char* string = "bitps";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_49)
+{
+    char* string = "kbitps";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_50)
+{
+    char* string = "kbps";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_51)
+{
+    char* string = "kbbitps";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_52)
+{
+    char* string = "mbitps";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_53)
+{
+    char* string = "mbps";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_54)
+{
+    char* string = "mbbitps";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_55)
+{
+    char* string = "gbitps";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_56)
+{
+    char* string = "gbps";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_57)
+{
+    char* string = "gbbitps";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_58)
+{
+    char* string = "tbitps";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_59)
+{
+    char* string = "tbps";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_60)
+{
+    char* string = "tbbitps";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
 CTEST(is_alpha, incorrect_string_1)
 {
     char* string = "Dat.A-rA2tE";
