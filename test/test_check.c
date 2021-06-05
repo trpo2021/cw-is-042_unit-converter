@@ -985,3 +985,43 @@ CTEST(is_digit, incorrect_string_25)
 
     ASSERT_FALSE(real);
 }
+
+CTEST(check_number_length, correct_string_1)
+{
+    char* string = "1";
+    const int real = check_number_length(string);
+    const int exp = 0;
+    ASSERT_EQUAL(exp, real);
+}
+
+CTEST(check_number_length, correct_string_2)
+{
+    char* string = "10000000000000000000";
+    const int real = check_number_length(string);
+    const int exp = 0;
+    ASSERT_EQUAL(exp, real);
+}
+
+CTEST(check_number_length, correct_string_3)
+{
+    char* string = "9999999999999999999.99999999999999999999";
+    const int real = check_number_length(string);
+    const int exp = 0;
+    ASSERT_EQUAL(exp, real);
+}
+
+CTEST(check_number_length, incorrect_string_1)
+{
+    char* string = "100000000000000000000";
+    const int real = check_number_length(string);
+    const int exp = -1;
+    ASSERT_EQUAL(exp, real);
+}
+
+CTEST(check_number_length, incorrect_string_2)
+{
+    char* string = "100000000000000000000000000000000000000000000000000";
+    const int real = check_number_length(string);
+    const int exp = -1;
+    ASSERT_EQUAL(exp, real);
+}
