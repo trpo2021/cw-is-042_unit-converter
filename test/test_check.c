@@ -1027,12 +1027,2337 @@ CTEST(check_number_length, incorrect_string_2)
     ASSERT_EQUAL(exp, real);
 }
 
-CTEST(is_appropriate, correct_units_1)
+CTEST(is_appropriate, correct_time_units_1)
 {
     DefineUnits units;
     units.category = "time";
     units.have_unit = "day";
     units.want_unit = "sec";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_2)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "ns";
+    units.want_unit = "sec";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_3)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "us";
+    units.want_unit = "sec";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_4)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "ms";
+    units.want_unit = "sec";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_5)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "sec";
+    units.want_unit = "sec";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_6)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "min";
+    units.want_unit = "sec";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_7)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "hour";
+    units.want_unit = "sec";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_8)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "week";
+    units.want_unit = "sec";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_9)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "month";
+    units.want_unit = "sec";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_10)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "year";
+    units.want_unit = "sec";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_11)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "decade";
+    units.want_unit = "sec";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_12)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "century";
+    units.want_unit = "sec";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_13)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "ns";
+    units.want_unit = "ns";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_14)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "us";
+    units.want_unit = "ns";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_15)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "ms";
+    units.want_unit = "ns";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_16)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "sec";
+    units.want_unit = "ns";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_17)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "min";
+    units.want_unit = "ns";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_18)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "hour";
+    units.want_unit = "ns";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_19)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "day";
+    units.want_unit = "ns";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_20)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "week";
+    units.want_unit = "ns";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_21)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "month";
+    units.want_unit = "ns";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_22)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "year";
+    units.want_unit = "ns";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_23)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "decade";
+    units.want_unit = "ns";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_24)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "century";
+    units.want_unit = "ns";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_25)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "ns";
+    units.want_unit = "us";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_26)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "us";
+    units.want_unit = "us";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_27)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "ms";
+    units.want_unit = "us";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_28)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "sec";
+    units.want_unit = "us";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_29)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "min";
+    units.want_unit = "us";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_30)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "hour";
+    units.want_unit = "us";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_31)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "day";
+    units.want_unit = "us";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_32)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "week";
+    units.want_unit = "us";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_33)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "month";
+    units.want_unit = "us";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_34)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "year";
+    units.want_unit = "us";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_35)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "decade";
+    units.want_unit = "us";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_36)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "century";
+    units.want_unit = "us";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_37)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "ns";
+    units.want_unit = "ms";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_38)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "us";
+    units.want_unit = "ms";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_39)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "ms";
+    units.want_unit = "ms";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_40)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "sec";
+    units.want_unit = "ms";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_41)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "min";
+    units.want_unit = "ms";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_42)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "hour";
+    units.want_unit = "ms";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_43)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "day";
+    units.want_unit = "ms";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_44)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "week";
+    units.want_unit = "ms";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_45)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "month";
+    units.want_unit = "ms";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_46)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "year";
+    units.want_unit = "ms";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_47)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "decade";
+    units.want_unit = "ms";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_48)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "century";
+    units.want_unit = "ms";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_49)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "ns";
+    units.want_unit = "sec";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_50)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "us";
+    units.want_unit = "sec";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_51)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "ms";
+    units.want_unit = "sec";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_52)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "sec";
+    units.want_unit = "sec";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_53)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "min";
+    units.want_unit = "sec";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_54)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "hour";
+    units.want_unit = "sec";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_55)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "day";
+    units.want_unit = "sec";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_56)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "week";
+    units.want_unit = "sec";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_57)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "month";
+    units.want_unit = "sec";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_58)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "year";
+    units.want_unit = "sec";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_59)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "decade";
+    units.want_unit = "sec";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_60)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "century";
+    units.want_unit = "sec";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_61)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "ns";
+    units.want_unit = "min";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_62)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "us";
+    units.want_unit = "min";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_63)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "ms";
+    units.want_unit = "min";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_64)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "sec";
+    units.want_unit = "min";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_65)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "min";
+    units.want_unit = "min";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_66)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "hour";
+    units.want_unit = "min";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_67)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "day";
+    units.want_unit = "min";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_68)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "week";
+    units.want_unit = "min";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_69)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "month";
+    units.want_unit = "min";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_70)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "year";
+    units.want_unit = "min";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_71)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "decade";
+    units.want_unit = "min";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_72)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "century";
+    units.want_unit = "min";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_73)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "ns";
+    units.want_unit = "hour";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_74)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "us";
+    units.want_unit = "hour";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_75)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "ms";
+    units.want_unit = "hour";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_76)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "sec";
+    units.want_unit = "hour";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_77)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "min";
+    units.want_unit = "hour";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_78)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "hour";
+    units.want_unit = "hour";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_79)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "day";
+    units.want_unit = "hour";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_80)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "week";
+    units.want_unit = "hour";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_81)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "month";
+    units.want_unit = "hour";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_82)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "year";
+    units.want_unit = "hour";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_83)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "decade";
+    units.want_unit = "hour";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_84)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "century";
+    units.want_unit = "hour";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_85)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "ns";
+    units.want_unit = "day";;
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_86)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "us";
+    units.want_unit = "day";;
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_87)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "ms";
+    units.want_unit = "day";;
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_88)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "sec";
+    units.want_unit = "day";;
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_89)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "min";
+    units.want_unit = "day";;
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_90)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "hour";
+    units.want_unit = "day";;
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_91)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "day";
+    units.want_unit = "day";;
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_92)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "week";
+    units.want_unit = "day";;
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_93)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "month";
+    units.want_unit = "day";;
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_94)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "year";
+    units.want_unit = "day";;
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_95)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "decade";
+    units.want_unit = "day";;
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_96)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "century";
+    units.want_unit = "day";;
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_97)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "ns";
+    units.want_unit = "week";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_98)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "us";
+    units.want_unit = "week";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_99)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "ms";
+    units.want_unit = "week";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_100)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "sec";
+    units.want_unit = "week";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_101)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "min";
+    units.want_unit = "week";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_102)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "hour";
+    units.want_unit = "week";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_103)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "day";
+    units.want_unit = "week";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_104)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "week";
+    units.want_unit = "week";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_105)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "month";
+    units.want_unit = "week";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_106)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "year";
+    units.want_unit = "week";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_107)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "decade";
+    units.want_unit = "week";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_108)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "century";
+    units.want_unit = "week";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_108)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "ns";
+    units.want_unit = "month";;
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_109)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "us";
+    units.want_unit = "month";;
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_110)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "ms";
+    units.want_unit = "month";;
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_111)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "sec";
+    units.want_unit = "month";;
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_112)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "min";
+    units.want_unit = "month";;
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_113)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "hour";
+    units.want_unit = "month";;
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_114)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "day";
+    units.want_unit = "month";;
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_115)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "week";
+    units.want_unit = "month";;
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_116)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "month";
+    units.want_unit = "month";;
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_117)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "year";
+    units.want_unit = "month";;
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_118)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "decade";
+    units.want_unit = "month";;
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_119)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "century";
+    units.want_unit = "month";;
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_120)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "ns";
+    units.want_unit = "year";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_121)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "us";
+    units.want_unit = "year";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_122)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "ms";
+    units.want_unit = "year";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_123)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "sec";
+    units.want_unit = "year";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_124)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "min";
+    units.want_unit = "year";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_125)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "hour";
+    units.want_unit = "year";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_126)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "day";
+    units.want_unit = "year";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_127)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "week";
+    units.want_unit = "year";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_128)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "month";
+    units.want_unit = "year";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_129)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "year";
+    units.want_unit = "year";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_130)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "decade";
+    units.want_unit = "year";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_131)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "century";
+    units.want_unit = "year";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_132)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "ns";
+    units.want_unit = "decade";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_133)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "us";
+    units.want_unit = "decade";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_134)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "ms";
+    units.want_unit = "decade";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_135)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "sec";
+    units.want_unit = "decade";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_136)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "min";
+    units.want_unit = "decade";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_137)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "hour";
+    units.want_unit = "decade";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_138)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "day";
+    units.want_unit = "decade";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_139)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "week";
+    units.want_unit = "decade";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_140)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "month";
+    units.want_unit = "decade";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_141)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "year";
+    units.want_unit = "decade";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_142)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "decade";
+    units.want_unit = "decade";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_143)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "century";
+    units.want_unit = "decade";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_144)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "ns";
+    units.want_unit = "century";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_145)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "us";
+    units.want_unit = "century";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_146)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "ms";
+    units.want_unit = "century";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_147)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "sec";
+    units.want_unit = "century";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_148)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "min";
+    units.want_unit = "century";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_149)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "hour";
+    units.want_unit = "century";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_150)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "day";
+    units.want_unit = "century";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_151)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "week";
+    units.want_unit = "century";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_152)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "month";
+    units.want_unit = "century";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_153)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "year";
+    units.want_unit = "century";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_154)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "decade";
+    units.want_unit = "century";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_155)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "century";
+    units.want_unit = "century";
 
     ListNode* list;
     list = data_file_parser();
