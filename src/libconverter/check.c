@@ -68,14 +68,17 @@ bool is_digit(char* string)
     int i = 0;
     int count = 0;
     int point_count = 0;
+    int plus_count = 0;
     for (; string[i]; ++i) {
         if (isdigit(string[i]) != 0) {
             ++count;
         } else if (string[i] == '.') {
             ++point_count;
+        } else if (string[i] == '+') {
+            ++plus_count;
         }
     }
-    if ((i == count + point_count) && (point_count <= 1)) {
+    if ((i == count + point_count + plus_count) && (point_count <= 1) && (plus_count <= 1) && (count != 0)) {
         return true;
     }
     return false;
