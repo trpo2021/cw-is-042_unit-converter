@@ -4,8 +4,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include <stdio.h>
-
 bool is_appropriate(ListNode* head, DefineUnits* units)
 {
     ListNode* first_node;

@@ -3,7 +3,6 @@
 #include <libconverter/listnode.h>
 
 #define MAX_STRING_LENGTH 128
-#define UNITS_NUM 53
 
 typedef struct {
     char category[MAX_STRING_LENGTH];
