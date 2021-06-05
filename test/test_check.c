@@ -12,7 +12,7 @@ CTEST(is_alpha, correct_string_1)
 
 CTEST(is_alpha, correct_string_2)
 {
-    char* string = "mBps";
+    char* string = "tIMe";
     const bool real = is_alpha(string);
 
     ASSERT_TRUE(real);
@@ -20,7 +20,7 @@ CTEST(is_alpha, correct_string_2)
 
 CTEST(is_alpha, correct_string_3)
 {
-    char* string = "yEAr";
+    char* string = "LEngtH";
     const bool real = is_alpha(string);
 
     ASSERT_TRUE(real);
@@ -28,7 +28,7 @@ CTEST(is_alpha, correct_string_3)
 
 CTEST(is_alpha, correct_string_4)
 {
-    char* string = "MiCrOmEtErs";
+    char* string = "RAte";
     const bool real = is_alpha(string);
 
     ASSERT_TRUE(real);
@@ -36,7 +36,111 @@ CTEST(is_alpha, correct_string_4)
 
 CTEST(is_alpha, correct_string_5)
 {
+    char* string = "dATa-sIZe";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_6)
+{
+    char* string = "Km";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_7)
+{
+    char* string = "m";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_8)
+{
+    char* string = "cM";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_9)
+{
+    char* string = "mM";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_10)
+{
+    char* string = "MiCrOmEtErs";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_11)
+{
     char* string = "Meterss";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_12)
+{
+    char* string = "um";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_13)
+{
+    char* string = "NM";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_14)
+{
+    char* string = "mILE";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_15)
+{
+    char* string = "FT";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_16)
+{
+    char* string = "yARd";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_17)
+{
+    char* string = "inch";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_18)
+{
+    char* string = "nMI";
     const bool real = is_alpha(string);
 
     ASSERT_TRUE(real);
