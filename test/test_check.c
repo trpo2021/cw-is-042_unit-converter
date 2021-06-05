@@ -146,6 +146,102 @@ CTEST(is_alpha, correct_string_18)
     ASSERT_TRUE(real);
 }
 
+CTEST(is_alpha, correct_string_19)
+{
+    char* string = "NS";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_20)
+{
+    char* string = "us";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_21)
+{
+    char* string = "ms";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_22)
+{
+    char* string = "SEC";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_23)
+{
+    char* string = "mIn";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_24)
+{
+    char* string = "hOUr";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_25)
+{
+    char* string = "Day";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_26)
+{
+    char* string = "WeeK";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_27)
+{
+    char* string = "monTH";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_28)
+{
+    char* string = "Year";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_29)
+{
+    char* string = "DecAdE";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_alpha, correct_string_30)
+{
+    char* string = "Century";
+    const bool real = is_alpha(string);
+
+    ASSERT_TRUE(real);
+}
+
 CTEST(is_alpha, incorrect_string_1)
 {
     char* string = "Dat.A-rA2tE";
