@@ -16,14 +16,6 @@ bool is_appropriate(ListNode* head, DefineUnits* units)
     return false;
 }
 
-bool is_positive(double value)
-{
-    if (value < 0) {
-        return false;
-    }
-    return true;
-}
-
 bool is_alpha(char* string)
 {
     int tmp = strlen(string);
