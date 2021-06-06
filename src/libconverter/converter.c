@@ -28,10 +28,6 @@ static double get_factor(ListNode* list, DefineUnits* units)
         return -1;
     }
     factor = first_node->factor / second_node->factor;
-
-    freelist(first_node);
-    freelist(second_node);
-
     return factor;
 }
 
