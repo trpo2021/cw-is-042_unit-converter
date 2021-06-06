@@ -15,6 +15,7 @@ int main(int argc, char* argv[])
             || strcmp(argv[1], "--syntax") == 0)) {
         call_help(argv[1]);
         return 0;
+    }
     if (argc == 4 && is_alpha(argv[1]) && is_alpha(argv[2])
             && is_alpha(argv[3])) {
         init_units_struct(&units, argc, argv);
