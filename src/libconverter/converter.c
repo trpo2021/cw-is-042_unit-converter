@@ -110,12 +110,12 @@ int convert_units(DefineUnits* units)
     if (list == NULL) {
         return 1;
     }
-    /*
     if (is_appropriate(list, units) == 0) {
         // free(list);
         return -1;
     }
     double factor = get_factor(list, units);
+    /*
     if (is_positive(factor) == 0) {
         // free(list);
         return -1;
