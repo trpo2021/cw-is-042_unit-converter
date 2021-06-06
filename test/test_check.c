@@ -5487,3 +5487,1653 @@ CTEST(is_appropriate, correct_rate_units_25)
     const bool real = is_appropriate(list, &units);
     ASSERT_TRUE(real);
 }
+
+CTEST(is_appropriate, correct_data_size_units_1)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "bit";
+    units.want_unit = "bit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_2)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "kbit";
+    units.want_unit = "bit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_3)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "mbit";
+    units.want_unit = "bit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_4)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "gbit";
+    units.want_unit = "bit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_5)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "tbit";
+    units.want_unit = "bit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_6)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "pbit";
+    units.want_unit = "bit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_7)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "b";
+    units.want_unit = "bit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_8)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "mb";
+    units.want_unit = "bit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_9)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "gb";
+    units.want_unit = "bit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_10)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "tb";
+    units.want_unit = "bit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_11)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "pb";
+    units.want_unit = "bit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_12)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "bit";
+    units.want_unit = "mbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_13)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "kbit";
+    units.want_unit = "mbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_14)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "mbit";
+    units.want_unit = "mbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_15)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "gbit";
+    units.want_unit = "mbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_16)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "tbit";
+    units.want_unit = "mbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_17)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "pbit";
+    units.want_unit = "mbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_18)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "b";
+    units.want_unit = "mbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_19)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "mb";
+    units.want_unit = "mbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_20)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "gb";
+    units.want_unit = "mbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_21)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "tb";
+    units.want_unit = "mbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_22)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "pb";
+    units.want_unit = "mbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_23)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "bit";
+    units.want_unit = "gbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_24)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "kbit";
+    units.want_unit = "gbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_25)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "mbit";
+    units.want_unit = "gbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_26)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "gbit";
+    units.want_unit = "gbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_27)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "tbit";
+    units.want_unit = "gbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_28)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "pbit";
+    units.want_unit = "gbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_29)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "b";
+    units.want_unit = "gbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_30)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "mb";
+    units.want_unit = "gbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_31)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "gb";
+    units.want_unit = "gbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_32)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "tb";
+    units.want_unit = "gbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_33)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "pb";
+    units.want_unit = "gbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_34)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "bit";
+    units.want_unit = "tbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_35)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "kbit";
+    units.want_unit = "tbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_36)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "mbit";
+    units.want_unit = "tbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_37)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "gbit";
+    units.want_unit = "tbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_38)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "tbit";
+    units.want_unit = "tbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_39)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "pbit";
+    units.want_unit = "tbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_40)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "b";
+    units.want_unit = "tbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_41)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "mb";
+    units.want_unit = "tbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_42)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "gb";
+    units.want_unit = "tbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_43)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "tb";
+    units.want_unit = "tbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_44)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "pb";
+    units.want_unit = "tbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_45)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "bit";
+    units.want_unit = "pbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_46)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "kbit";
+    units.want_unit = "pbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_47)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "mbit";
+    units.want_unit = "pbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_48)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "gbit";
+    units.want_unit = "pbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_49)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "tbit";
+    units.want_unit = "pbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_50)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "pbit";
+    units.want_unit = "pbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_51)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "b";
+    units.want_unit = "pbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_52)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "mb";
+    units.want_unit = "pbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_53)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "gb";
+    units.want_unit = "pbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_54)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "tb";
+    units.want_unit = "pbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_55)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "pb";
+    units.want_unit = "pbit";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_56)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "bit";
+    units.want_unit = "b";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_57)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "kbit";
+    units.want_unit = "b";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_58)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "mbit";
+    units.want_unit = "b";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_59)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "gbit";
+    units.want_unit = "b";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_60)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "tbit";
+    units.want_unit = "b";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_61)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "pbit";
+    units.want_unit = "b";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_62)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "b";
+    units.want_unit = "b";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_63)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "mb";
+    units.want_unit = "b";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_64)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "gb";
+    units.want_unit = "b";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_65)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "tb";
+    units.want_unit = "b";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_66)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "pb";
+    units.want_unit = "b";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_67)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "bit";
+    units.want_unit = "mb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_68)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "kbit";
+    units.want_unit = "mb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_69)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "mbit";
+    units.want_unit = "mb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_70)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "gbit";
+    units.want_unit = "mb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_71)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "tbit";
+    units.want_unit = "mb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_72)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "pbit";
+    units.want_unit = "mb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_73)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "b";
+    units.want_unit = "mb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_74)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "mb";
+    units.want_unit = "mb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_75)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "gb";
+    units.want_unit = "mb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_76)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "tb";
+    units.want_unit = "mb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_77)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "pb";
+    units.want_unit = "mb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_78)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "bit";
+    units.want_unit = "gb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_79)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "kbit";
+    units.want_unit = "gb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_80)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "mbit";
+    units.want_unit = "gb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_81)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "gbit";
+    units.want_unit = "gb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_82)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "tbit";
+    units.want_unit = "gb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_83)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "pbit";
+    units.want_unit = "gb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_84)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "b";
+    units.want_unit = "gb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_85)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "mb";
+    units.want_unit = "gb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_86)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "gb";
+    units.want_unit = "gb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_87)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "tb";
+    units.want_unit = "gb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_88)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "pb";
+    units.want_unit = "gb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_89)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "bit";
+    units.want_unit = "tb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_90)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "kbit";
+    units.want_unit = "tb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_91)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "mbit";
+    units.want_unit = "tb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_92)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "gbit";
+    units.want_unit = "tb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_93)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "tbit";
+    units.want_unit = "tb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_94)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "pbit";
+    units.want_unit = "tb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_95)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "b";
+    units.want_unit = "tb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_96)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "mb";
+    units.want_unit = "tb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_97)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "gb";
+    units.want_unit = "tb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_98)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "tb";
+    units.want_unit = "tb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_99)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "pb";
+    units.want_unit = "tb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_100)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "bit";
+    units.want_unit = "pb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_101)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "kbit";
+    units.want_unit = "pb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_102)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "mbit";
+    units.want_unit = "pb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_103)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "gbit";
+    units.want_unit = "pb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_104)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "tbit";
+    units.want_unit = "pb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_105)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "pbit";
+    units.want_unit = "pb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_106)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "b";
+    units.want_unit = "pb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_107)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "mb";
+    units.want_unit = "pb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_108)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "gb";
+    units.want_unit = "pb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_109)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "tb";
+    units.want_unit = "pb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_data_size_units_110)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "pb";
+    units.want_unit = "pb";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
