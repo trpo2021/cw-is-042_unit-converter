@@ -116,7 +116,7 @@ int convert_units(DefineUnits* units)
         // free(list);
         return -1;
     }
-    /*
+
     double factor = get_factor(list, units);
     if (is_positive(factor) == 0) {
         // free(list);
@@ -124,6 +124,6 @@ int convert_units(DefineUnits* units)
     }
     units->want_value = units->have_value * factor;
     // free(list);
-    */
+
     return 0;
 }

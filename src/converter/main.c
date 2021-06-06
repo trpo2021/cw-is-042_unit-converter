@@ -10,11 +10,14 @@
 
 int main(int argc, char* argv[])
 {
+    /*
     DefineUnits* units = malloc(sizeof(DefineUnits*));
     if (units == NULL) {
         output_error(ErrorTypeMemory);
         return -1;
     }
+    */
+    DefineUnits units;
     if (argc == 2
         && (strcmp(argv[1], "--help") == 0
             || strcmp(argv[1], "--syntax") == 0)) {
@@ -22,17 +25,19 @@ int main(int argc, char* argv[])
     } else if (
             argc == 4 && is_alpha(argv[1]) && is_alpha(argv[2])
             && is_alpha(argv[3])) {
-        units = init_units_struct(units, argc, argv);
+        // units = init_units_struct(units, argc, argv);
+        init_units_struct(&units, argc, argv);
     } else if (
             argc == 5 && is_alpha(argv[1]) && is_digit(argv[2])
             && is_alpha(argv[3]) && is_alpha(argv[4])) {
         int length_status = check_number_length(argv[2]);
         if (length_status == -1) {
             output_error(ErrorTypeLargeValue);
-            free(units);
+            // free(units);
             return -1;
         }
-        units = init_units_struct(units, argc, argv);
+        // units = init_units_struct(units, argc, argv);
+        init_units_struct(&units, argc, argv);
     } else if (
             argc == 5 && strcmp(argv[1], "--path") == 0
             && strcmp(argv[3], "--path") == 0) {
@@ -40,15 +45,15 @@ int main(int argc, char* argv[])
         // file_reader(units, argv[2], argv[4]);
     } else {
         output_error(ErrorTypeArgument);
-        free(units);
+        // free(units);
         return -1;
     }
-    int convert_status = convert_units(units);
+    int convert_status = convert_units(&units);
     if (convert_status == 0) {
-        output_data(units);
+        output_data(&units);
     } else {
         output_error(convert_status);
     }
-    free(units);
+    // free(units);
     return 0;
 }
