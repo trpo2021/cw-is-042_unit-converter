@@ -116,7 +116,7 @@ int convert_units(DefineUnits* units)
     }
 
     double factor = get_factor(list, units);
-    if (is_positive(factor) == 0) {
+    if (factor < 0) {
         // free(list);
         return -1;
     }
