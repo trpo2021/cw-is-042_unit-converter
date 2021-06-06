@@ -16,7 +16,6 @@ static char* to_lower_string(char* string)
     return string;
 }
 
-/*
 static double get_factor(ListNode* list, DefineUnits* units)
 {
     ListNode* first_node;
@@ -35,7 +34,6 @@ static double get_factor(ListNode* list, DefineUnits* units)
 
     return factor;
 }
-*/
 
 ListNode* data_file_parser()
 {
