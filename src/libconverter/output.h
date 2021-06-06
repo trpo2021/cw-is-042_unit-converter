@@ -5,7 +5,8 @@
 typedef enum {
     ErrorTypeSyntax = -1,
     ErrorTypeMemory = -2,
-    ErrorTypeArgument = -3
+    ErrorTypeArgument = -3,
+    ErrorTypeLargeValue = -4
 } ErrorType;
 
 void output_data(DefineUnits* units);

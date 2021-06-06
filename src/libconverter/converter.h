@@ -1,11 +1,8 @@
 #pragma once
 
 #include <libconverter/listnode.h>
-#include <stdbool.h>
-#include <stdio.h>
 
 #define MAX_STRING_LENGTH 128
-#define UNITS_NUM 53
 
 typedef struct {
     char category[MAX_STRING_LENGTH];
@@ -21,6 +18,6 @@ typedef struct {
     char* want_unit; // Единица, в которую хотим перевести значение
 } DefineUnits;
 
+ListNode* data_file_parser();
 DefineUnits* init_units_struct(DefineUnits* units, int argc, char* argv[]);
 int convert_units(DefineUnits* units);
-bool is_appropriate(ListNode* head, DefineUnits* units);

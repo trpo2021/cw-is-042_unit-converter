@@ -1,7 +1,8 @@
+#include <libconverter/check.h>
 #include <libconverter/converter.h>
-#include <libconverter/output.h>
 
 #include <ctype.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -9,14 +10,10 @@ const char* units_data_file_path = "units/units.csv";
 
 static char* to_lower_string(char* string)
 {
-    size_t len = strlen(string);
-    char* tmp = malloc(len * sizeof(char));
-    tmp = strcpy(tmp, string);
-    for (int i = 0; tmp[i]; ++i) {
-        tmp[i] = tolower(tmp[i]);
+    for (int i = 0; string[i]; ++i) {
+        string[i] = tolower(string[i]);
     }
-
-    return tmp;
+    return string;
 }
 
 static double get_factor(ListNode* list, DefineUnits* units)
@@ -31,14 +28,10 @@ static double get_factor(ListNode* list, DefineUnits* units)
         return -1;
     }
     factor = first_node->factor / second_node->factor;
-
-    freelist(first_node);
-    freelist(second_node);
-
     return factor;
 }
 
-static ListNode* data_file_parser()
+ListNode* data_file_parser()
 {
     FILE* data_file = fopen(units_data_file_path, "rt");
     if (data_file == NULL) {
@@ -93,15 +86,15 @@ static ListNode* data_file_parser()
 
 DefineUnits* init_units_struct(DefineUnits* units, int argc, char* argv[])
 {
-    units->category = argv[1];
+    units->category = to_lower_string(argv[1]);
     if (argc == 5) {
         units->have_value = atof(argv[2]);
-        units->have_unit = argv[3];
-        units->want_unit = argv[4];
+        units->have_unit = to_lower_string(argv[3]);
+        units->want_unit = to_lower_string(argv[4]);
     } else {
         units->have_value = 1;
-        units->have_unit = argv[2];
-        units->want_unit = argv[3];
+        units->have_unit = to_lower_string(argv[2]);
+        units->want_unit = to_lower_string(argv[3]);
     }
     return units;
 }
@@ -118,25 +111,11 @@ int convert_units(DefineUnits* units)
         return -1;
     }
     double factor = get_factor(list, units);
+    if (factor < 0) {
+        free(list);
+        return -1;
+    }
     units->want_value = units->have_value * factor;
     free(list);
     return 0;
-}
-
-bool is_appropriate(ListNode* head, DefineUnits* units)
-{
-    ListNode* first_node;
-    ListNode* second_node;
-    first_node = list_lookup(
-            head,
-            to_lower_string(units->category),
-            to_lower_string(units->have_unit));
-    second_node = list_lookup(
-            head,
-            to_lower_string(units->category),
-            to_lower_string(units->want_unit));
-    if ((first_node != NULL) && (second_node != NULL)) {
-        return true;
-    }
-    return false;
 }
