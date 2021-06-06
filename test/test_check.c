@@ -9674,3 +9674,153 @@ CTEST(is_appropriate, correct_data_rate_units_169)
     const bool real = is_appropriate(list, &units);
     ASSERT_TRUE(real);
 }
+
+CTEST(is_appropriate, incorrect_input_units_1)
+{
+    DefineUnits units;
+    units.category = "data-rate";
+    units.have_unit = "mps";
+    units.want_unit = "tbbitps";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_appropriate, incorrect_input_units_2)
+{
+    DefineUnits units;
+    units.category = "d4ta-r4te";
+    units.have_unit = "mbbitps";
+    units.want_unit = "tbbitps";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_appropriate, incorrect_input_units_3)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "mps";
+    units.want_unit = "tbbitps";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_appropriate, incorrect_input_units_4)
+{
+    DefineUnits units;
+    units.category = "data-rate";
+    units.have_unit = "mps";
+    units.want_unit = "decade";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_appropriate, incorrect_input_units_5)
+{
+    DefineUnits units;
+    units.category = "tesla-model-S";
+    units.have_unit = "tesla-model-E";
+    units.want_unit = "tesla-model-X";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_appropriate, incorrect_input_units_6)
+{
+    DefineUnits units;
+    units.category = "rate";
+    units.have_unit = "m";
+    units.want_unit = "mph";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_appropriate, incorrect_input_units_7)
+{
+    DefineUnits units;
+    units.category = "I";
+    units.have_unit = "am";
+    units.want_unit = "Batman";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_appropriate, incorrect_input_units_8)
+{
+    DefineUnits units;
+    units.category = "data-rate";
+    units.have_unit = "mph";
+    units.want_unit = "ft";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_appropriate, incorrect_input_units_9)
+{
+    DefineUnits units;
+    units.category = "data-rate";
+    units.have_unit = "1";
+    units.want_unit = "10";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_appropriate, incorrect_input_units_10)
+{
+    DefineUnits units;
+    units.category = "Never-gonna-give-you-up";
+    units.have_unit = "Never-gonna-let-you-down";
+    units.want_unit = "Never-gonna-turn-around";
+                        //and hurt you
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_FALSE(real);
+}
