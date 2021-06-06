@@ -44,49 +44,6 @@ ListNode* list_lookup(ListNode* list, char* category, char* unit)
     return NULL;
 }
 
-ListNode* list_lookup_by_key(ListNode* head, int key)
-{
-    if (key <= 0) {
-        return head;
-    }
-    ListNode* p1 = head;
-    ListNode* p2 = head;
-
-    for (int i = 0; i < key - 1; ++i) {
-        if (p2 == NULL) {
-            return NULL;
-        }
-        p2 = p2->next;
-    }
-    if (p2 == NULL) {
-        return NULL;
-    }
-    while (p2->next != NULL) {
-        p1 = p1->next;
-        p2 = p2->next;
-    }
-    return p1;
-}
-
-ListNode* list_delete(ListNode* list, char* category, char* unit)
-{
-    ListNode* p;
-    ListNode* prev = NULL;
-    for (p = list; p != NULL; p = p->next) {
-        if (strcmp(p->category, category) == 0 && strcmp(p->unit, unit) == 0) {
-            if (prev == NULL) {
-                list = p->next;
-            } else {
-                prev->next = p->next;
-            }
-            free(p);
-            return list;
-        }
-        prev = p;
-    }
-    return NULL;
-}
-
 void freelist(ListNode* head)
 {
     ListNode* tmp;
