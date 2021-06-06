@@ -3299,3 +3299,1818 @@ CTEST(is_appropriate, correct_time_units_156)
     const bool real = is_appropriate(list, &units);
     ASSERT_TRUE(real);
 }
+
+CTEST(is_appropriate, correct_length_units_1)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "km";
+    units.want_unit = "km";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_2)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "m";
+    units.want_unit = "km";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_3)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "cm";
+    units.want_unit = "km";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_4)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "mm";
+    units.want_unit = "km";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_5)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "um";
+    units.want_unit = "km";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_6)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "nm";
+    units.want_unit = "km";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_7)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "mile";
+    units.want_unit = "km";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_8)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "ft";
+    units.want_unit = "km";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_9)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "yard";
+    units.want_unit = "km";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_10)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "inch";
+    units.want_unit = "km";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_11)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "nmi";
+    units.want_unit = "km";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_12)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "km";
+    units.want_unit = "m";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_13)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "m";
+    units.want_unit = "m";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_14)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "cm";
+    units.want_unit = "m";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_15)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "mm";
+    units.want_unit = "m";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_16)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "um";
+    units.want_unit = "m";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_17)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "nm";
+    units.want_unit = "m";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_18)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "mile";
+    units.want_unit = "m";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_19)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "ft";
+    units.want_unit = "m";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_20)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "yard";
+    units.want_unit = "m";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_21)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "inch";
+    units.want_unit = "m";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_22)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "nmi";
+    units.want_unit = "m";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_23)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "km";
+    units.want_unit = "cm";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_24)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "m";
+    units.want_unit = "cm";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_25)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "cm";
+    units.want_unit = "cm";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_26)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "mm";
+    units.want_unit = "cm";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_27)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "um";
+    units.want_unit = "cm";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_28)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "nm";
+    units.want_unit = "cm";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_29)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "mile";
+    units.want_unit = "cm";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_30)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "ft";
+    units.want_unit = "cm";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_31)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "yard";
+    units.want_unit = "cm";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_32)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "inch";
+    units.want_unit = "cm";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_33)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "nmi";
+    units.want_unit = "cm";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_34)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "km";
+    units.want_unit = "mm";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_35)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "m";
+    units.want_unit = "mm";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_36)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "cm";
+    units.want_unit = "mm";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_37)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "mm";
+    units.want_unit = "mm";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_38)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "um";
+    units.want_unit = "mm";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_39)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "nm";
+    units.want_unit = "mm";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_40)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "mile";
+    units.want_unit = "mm";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_41)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "ft";
+    units.want_unit = "mm";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_42)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "yard";
+    units.want_unit = "mm";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_43)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "inch";
+    units.want_unit = "mm";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_44)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "nmi";
+    units.want_unit = "mm";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_45)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "km";
+    units.want_unit = "um";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_46)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "m";
+    units.want_unit = "um";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_47)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "cm";
+    units.want_unit = "um";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_48)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "mm";
+    units.want_unit = "um";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_49)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "um";
+    units.want_unit = "um";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_50)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "nm";
+    units.want_unit = "um";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_51)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "mile";
+    units.want_unit = "um";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_52)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "ft";
+    units.want_unit = "um";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_53)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "yard";
+    units.want_unit = "um";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_54)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "inch";
+    units.want_unit = "um";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_55)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "nmi";
+    units.want_unit = "um";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_56)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "km";
+    units.want_unit = "nm";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_57)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "m";
+    units.want_unit = "nm";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_58)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "cm";
+    units.want_unit = "nm";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_59)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "mm";
+    units.want_unit = "nm";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_60)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "um";
+    units.want_unit = "nm";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_61)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "nm";
+    units.want_unit = "nm";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_62)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "mile";
+    units.want_unit = "nm";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_63)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "ft";
+    units.want_unit = "nm";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_64)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "yard";
+    units.want_unit = "nm";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_65)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "inch";
+    units.want_unit = "nm";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_66)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "nmi";
+    units.want_unit = "nm";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_67)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "km";
+    units.want_unit = "mile";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_68)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "m";
+    units.want_unit = "mile";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_69)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "cm";
+    units.want_unit = "mile";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_70)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "mm";
+    units.want_unit = "mile";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_71)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "um";
+    units.want_unit = "mile";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_72)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "nm";
+    units.want_unit = "mile";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_73)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "mile";
+    units.want_unit = "mile";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_74)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "ft";
+    units.want_unit = "mile";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_75)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "yard";
+    units.want_unit = "mile";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_76)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "inch";
+    units.want_unit = "mile";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_77)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "nmi";
+    units.want_unit = "mile";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_78)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "km";
+    units.want_unit = "ft";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_79)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "m";
+    units.want_unit = "ft";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_80)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "cm";
+    units.want_unit = "ft";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_81)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "mm";
+    units.want_unit = "ft";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_82)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "um";
+    units.want_unit = "ft";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_83)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "nm";
+    units.want_unit = "ft";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_84)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "mile";
+    units.want_unit = "ft";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_85)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "ft";
+    units.want_unit = "ft";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_86)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "yard";
+    units.want_unit = "ft";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_87)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "inch";
+    units.want_unit = "ft";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_88)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "nmi";
+    units.want_unit = "ft";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_89)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "km";
+    units.want_unit = "yard";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_90)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "m";
+    units.want_unit = "yard";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_91)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "cm";
+    units.want_unit = "yard";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_92)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "mm";
+    units.want_unit = "yard";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_93)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "um";
+    units.want_unit = "yard";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_94)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "nm";
+    units.want_unit = "yard";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_95)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "mile";
+    units.want_unit = "yard";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_96)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "ft";
+    units.want_unit = "yard";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_97)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "yard";
+    units.want_unit = "yard";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_98)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "inch";
+    units.want_unit = "yard";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_99)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "nmi";
+    units.want_unit = "yard";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_100)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "km";
+    units.want_unit = "inch";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_101)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "m";
+    units.want_unit = "inch";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_102)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "cm";
+    units.want_unit = "inch";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_103)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "mm";
+    units.want_unit = "inch";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_104)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "um";
+    units.want_unit = "inch";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_105)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "nm";
+    units.want_unit = "inch";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_106)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "mile";
+    units.want_unit = "inch";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_107)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "ft";
+    units.want_unit = "inch";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_108)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "yard";
+    units.want_unit = "inch";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_109)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "inch";
+    units.want_unit = "inch";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_110)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "nmi";
+    units.want_unit = "inch";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_111)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "km";
+    units.want_unit = "nmi";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_112)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "m";
+    units.want_unit = "nmi";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_113)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "cm";
+    units.want_unit = "nmi";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_114)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "mm";
+    units.want_unit = "nmi";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_115)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "um";
+    units.want_unit = "nmi";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_116)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "nm";
+    units.want_unit = "nmi";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_117)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "mile";
+    units.want_unit = "nmi";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_118)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "ft";
+    units.want_unit = "nmi";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_119)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "yard";
+    units.want_unit = "nmi";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_120)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "inch";
+    units.want_unit = "nmi";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_length_units_121)
+{
+    DefineUnits units;
+    units.category = "length";
+    units.have_unit = "nmi";
+    units.want_unit = "nmi";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
