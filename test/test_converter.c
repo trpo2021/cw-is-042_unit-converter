@@ -211,7 +211,7 @@ CTEST(convert_units, unsuccessful_conversion_9)
 }
 
 CTEST(data_file_parser, successful_parcing)
-{   
+{
     const ListNode* real = data_file_parser();
     ASSERT_NOT_NULL(real);
 }
