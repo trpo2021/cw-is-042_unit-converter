@@ -2292,7 +2292,7 @@ CTEST(is_appropriate, correct_time_units_85)
     DefineUnits units;
     units.category = "time";
     units.have_unit = "ns";
-    units.want_unit = "day";;
+    units.want_unit = "day";
 
     ListNode* list;
     list = data_file_parser();
@@ -2307,7 +2307,7 @@ CTEST(is_appropriate, correct_time_units_86)
     DefineUnits units;
     units.category = "time";
     units.have_unit = "us";
-    units.want_unit = "day";;
+    units.want_unit = "day";
 
     ListNode* list;
     list = data_file_parser();
@@ -2322,7 +2322,7 @@ CTEST(is_appropriate, correct_time_units_87)
     DefineUnits units;
     units.category = "time";
     units.have_unit = "ms";
-    units.want_unit = "day";;
+    units.want_unit = "day";
 
     ListNode* list;
     list = data_file_parser();
@@ -2337,7 +2337,7 @@ CTEST(is_appropriate, correct_time_units_88)
     DefineUnits units;
     units.category = "time";
     units.have_unit = "sec";
-    units.want_unit = "day";;
+    units.want_unit = "day";
 
     ListNode* list;
     list = data_file_parser();
@@ -2352,7 +2352,7 @@ CTEST(is_appropriate, correct_time_units_89)
     DefineUnits units;
     units.category = "time";
     units.have_unit = "min";
-    units.want_unit = "day";;
+    units.want_unit = "day";
 
     ListNode* list;
     list = data_file_parser();
@@ -2367,7 +2367,7 @@ CTEST(is_appropriate, correct_time_units_90)
     DefineUnits units;
     units.category = "time";
     units.have_unit = "hour";
-    units.want_unit = "day";;
+    units.want_unit = "day";
 
     ListNode* list;
     list = data_file_parser();
@@ -2382,7 +2382,7 @@ CTEST(is_appropriate, correct_time_units_91)
     DefineUnits units;
     units.category = "time";
     units.have_unit = "day";
-    units.want_unit = "day";;
+    units.want_unit = "day";
 
     ListNode* list;
     list = data_file_parser();
@@ -2397,7 +2397,7 @@ CTEST(is_appropriate, correct_time_units_92)
     DefineUnits units;
     units.category = "time";
     units.have_unit = "week";
-    units.want_unit = "day";;
+    units.want_unit = "day";
 
     ListNode* list;
     list = data_file_parser();
@@ -2412,7 +2412,7 @@ CTEST(is_appropriate, correct_time_units_93)
     DefineUnits units;
     units.category = "time";
     units.have_unit = "month";
-    units.want_unit = "day";;
+    units.want_unit = "day";
 
     ListNode* list;
     list = data_file_parser();
@@ -2427,7 +2427,7 @@ CTEST(is_appropriate, correct_time_units_94)
     DefineUnits units;
     units.category = "time";
     units.have_unit = "year";
-    units.want_unit = "day";;
+    units.want_unit = "day";
 
     ListNode* list;
     list = data_file_parser();
@@ -2442,7 +2442,7 @@ CTEST(is_appropriate, correct_time_units_95)
     DefineUnits units;
     units.category = "time";
     units.have_unit = "decade";
-    units.want_unit = "day";;
+    units.want_unit = "day";
 
     ListNode* list;
     list = data_file_parser();
@@ -2457,7 +2457,7 @@ CTEST(is_appropriate, correct_time_units_96)
     DefineUnits units;
     units.category = "time";
     units.have_unit = "century";
-    units.want_unit = "day";;
+    units.want_unit = "day";
 
     ListNode* list;
     list = data_file_parser();
@@ -2647,26 +2647,11 @@ CTEST(is_appropriate, correct_time_units_108)
     ASSERT_TRUE(real);
 }
 
-CTEST(is_appropriate, correct_time_units_108)
-{
-    DefineUnits units;
-    units.category = "time";
-    units.have_unit = "ns";
-    units.want_unit = "month";;
-
-    ListNode* list;
-    list = data_file_parser();
-    ASSERT_NOT_NULL(list);
-
-    const bool real = is_appropriate(list, &units);
-    ASSERT_TRUE(real);
-}
-
 CTEST(is_appropriate, correct_time_units_109)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "us";
+    units.have_unit = "ns";
     units.want_unit = "month";;
 
     ListNode* list;
@@ -2681,7 +2666,7 @@ CTEST(is_appropriate, correct_time_units_110)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "ms";
+    units.have_unit = "us";
     units.want_unit = "month";;
 
     ListNode* list;
@@ -2696,7 +2681,7 @@ CTEST(is_appropriate, correct_time_units_111)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "sec";
+    units.have_unit = "ms";
     units.want_unit = "month";;
 
     ListNode* list;
@@ -2711,7 +2696,7 @@ CTEST(is_appropriate, correct_time_units_112)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "min";
+    units.have_unit = "sec";
     units.want_unit = "month";;
 
     ListNode* list;
@@ -2726,7 +2711,7 @@ CTEST(is_appropriate, correct_time_units_113)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "hour";
+    units.have_unit = "min";
     units.want_unit = "month";;
 
     ListNode* list;
@@ -2741,7 +2726,7 @@ CTEST(is_appropriate, correct_time_units_114)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "day";
+    units.have_unit = "hour";
     units.want_unit = "month";;
 
     ListNode* list;
@@ -2756,7 +2741,7 @@ CTEST(is_appropriate, correct_time_units_115)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "week";
+    units.have_unit = "day";
     units.want_unit = "month";;
 
     ListNode* list;
@@ -2771,7 +2756,7 @@ CTEST(is_appropriate, correct_time_units_116)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "month";
+    units.have_unit = "week";
     units.want_unit = "month";;
 
     ListNode* list;
@@ -2786,7 +2771,7 @@ CTEST(is_appropriate, correct_time_units_117)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "year";
+    units.have_unit = "month";
     units.want_unit = "month";;
 
     ListNode* list;
@@ -2801,7 +2786,7 @@ CTEST(is_appropriate, correct_time_units_118)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "decade";
+    units.have_unit = "year";
     units.want_unit = "month";;
 
     ListNode* list;
@@ -2816,7 +2801,7 @@ CTEST(is_appropriate, correct_time_units_119)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "century";
+    units.have_unit = "decade";
     units.want_unit = "month";;
 
     ListNode* list;
@@ -2831,8 +2816,8 @@ CTEST(is_appropriate, correct_time_units_120)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "ns";
-    units.want_unit = "year";
+    units.have_unit = "century";
+    units.want_unit = "month";;
 
     ListNode* list;
     list = data_file_parser();
@@ -2846,7 +2831,7 @@ CTEST(is_appropriate, correct_time_units_121)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "us";
+    units.have_unit = "ns";
     units.want_unit = "year";
 
     ListNode* list;
@@ -2861,7 +2846,7 @@ CTEST(is_appropriate, correct_time_units_122)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "ms";
+    units.have_unit = "us";
     units.want_unit = "year";
 
     ListNode* list;
@@ -2876,7 +2861,7 @@ CTEST(is_appropriate, correct_time_units_123)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "sec";
+    units.have_unit = "ms";
     units.want_unit = "year";
 
     ListNode* list;
@@ -2891,7 +2876,7 @@ CTEST(is_appropriate, correct_time_units_124)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "min";
+    units.have_unit = "sec";
     units.want_unit = "year";
 
     ListNode* list;
@@ -2906,7 +2891,7 @@ CTEST(is_appropriate, correct_time_units_125)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "hour";
+    units.have_unit = "min";
     units.want_unit = "year";
 
     ListNode* list;
@@ -2921,7 +2906,7 @@ CTEST(is_appropriate, correct_time_units_126)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "day";
+    units.have_unit = "hour";
     units.want_unit = "year";
 
     ListNode* list;
@@ -2936,7 +2921,7 @@ CTEST(is_appropriate, correct_time_units_127)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "week";
+    units.have_unit = "day";
     units.want_unit = "year";
 
     ListNode* list;
@@ -2951,7 +2936,7 @@ CTEST(is_appropriate, correct_time_units_128)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "month";
+    units.have_unit = "week";
     units.want_unit = "year";
 
     ListNode* list;
@@ -2966,7 +2951,7 @@ CTEST(is_appropriate, correct_time_units_129)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "year";
+    units.have_unit = "month";
     units.want_unit = "year";
 
     ListNode* list;
@@ -2981,7 +2966,7 @@ CTEST(is_appropriate, correct_time_units_130)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "decade";
+    units.have_unit = "year";
     units.want_unit = "year";
 
     ListNode* list;
@@ -2996,7 +2981,7 @@ CTEST(is_appropriate, correct_time_units_131)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "century";
+    units.have_unit = "decade";
     units.want_unit = "year";
 
     ListNode* list;
@@ -3011,8 +2996,8 @@ CTEST(is_appropriate, correct_time_units_132)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "ns";
-    units.want_unit = "decade";
+    units.have_unit = "century";
+    units.want_unit = "year";
 
     ListNode* list;
     list = data_file_parser();
@@ -3026,7 +3011,7 @@ CTEST(is_appropriate, correct_time_units_133)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "us";
+    units.have_unit = "ns";
     units.want_unit = "decade";
 
     ListNode* list;
@@ -3041,7 +3026,7 @@ CTEST(is_appropriate, correct_time_units_134)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "ms";
+    units.have_unit = "us";
     units.want_unit = "decade";
 
     ListNode* list;
@@ -3056,7 +3041,7 @@ CTEST(is_appropriate, correct_time_units_135)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "sec";
+    units.have_unit = "ms";
     units.want_unit = "decade";
 
     ListNode* list;
@@ -3071,7 +3056,7 @@ CTEST(is_appropriate, correct_time_units_136)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "min";
+    units.have_unit = "sec";
     units.want_unit = "decade";
 
     ListNode* list;
@@ -3086,7 +3071,7 @@ CTEST(is_appropriate, correct_time_units_137)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "hour";
+    units.have_unit = "min";
     units.want_unit = "decade";
 
     ListNode* list;
@@ -3101,7 +3086,7 @@ CTEST(is_appropriate, correct_time_units_138)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "day";
+    units.have_unit = "hour";
     units.want_unit = "decade";
 
     ListNode* list;
@@ -3116,7 +3101,7 @@ CTEST(is_appropriate, correct_time_units_139)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "week";
+    units.have_unit = "day";
     units.want_unit = "decade";
 
     ListNode* list;
@@ -3131,7 +3116,7 @@ CTEST(is_appropriate, correct_time_units_140)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "month";
+    units.have_unit = "week";
     units.want_unit = "decade";
 
     ListNode* list;
@@ -3146,7 +3131,7 @@ CTEST(is_appropriate, correct_time_units_141)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "year";
+    units.have_unit = "month";
     units.want_unit = "decade";
 
     ListNode* list;
@@ -3161,7 +3146,7 @@ CTEST(is_appropriate, correct_time_units_142)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "decade";
+    units.have_unit = "year";
     units.want_unit = "decade";
 
     ListNode* list;
@@ -3176,7 +3161,7 @@ CTEST(is_appropriate, correct_time_units_143)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "century";
+    units.have_unit = "decade";
     units.want_unit = "decade";
 
     ListNode* list;
@@ -3191,8 +3176,8 @@ CTEST(is_appropriate, correct_time_units_144)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "ns";
-    units.want_unit = "century";
+    units.have_unit = "century";
+    units.want_unit = "decade";
 
     ListNode* list;
     list = data_file_parser();
@@ -3206,7 +3191,7 @@ CTEST(is_appropriate, correct_time_units_145)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "us";
+    units.have_unit = "ns";
     units.want_unit = "century";
 
     ListNode* list;
@@ -3221,7 +3206,7 @@ CTEST(is_appropriate, correct_time_units_146)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "ms";
+    units.have_unit = "us";
     units.want_unit = "century";
 
     ListNode* list;
@@ -3236,7 +3221,7 @@ CTEST(is_appropriate, correct_time_units_147)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "sec";
+    units.have_unit = "ms";
     units.want_unit = "century";
 
     ListNode* list;
@@ -3251,7 +3236,7 @@ CTEST(is_appropriate, correct_time_units_148)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "min";
+    units.have_unit = "sec";
     units.want_unit = "century";
 
     ListNode* list;
@@ -3266,7 +3251,7 @@ CTEST(is_appropriate, correct_time_units_149)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "hour";
+    units.have_unit = "min";
     units.want_unit = "century";
 
     ListNode* list;
@@ -3281,7 +3266,7 @@ CTEST(is_appropriate, correct_time_units_150)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "day";
+    units.have_unit = "hour";
     units.want_unit = "century";
 
     ListNode* list;
@@ -3296,7 +3281,7 @@ CTEST(is_appropriate, correct_time_units_151)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "week";
+    units.have_unit = "day";
     units.want_unit = "century";
 
     ListNode* list;
@@ -3311,7 +3296,7 @@ CTEST(is_appropriate, correct_time_units_152)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "month";
+    units.have_unit = "week";
     units.want_unit = "century";
 
     ListNode* list;
@@ -3326,7 +3311,7 @@ CTEST(is_appropriate, correct_time_units_153)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "year";
+    units.have_unit = "month";
     units.want_unit = "century";
 
     ListNode* list;
@@ -3341,7 +3326,7 @@ CTEST(is_appropriate, correct_time_units_154)
 {
     DefineUnits units;
     units.category = "time";
-    units.have_unit = "decade";
+    units.have_unit = "year";
     units.want_unit = "century";
 
     ListNode* list;
@@ -3353,6 +3338,21 @@ CTEST(is_appropriate, correct_time_units_154)
 }
 
 CTEST(is_appropriate, correct_time_units_155)
+{
+    DefineUnits units;
+    units.category = "time";
+    units.have_unit = "decade";
+    units.want_unit = "century";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_time_units_156)
 {
     DefineUnits units;
     units.category = "time";
