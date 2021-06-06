@@ -107,15 +107,15 @@ int convert_units(DefineUnits* units)
         return 1;
     }
     if (is_appropriate(list, units) == 0) {
-        free(list);
+        freelist(list);
         return -1;
     }
     double factor = get_factor(list, units);
     if (factor < 0) {
-        free(list);
+        freelist(list);
         return -1;
     }
     units->want_value = units->have_value * factor;
-    free(list);
+    freelist(list);
     return 0;
 }
