@@ -2652,7 +2652,7 @@ CTEST(is_appropriate, correct_time_units_109)
     DefineUnits units;
     units.category = "time";
     units.have_unit = "ns";
-    units.want_unit = "month";;
+    units.want_unit = "month";
 
     ListNode* list;
     list = data_file_parser();
@@ -2667,7 +2667,7 @@ CTEST(is_appropriate, correct_time_units_110)
     DefineUnits units;
     units.category = "time";
     units.have_unit = "us";
-    units.want_unit = "month";;
+    units.want_unit = "month";
 
     ListNode* list;
     list = data_file_parser();
@@ -2682,7 +2682,7 @@ CTEST(is_appropriate, correct_time_units_111)
     DefineUnits units;
     units.category = "time";
     units.have_unit = "ms";
-    units.want_unit = "month";;
+    units.want_unit = "month";
 
     ListNode* list;
     list = data_file_parser();
@@ -2697,7 +2697,7 @@ CTEST(is_appropriate, correct_time_units_112)
     DefineUnits units;
     units.category = "time";
     units.have_unit = "sec";
-    units.want_unit = "month";;
+    units.want_unit = "month";
 
     ListNode* list;
     list = data_file_parser();
@@ -2712,7 +2712,7 @@ CTEST(is_appropriate, correct_time_units_113)
     DefineUnits units;
     units.category = "time";
     units.have_unit = "min";
-    units.want_unit = "month";;
+    units.want_unit = "month";
 
     ListNode* list;
     list = data_file_parser();
@@ -2727,7 +2727,7 @@ CTEST(is_appropriate, correct_time_units_114)
     DefineUnits units;
     units.category = "time";
     units.have_unit = "hour";
-    units.want_unit = "month";;
+    units.want_unit = "month";
 
     ListNode* list;
     list = data_file_parser();
@@ -2742,7 +2742,7 @@ CTEST(is_appropriate, correct_time_units_115)
     DefineUnits units;
     units.category = "time";
     units.have_unit = "day";
-    units.want_unit = "month";;
+    units.want_unit = "month";
 
     ListNode* list;
     list = data_file_parser();
@@ -2757,7 +2757,7 @@ CTEST(is_appropriate, correct_time_units_116)
     DefineUnits units;
     units.category = "time";
     units.have_unit = "week";
-    units.want_unit = "month";;
+    units.want_unit = "month";
 
     ListNode* list;
     list = data_file_parser();
@@ -2772,7 +2772,7 @@ CTEST(is_appropriate, correct_time_units_117)
     DefineUnits units;
     units.category = "time";
     units.have_unit = "month";
-    units.want_unit = "month";;
+    units.want_unit = "month";
 
     ListNode* list;
     list = data_file_parser();
@@ -2787,7 +2787,7 @@ CTEST(is_appropriate, correct_time_units_118)
     DefineUnits units;
     units.category = "time";
     units.have_unit = "year";
-    units.want_unit = "month";;
+    units.want_unit = "month";
 
     ListNode* list;
     list = data_file_parser();
@@ -2802,7 +2802,7 @@ CTEST(is_appropriate, correct_time_units_119)
     DefineUnits units;
     units.category = "time";
     units.have_unit = "decade";
-    units.want_unit = "month";;
+    units.want_unit = "month";
 
     ListNode* list;
     list = data_file_parser();
@@ -2817,7 +2817,7 @@ CTEST(is_appropriate, correct_time_units_120)
     DefineUnits units;
     units.category = "time";
     units.have_unit = "century";
-    units.want_unit = "month";;
+    units.want_unit = "month";
 
     ListNode* list;
     list = data_file_parser();
