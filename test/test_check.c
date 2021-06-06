@@ -7340,7 +7340,7 @@ CTEST(is_appropriate, correct_data_rate_units_14)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "bitps";
-    units.have_unit = "kbitps";
+    units.want_unit = "kbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7355,7 +7355,7 @@ CTEST(is_appropriate, correct_data_rate_units_15)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbitps";
-    units.have_unit = "kbitps";
+    units.want_unit  = "kbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7370,7 +7370,7 @@ CTEST(is_appropriate, correct_data_rate_units_16)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbps";
-    units.have_unit = "kbitps";
+    units.want_unit  = "kbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7385,7 +7385,7 @@ CTEST(is_appropriate, correct_data_rate_units_17)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbbitps";
-    units.have_unit = "kbitps";
+    units.want_unit  = "kbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7400,7 +7400,7 @@ CTEST(is_appropriate, correct_data_rate_units_18)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbitps";
-    units.have_unit = "kbitps";
+    units.want_unit  = "kbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7415,7 +7415,7 @@ CTEST(is_appropriate, correct_data_rate_units_19)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbps";
-    units.have_unit = "kbitps";
+    units.want_unit  = "kbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7430,7 +7430,7 @@ CTEST(is_appropriate, correct_data_rate_units_20)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbbitps";
-    units.have_unit = "kbitps";
+    units.want_unit  = "kbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7445,7 +7445,7 @@ CTEST(is_appropriate, correct_data_rate_units_21)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbitps";
-    units.have_unit = "kbitps";
+    units.want_unit  = "kbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7460,7 +7460,7 @@ CTEST(is_appropriate, correct_data_rate_units_22)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbps";
-    units.have_unit = "kbitps";
+    units.want_unit  = "kbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7475,7 +7475,7 @@ CTEST(is_appropriate, correct_data_rate_units_23)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbbitps";
-    units.have_unit = "kbitps";
+    units.want_unit  = "kbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7490,7 +7490,7 @@ CTEST(is_appropriate, correct_data_rate_units_24)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbitps";
-    units.have_unit = "kbitps";
+    units.want_unit  = "kbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7505,7 +7505,7 @@ CTEST(is_appropriate, correct_data_rate_units_25)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbps";
-    units.have_unit = "kbitps";
+    units.want_unit  = "kbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7520,7 +7520,7 @@ CTEST(is_appropriate, correct_data_rate_units_26)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbbitps";
-    units.have_unit = "kbitps";
+    units.want_unit  = "kbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7535,7 +7535,7 @@ CTEST(is_appropriate, correct_data_rate_units_27)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "bitps";
-    units.have_unit = "kbps";
+    units.want_unit  = "kbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7550,7 +7550,7 @@ CTEST(is_appropriate, correct_data_rate_units_28)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbitps";
-    units.have_unit = "kbps";
+    units.want_unit  = "kbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7565,7 +7565,7 @@ CTEST(is_appropriate, correct_data_rate_units_29)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbps";
-    units.have_unit = "kbps";
+    units.want_unit  = "kbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7580,7 +7580,7 @@ CTEST(is_appropriate, correct_data_rate_units_30)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbbitps";
-    units.have_unit = "kbps";
+    units.want_unit  = "kbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7595,7 +7595,7 @@ CTEST(is_appropriate, correct_data_rate_units_31)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbitps";
-    units.have_unit = "kbps";
+    units.want_unit  = "kbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7610,7 +7610,7 @@ CTEST(is_appropriate, correct_data_rate_units_32)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbps";
-    units.have_unit = "kbps";
+    units.want_unit  = "kbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7625,7 +7625,7 @@ CTEST(is_appropriate, correct_data_rate_units_33)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbbitps";
-    units.have_unit = "kbps";
+    units.want_unit  = "kbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7640,7 +7640,7 @@ CTEST(is_appropriate, correct_data_rate_units_34)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbitps";
-    units.have_unit = "kbps";
+    units.want_unit  = "kbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7655,7 +7655,7 @@ CTEST(is_appropriate, correct_data_rate_units_35)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbps";
-    units.have_unit = "kbps";
+    units.want_unit  = "kbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7670,7 +7670,7 @@ CTEST(is_appropriate, correct_data_rate_units_36)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbbitps";
-    units.have_unit = "kbps";
+    units.want_unit  = "kbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7685,7 +7685,7 @@ CTEST(is_appropriate, correct_data_rate_units_37)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbitps";
-    units.have_unit = "kbps";
+    units.want_unit  = "kbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7700,7 +7700,7 @@ CTEST(is_appropriate, correct_data_rate_units_38)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbps";
-    units.have_unit = "kbps";
+    units.want_unit  = "kbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7715,7 +7715,7 @@ CTEST(is_appropriate, correct_data_rate_units_39)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbbitps";
-    units.have_unit = "kbps";
+    units.want_unit  = "kbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7730,7 +7730,7 @@ CTEST(is_appropriate, correct_data_rate_units_40)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "bitps";
-    units.have_unit = "kbbitps";
+    units.want_unit  = "kbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7745,7 +7745,7 @@ CTEST(is_appropriate, correct_data_rate_units_41)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbitps";
-    units.have_unit = "kbbitps";
+    units.want_unit  = "kbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7760,7 +7760,7 @@ CTEST(is_appropriate, correct_data_rate_units_42)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbps";
-    units.have_unit = "kbbitps";
+    units.want_unit  = "kbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7775,7 +7775,7 @@ CTEST(is_appropriate, correct_data_rate_units_43)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbbitps";
-    units.have_unit = "kbbitps";
+    units.want_unit  = "kbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7790,7 +7790,7 @@ CTEST(is_appropriate, correct_data_rate_units_44)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbitps";
-    units.have_unit = "kbbitps";
+    units.want_unit  = "kbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7805,7 +7805,7 @@ CTEST(is_appropriate, correct_data_rate_units_45)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbps";
-    units.have_unit = "kbbitps";
+    units.want_unit  = "kbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7820,7 +7820,7 @@ CTEST(is_appropriate, correct_data_rate_units_46)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbbitps";
-    units.have_unit = "kbbitps";
+    units.want_unit  = "kbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7835,7 +7835,7 @@ CTEST(is_appropriate, correct_data_rate_units_47)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbitps";
-    units.have_unit = "kbbitps";
+    units.want_unit  = "kbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7850,7 +7850,7 @@ CTEST(is_appropriate, correct_data_rate_units_48)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbps";
-    units.have_unit = "kbbitps";
+    units.want_unit  = "kbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7865,7 +7865,7 @@ CTEST(is_appropriate, correct_data_rate_units_49)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbbitps";
-    units.have_unit = "kbbitps";
+    units.want_unit  = "kbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7880,7 +7880,7 @@ CTEST(is_appropriate, correct_data_rate_units_50)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbitps";
-    units.have_unit = "kbbitps";
+    units.want_unit  = "kbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7895,7 +7895,7 @@ CTEST(is_appropriate, correct_data_rate_units_51)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbps";
-    units.have_unit = "kbbitps";
+    units.want_unit  = "kbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7910,7 +7910,7 @@ CTEST(is_appropriate, correct_data_rate_units_52)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbbitps";
-    units.have_unit = "kbbitps";
+    units.want_unit  = "kbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7925,7 +7925,7 @@ CTEST(is_appropriate, correct_data_rate_units_53)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "bitps";
-    units.have_unit = "mbitps";
+    units.want_unit  = "mbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7940,7 +7940,7 @@ CTEST(is_appropriate, correct_data_rate_units_54)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbitps";
-    units.have_unit = "mbitps";
+    units.want_unit  = "mbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7955,7 +7955,7 @@ CTEST(is_appropriate, correct_data_rate_units_55)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbps";
-    units.have_unit = "mbitps";
+    units.want_unit  = "mbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7970,7 +7970,7 @@ CTEST(is_appropriate, correct_data_rate_units_56)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbbitps";
-    units.have_unit = "mbitps";
+    units.want_unit  = "mbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -7985,7 +7985,7 @@ CTEST(is_appropriate, correct_data_rate_units_57)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbitps";
-    units.have_unit = "mbitps";
+    units.want_unit  = "mbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8000,7 +8000,7 @@ CTEST(is_appropriate, correct_data_rate_units_58)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbps";
-    units.have_unit = "mbitps";
+    units.want_unit  = "mbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8015,7 +8015,7 @@ CTEST(is_appropriate, correct_data_rate_units_59)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbbitps";
-    units.have_unit = "mbitps";
+    units.want_unit  = "mbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8030,7 +8030,7 @@ CTEST(is_appropriate, correct_data_rate_units_60)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbitps";
-    units.have_unit = "mbitps";
+    units.want_unit  = "mbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8045,7 +8045,7 @@ CTEST(is_appropriate, correct_data_rate_units_61)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbps";
-    units.have_unit = "mbitps";
+    units.want_unit  = "mbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8060,7 +8060,7 @@ CTEST(is_appropriate, correct_data_rate_units_62)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbbitps";
-    units.have_unit = "mbitps";
+    units.want_unit  = "mbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8075,7 +8075,7 @@ CTEST(is_appropriate, correct_data_rate_units_63)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbitps";
-    units.have_unit = "mbitps";
+    units.want_unit  = "mbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8090,7 +8090,7 @@ CTEST(is_appropriate, correct_data_rate_units_64)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbps";
-    units.have_unit = "mbitps";
+    units.want_unit  = "mbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8105,7 +8105,7 @@ CTEST(is_appropriate, correct_data_rate_units_65)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbbitps";
-    units.have_unit = "mbitps";
+    units.want_unit  = "mbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8120,7 +8120,7 @@ CTEST(is_appropriate, correct_data_rate_units_66)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "bitps";
-    units.have_unit = "mbps";
+    units.want_unit  = "mbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8135,7 +8135,7 @@ CTEST(is_appropriate, correct_data_rate_units_67)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbitps";
-    units.have_unit = "mbps";
+    units.want_unit  = "mbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8150,7 +8150,7 @@ CTEST(is_appropriate, correct_data_rate_units_68)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbps";
-    units.have_unit = "mbps";
+    units.want_unit  = "mbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8165,7 +8165,7 @@ CTEST(is_appropriate, correct_data_rate_units_69)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbbitps";
-    units.have_unit = "mbps";
+    units.want_unit  = "mbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8180,7 +8180,7 @@ CTEST(is_appropriate, correct_data_rate_units_70)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbitps";
-    units.have_unit = "mbps";
+    units.want_unit  = "mbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8195,7 +8195,7 @@ CTEST(is_appropriate, correct_data_rate_units_71)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbps";
-    units.have_unit = "mbps";
+    units.want_unit  = "mbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8210,7 +8210,7 @@ CTEST(is_appropriate, correct_data_rate_units_72)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbbitps";
-    units.have_unit = "mbps";
+    units.want_unit  = "mbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8225,7 +8225,7 @@ CTEST(is_appropriate, correct_data_rate_units_73)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbitps";
-    units.have_unit = "mbps";
+    units.want_unit  = "mbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8240,7 +8240,7 @@ CTEST(is_appropriate, correct_data_rate_units_74)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbps";
-    units.have_unit = "mbps";
+    units.want_unit  = "mbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8255,7 +8255,7 @@ CTEST(is_appropriate, correct_data_rate_units_75)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbbitps";
-    units.have_unit = "mbps";
+    units.want_unit  = "mbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8270,7 +8270,7 @@ CTEST(is_appropriate, correct_data_rate_units_76)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbitps";
-    units.have_unit = "mbps";
+    units.want_unit  = "mbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8285,7 +8285,7 @@ CTEST(is_appropriate, correct_data_rate_units_77)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbps";
-    units.have_unit = "mbps";
+    units.want_unit  = "mbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8300,7 +8300,7 @@ CTEST(is_appropriate, correct_data_rate_units_78)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbbitps";
-    units.have_unit = "mbps";
+    units.want_unit  = "mbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8315,7 +8315,7 @@ CTEST(is_appropriate, correct_data_rate_units_79)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "bitps";
-    units.have_unit = "mbbitps";
+    units.want_unit  = "mbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8330,7 +8330,7 @@ CTEST(is_appropriate, correct_data_rate_units_80)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbitps";
-    units.have_unit = "mbbitps";
+    units.want_unit  = "mbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8345,7 +8345,7 @@ CTEST(is_appropriate, correct_data_rate_units_81)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbps";
-    units.have_unit = "mbbitps";
+    units.want_unit  = "mbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8360,7 +8360,7 @@ CTEST(is_appropriate, correct_data_rate_units_82)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbbitps";
-    units.have_unit = "mbbitps";
+    units.want_unit  = "mbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8375,7 +8375,7 @@ CTEST(is_appropriate, correct_data_rate_units_83)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbitps";
-    units.have_unit = "mbbitps";
+    units.want_unit  = "mbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8390,7 +8390,7 @@ CTEST(is_appropriate, correct_data_rate_units_84)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbps";
-    units.have_unit = "mbbitps";
+    units.want_unit  = "mbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8405,7 +8405,7 @@ CTEST(is_appropriate, correct_data_rate_units_85)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbbitps";
-    units.have_unit = "mbbitps";
+    units.want_unit  = "mbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8420,7 +8420,7 @@ CTEST(is_appropriate, correct_data_rate_units_86)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbitps";
-    units.have_unit = "mbbitps";
+    units.want_unit  = "mbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8435,7 +8435,7 @@ CTEST(is_appropriate, correct_data_rate_units_87)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbps";
-    units.have_unit = "mbbitps";
+    units.want_unit  = "mbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8450,7 +8450,7 @@ CTEST(is_appropriate, correct_data_rate_units_88)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbbitps";
-    units.have_unit = "mbbitps";
+    units.want_unit  = "mbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8465,7 +8465,7 @@ CTEST(is_appropriate, correct_data_rate_units_89)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbitps";
-    units.have_unit = "mbbitps";
+    units.want_unit  = "mbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8480,7 +8480,7 @@ CTEST(is_appropriate, correct_data_rate_units_90)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbps";
-    units.have_unit = "mbbitps";
+    units.want_unit  = "mbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8495,7 +8495,7 @@ CTEST(is_appropriate, correct_data_rate_units_91)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbbitps";
-    units.have_unit = "mbbitps";
+    units.want_unit  = "mbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8510,7 +8510,7 @@ CTEST(is_appropriate, correct_data_rate_units_92)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "bitps";
-    units.have_unit = "gbitps";
+    units.want_unit  = "gbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8525,7 +8525,7 @@ CTEST(is_appropriate, correct_data_rate_units_93)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbitps";
-    units.have_unit = "gbitps";
+    units.want_unit  = "gbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8540,7 +8540,7 @@ CTEST(is_appropriate, correct_data_rate_units_94)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbps";
-    units.have_unit = "gbitps";
+    units.want_unit  = "gbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8555,7 +8555,7 @@ CTEST(is_appropriate, correct_data_rate_units_95)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbbitps";
-    units.have_unit = "gbitps";
+    units.want_unit  = "gbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8570,7 +8570,7 @@ CTEST(is_appropriate, correct_data_rate_units_96)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbitps";
-    units.have_unit = "gbitps";
+    units.want_unit  = "gbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8585,7 +8585,7 @@ CTEST(is_appropriate, correct_data_rate_units_97)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbps";
-    units.have_unit = "gbitps";
+    units.want_unit  = "gbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8600,7 +8600,7 @@ CTEST(is_appropriate, correct_data_rate_units_98)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbbitps";
-    units.have_unit = "gbitps";
+    units.want_unit  = "gbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8615,7 +8615,7 @@ CTEST(is_appropriate, correct_data_rate_units_99)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbitps";
-    units.have_unit = "gbitps";
+    units.want_unit  = "gbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8630,7 +8630,7 @@ CTEST(is_appropriate, correct_data_rate_units_100)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbps";
-    units.have_unit = "gbitps";
+    units.want_unit  = "gbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8645,7 +8645,7 @@ CTEST(is_appropriate, correct_data_rate_units_101)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbbitps";
-    units.have_unit = "gbitps";
+    units.want_unit  = "gbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8660,7 +8660,7 @@ CTEST(is_appropriate, correct_data_rate_units_102)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbitps";
-    units.have_unit = "gbitps";
+    units.want_unit  = "gbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8675,7 +8675,7 @@ CTEST(is_appropriate, correct_data_rate_units_103)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbps";
-    units.have_unit = "gbitps";
+    units.want_unit  = "gbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8690,7 +8690,7 @@ CTEST(is_appropriate, correct_data_rate_units_104)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbbitps";
-    units.have_unit = "gbitps";
+    units.want_unit  = "gbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8705,7 +8705,7 @@ CTEST(is_appropriate, correct_data_rate_units_105)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "bitps";
-    units.have_unit = "gbps";
+    units.want_unit  = "gbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8720,7 +8720,7 @@ CTEST(is_appropriate, correct_data_rate_units_106)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbitps";
-    units.have_unit = "gbps";
+    units.want_unit  = "gbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8735,7 +8735,7 @@ CTEST(is_appropriate, correct_data_rate_units_107)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbps";
-    units.have_unit = "gbps";
+    units.want_unit  = "gbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8750,7 +8750,7 @@ CTEST(is_appropriate, correct_data_rate_units_108)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbbitps";
-    units.have_unit = "gbps";
+    units.want_unit  = "gbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8765,7 +8765,7 @@ CTEST(is_appropriate, correct_data_rate_units_109)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbitps";
-    units.have_unit = "gbps";
+    units.want_unit  = "gbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8780,7 +8780,7 @@ CTEST(is_appropriate, correct_data_rate_units_110)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbps";
-    units.have_unit = "gbps";
+    units.want_unit  = "gbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8795,7 +8795,7 @@ CTEST(is_appropriate, correct_data_rate_units_111)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbbitps";
-    units.have_unit = "gbps";
+    units.want_unit  = "gbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8810,7 +8810,7 @@ CTEST(is_appropriate, correct_data_rate_units_112)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbitps";
-    units.have_unit = "gbps";
+    units.want_unit  = "gbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8825,7 +8825,7 @@ CTEST(is_appropriate, correct_data_rate_units_113)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbps";
-    units.have_unit = "gbps";
+    units.want_unit  = "gbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8840,7 +8840,7 @@ CTEST(is_appropriate, correct_data_rate_units_114)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbbitps";
-    units.have_unit = "gbps";
+    units.want_unit  = "gbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8855,7 +8855,7 @@ CTEST(is_appropriate, correct_data_rate_units_115)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbitps";
-    units.have_unit = "gbps";
+    units.want_unit  = "gbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8870,7 +8870,7 @@ CTEST(is_appropriate, correct_data_rate_units_116)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbps";
-    units.have_unit = "gbps";
+    units.want_unit  = "gbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8885,7 +8885,7 @@ CTEST(is_appropriate, correct_data_rate_units_117)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbbitps";
-    units.have_unit = "gbps";
+    units.want_unit  = "gbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8900,7 +8900,7 @@ CTEST(is_appropriate, correct_data_rate_units_118)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "bitps";
-    units.have_unit = "gbbitps";
+    units.want_unit  = "gbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8915,7 +8915,7 @@ CTEST(is_appropriate, correct_data_rate_units_119)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbitps";
-    units.have_unit = "gbbitps";
+    units.want_unit  = "gbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8930,7 +8930,7 @@ CTEST(is_appropriate, correct_data_rate_units_120)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbps";
-    units.have_unit = "gbbitps";
+    units.want_unit  = "gbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8945,7 +8945,7 @@ CTEST(is_appropriate, correct_data_rate_units_121)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbbitps";
-    units.have_unit = "gbbitps";
+    units.want_unit  = "gbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8960,7 +8960,7 @@ CTEST(is_appropriate, correct_data_rate_units_122)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbitps";
-    units.have_unit = "gbbitps";
+    units.want_unit  = "gbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8975,7 +8975,7 @@ CTEST(is_appropriate, correct_data_rate_units_123)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbps";
-    units.have_unit = "gbbitps";
+    units.want_unit  = "gbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -8990,7 +8990,7 @@ CTEST(is_appropriate, correct_data_rate_units_124)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbbitps";
-    units.have_unit = "gbbitps";
+    units.want_unit  = "gbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9005,7 +9005,7 @@ CTEST(is_appropriate, correct_data_rate_units_125)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbitps";
-    units.have_unit = "gbbitps";
+    units.want_unit  = "gbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9020,7 +9020,7 @@ CTEST(is_appropriate, correct_data_rate_units_126)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbps";
-    units.have_unit = "gbbitps";
+    units.want_unit  = "gbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9035,7 +9035,7 @@ CTEST(is_appropriate, correct_data_rate_units_127)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbbitps";
-    units.have_unit = "gbbitps";
+    units.want_unit  = "gbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9050,7 +9050,7 @@ CTEST(is_appropriate, correct_data_rate_units_128)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbitps";
-    units.have_unit = "gbbitps";
+    units.want_unit  = "gbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9065,7 +9065,7 @@ CTEST(is_appropriate, correct_data_rate_units_129)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbps";
-    units.have_unit = "gbbitps";
+    units.want_unit  = "gbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9080,7 +9080,7 @@ CTEST(is_appropriate, correct_data_rate_units_130)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbbitps";
-    units.have_unit = "gbbitps";
+    units.want_unit  = "gbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9095,7 +9095,7 @@ CTEST(is_appropriate, correct_data_rate_units_131)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "bitps";
-    units.have_unit = "tbitps";
+    units.want_unit  = "tbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9110,7 +9110,7 @@ CTEST(is_appropriate, correct_data_rate_units_132)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbitps";
-    units.have_unit = "tbitps";
+    units.want_unit  = "tbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9125,7 +9125,7 @@ CTEST(is_appropriate, correct_data_rate_units_133)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbps";
-    units.have_unit = "tbitps";
+    units.want_unit  = "tbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9140,7 +9140,7 @@ CTEST(is_appropriate, correct_data_rate_units_134)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbbitps";
-    units.have_unit = "tbitps";
+    units.want_unit  = "tbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9155,7 +9155,7 @@ CTEST(is_appropriate, correct_data_rate_units_135)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbitps";
-    units.have_unit = "tbitps";
+    units.want_unit  = "tbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9170,7 +9170,7 @@ CTEST(is_appropriate, correct_data_rate_units_136)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbps";
-    units.have_unit = "tbitps";
+    units.want_unit  = "tbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9185,7 +9185,7 @@ CTEST(is_appropriate, correct_data_rate_units_137)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbbitps";
-    units.have_unit = "tbitps";
+    units.want_unit  = "tbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9200,7 +9200,7 @@ CTEST(is_appropriate, correct_data_rate_units_138)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbitps";
-    units.have_unit = "tbitps";
+    units.want_unit  = "tbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9215,7 +9215,7 @@ CTEST(is_appropriate, correct_data_rate_units_139)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbps";
-    units.have_unit = "tbitps";
+    units.want_unit  = "tbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9230,7 +9230,7 @@ CTEST(is_appropriate, correct_data_rate_units_140)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbbitps";
-    units.have_unit = "tbitps";
+    units.want_unit  = "tbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9245,7 +9245,7 @@ CTEST(is_appropriate, correct_data_rate_units_141)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbitps";
-    units.have_unit = "tbitps";
+    units.want_unit  = "tbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9260,7 +9260,7 @@ CTEST(is_appropriate, correct_data_rate_units_142)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbps";
-    units.have_unit = "tbitps";
+    units.want_unit  = "tbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9275,7 +9275,7 @@ CTEST(is_appropriate, correct_data_rate_units_143)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbbitps";
-    units.have_unit = "tbitps";
+    units.want_unit  = "tbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9290,7 +9290,7 @@ CTEST(is_appropriate, correct_data_rate_units_144)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "bitps";
-    units.have_unit = "tbps";
+    units.want_unit  = "tbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9305,7 +9305,7 @@ CTEST(is_appropriate, correct_data_rate_units_145)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbitps";
-    units.have_unit = "tbps";
+    units.want_unit  = "tbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9320,7 +9320,7 @@ CTEST(is_appropriate, correct_data_rate_units_146)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbps";
-    units.have_unit = "tbps";
+    units.want_unit  = "tbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9335,7 +9335,7 @@ CTEST(is_appropriate, correct_data_rate_units_147)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbbitps";
-    units.have_unit = "tbps";
+    units.want_unit  = "tbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9350,7 +9350,7 @@ CTEST(is_appropriate, correct_data_rate_units_148)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbitps";
-    units.have_unit = "tbps";
+    units.want_unit  = "tbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9365,7 +9365,7 @@ CTEST(is_appropriate, correct_data_rate_units_149)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbps";
-    units.have_unit = "tbps";
+    units.want_unit  = "tbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9380,7 +9380,7 @@ CTEST(is_appropriate, correct_data_rate_units_150)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbbitps";
-    units.have_unit = "tbps";
+    units.want_unit  = "tbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9395,7 +9395,7 @@ CTEST(is_appropriate, correct_data_rate_units_151)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbitps";
-    units.have_unit = "tbps";
+    units.want_unit  = "tbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9410,7 +9410,7 @@ CTEST(is_appropriate, correct_data_rate_units_152)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbps";
-    units.have_unit = "tbps";
+    units.want_unit  = "tbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9425,7 +9425,7 @@ CTEST(is_appropriate, correct_data_rate_units_153)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbbitps";
-    units.have_unit = "tbps";
+    units.want_unit  = "tbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9440,7 +9440,7 @@ CTEST(is_appropriate, correct_data_rate_units_154)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbitps";
-    units.have_unit = "tbps";
+    units.want_unit  = "tbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9455,7 +9455,7 @@ CTEST(is_appropriate, correct_data_rate_units_155)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbps";
-    units.have_unit = "tbps";
+    units.want_unit  = "tbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9470,7 +9470,7 @@ CTEST(is_appropriate, correct_data_rate_units_156)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbbitps";
-    units.have_unit = "tbps";
+    units.want_unit  = "tbps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9485,7 +9485,7 @@ CTEST(is_appropriate, correct_data_rate_units_157)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "bitps";
-    units.have_unit = "tbbitps";
+    units.want_unit  = "tbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9500,7 +9500,7 @@ CTEST(is_appropriate, correct_data_rate_units_158)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbitps";
-    units.have_unit = "tbbitps";
+    units.want_unit  = "tbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9515,7 +9515,7 @@ CTEST(is_appropriate, correct_data_rate_units_159)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbps";
-    units.have_unit = "tbbitps";
+    units.want_unit  = "tbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9530,7 +9530,7 @@ CTEST(is_appropriate, correct_data_rate_units_160)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "kbbitps";
-    units.have_unit = "tbbitps";
+    units.want_unit  = "tbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9545,7 +9545,7 @@ CTEST(is_appropriate, correct_data_rate_units_161)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbitps";
-    units.have_unit = "tbbitps";
+    units.want_unit  = "tbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9560,7 +9560,7 @@ CTEST(is_appropriate, correct_data_rate_units_162)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbps";
-    units.have_unit = "tbbitps";
+    units.want_unit  = "tbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9575,7 +9575,7 @@ CTEST(is_appropriate, correct_data_rate_units_163)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "mbbitps";
-    units.have_unit = "tbbitps";
+    units.want_unit  = "tbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9590,7 +9590,7 @@ CTEST(is_appropriate, correct_data_rate_units_164)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbitps";
-    units.have_unit = "tbbitps";
+    units.want_unit  = "tbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9605,7 +9605,7 @@ CTEST(is_appropriate, correct_data_rate_units_165)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbps";
-    units.have_unit = "tbbitps";
+    units.want_unit  = "tbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9620,7 +9620,7 @@ CTEST(is_appropriate, correct_data_rate_units_166)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "gbbitps";
-    units.have_unit = "tbbitps";
+    units.want_unit  = "tbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9635,7 +9635,7 @@ CTEST(is_appropriate, correct_data_rate_units_167)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbitps";
-    units.have_unit = "tbbitps";
+    units.want_unit  = "tbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9650,7 +9650,7 @@ CTEST(is_appropriate, correct_data_rate_units_168)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbps";
-    units.have_unit = "tbbitps";
+    units.want_unit  = "tbbitps";
 
     ListNode* list;
     list = data_file_parser();
@@ -9665,7 +9665,7 @@ CTEST(is_appropriate, correct_data_rate_units_169)
     DefineUnits units;
     units.category = "data-rate";
     units.have_unit = "tbbitps";
-    units.have_unit = "tbbitps";
+    units.want_unit  = "tbbitps";
 
     ListNode* list;
     list = data_file_parser();
