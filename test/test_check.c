@@ -5114,3 +5114,376 @@ CTEST(is_appropriate, correct_length_units_121)
     const bool real = is_appropriate(list, &units);
     ASSERT_TRUE(real);
 }
+
+CTEST(is_appropriate, correct_rate_units_1)
+{
+    DefineUnits units;
+    units.category = "rate";
+    units.have_unit = "mph";
+    units.want_unit = "mph";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_rate_units_2)
+{
+    DefineUnits units;
+    units.category = "rate";
+    units.have_unit = "fps";
+    units.want_unit = "mph";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_rate_units_3)
+{
+    DefineUnits units;
+    units.category = "rate";
+    units.have_unit = "mps";
+    units.want_unit = "mph";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_rate_units_4)
+{
+    DefineUnits units;
+    units.category = "rate";
+    units.have_unit = "kmph";
+    units.want_unit = "mph";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_rate_units_5)
+{
+    DefineUnits units;
+    units.category = "rate";
+    units.have_unit = "kt";
+    units.want_unit = "mph";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_rate_units_6)
+{
+    DefineUnits units;
+    units.category = "rate";
+    units.have_unit = "mph";
+    units.want_unit = "fps";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_rate_units_7)
+{
+    DefineUnits units;
+    units.category = "rate";
+    units.have_unit = "fps";
+    units.want_unit = "fps";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_rate_units_8)
+{
+    DefineUnits units;
+    units.category = "rate";
+    units.have_unit = "mps";
+    units.want_unit = "fps";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_rate_units_9)
+{
+    DefineUnits units;
+    units.category = "rate";
+    units.have_unit = "kmph";
+    units.want_unit = "fps";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_rate_units_10)
+{
+    DefineUnits units;
+    units.category = "rate";
+    units.have_unit = "kt";
+    units.want_unit = "fps";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_rate_units_11)
+{
+    DefineUnits units;
+    units.category = "rate";
+    units.have_unit = "mph";
+    units.want_unit = "mps";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_rate_units_12)
+{
+    DefineUnits units;
+    units.category = "rate";
+    units.have_unit = "fps";
+    units.want_unit = "mps";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_rate_units_13)
+{
+    DefineUnits units;
+    units.category = "rate";
+    units.have_unit = "mps";
+    units.want_unit = "mps";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_rate_units_14)
+{
+    DefineUnits units;
+    units.category = "rate";
+    units.have_unit = "kmph";
+    units.want_unit = "mps";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_rate_units_15)
+{
+    DefineUnits units;
+    units.category = "rate";
+    units.have_unit = "kt";
+    units.want_unit = "mps";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_rate_units_16)
+{
+    DefineUnits units;
+    units.category = "rate";
+    units.have_unit = "mph";
+    units.want_unit = "kmph";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_rate_units_17)
+{
+    DefineUnits units;
+    units.category = "rate";
+    units.have_unit = "fps";
+    units.want_unit = "kmph";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_rate_units_18)
+{
+    DefineUnits units;
+    units.category = "rate";
+    units.have_unit = "mps";
+    units.want_unit = "kmph";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_rate_units_19)
+{
+    DefineUnits units;
+    units.category = "rate";
+    units.have_unit = "kmph";
+    units.want_unit = "kmph";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_rate_units_20)
+{
+    DefineUnits units;
+    units.category = "rate";
+    units.have_unit = "kt";
+    units.want_unit = "kmph";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}CTEST(is_appropriate, correct_rate_units_21)
+{
+    DefineUnits units;
+    units.category = "rate";
+    units.have_unit = "mph";
+    units.want_unit = "kt";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_rate_units_22)
+{
+    DefineUnits units;
+    units.category = "rate";
+    units.have_unit = "fps";
+    units.want_unit = "kt";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_rate_units_23)
+{
+    DefineUnits units;
+    units.category = "rate";
+    units.have_unit = "mps";
+    units.want_unit = "kt";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_rate_units_24)
+{
+    DefineUnits units;
+    units.category = "rate";
+    units.have_unit = "kmph";
+    units.want_unit = "kt";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
+
+CTEST(is_appropriate, correct_rate_units_25)
+{
+    DefineUnits units;
+    units.category = "rate";
+    units.have_unit = "kt";
+    units.want_unit = "kt";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_TRUE(real);
+}
