@@ -17,7 +17,7 @@ int main(int argc, char* argv[])
         return 0;
     }
     if (argc == 4 && is_alpha(argv[1]) && is_alpha(argv[2])
-            && is_alpha(argv[3])) {
+        && is_alpha(argv[3])) {
         init_units_struct(&units, argc, argv);
     } else if (
             argc == 5 && is_alpha(argv[1]) && is_digit(argv[2])
