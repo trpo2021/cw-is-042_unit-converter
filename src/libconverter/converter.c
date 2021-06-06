@@ -16,6 +16,7 @@ static char* to_lower_string(char* string)
     return string;
 }
 
+/*
 static double get_factor(ListNode* list, DefineUnits* units)
 {
     ListNode* first_node;
@@ -34,6 +35,7 @@ static double get_factor(ListNode* list, DefineUnits* units)
 
     return factor;
 }
+*/
 
 ListNode* data_file_parser()
 {
@@ -114,12 +116,12 @@ int convert_units(DefineUnits* units)
         // free(list);
         return -1;
     }
+    /*
     double factor = get_factor(list, units);
     if (is_positive(factor) == 0) {
         // free(list);
         return -1;
     }
-    /*
     units->want_value = units->have_value * factor;
     // free(list);
     */
