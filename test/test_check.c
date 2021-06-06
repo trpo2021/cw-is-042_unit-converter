@@ -9816,7 +9816,172 @@ CTEST(is_appropriate, incorrect_input_units_10)
     units.category = "Never-gonna-give-you-up";
     units.have_unit = "Never-gonna-let-you-down";
     units.want_unit = "Never-gonna-turn-around";
-                        //and hurt you
+    //and hurt you
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_appropriate, incorrect_input_units_11)
+{
+    DefineUnits units;
+    units.category = "Length";
+    units.have_unit = "mps";
+    units.want_unit = "km";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_appropriate, incorrect_input_units_12)
+{
+    DefineUnits units;
+    units.category = "data-size";
+    units.have_unit = "bitps";
+    units.want_unit = "tbbitps";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_appropriate, incorrect_input_units_13)
+{
+    DefineUnits units;
+    units.category = "sec";
+    units.have_unit = "hour";
+    units.want_unit = "min";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_appropriate, incorrect_input_units_14)
+{
+    DefineUnits units;
+    units.category = "1234567890";
+    units.have_unit = "1234567890";
+    units.want_unit = "1234567890";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_appropriate, incorrect_input_units_15)
+{
+    DefineUnits units;
+    units.category = "Somebody";
+    units.have_unit = "Once";
+    units.want_unit = "told-me";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_appropriate, incorrect_input_units_16)
+{
+    DefineUnits units;
+    units.category = "The-world";
+    units.have_unit = "is-gonna";
+    units.want_unit = "roll-me";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_appropriate, incorrect_input_units_17)
+{
+    DefineUnits units;
+    units.category = "data-rate";
+    units.have_unit = "tb";
+    units.want_unit = "tbitps";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_appropriate, incorrect_input_units_18)
+{
+    DefineUnits units;
+    units.category = "dat,a-rate";
+    units.have_unit = "bitp-s";
+    units.want_unit = "tbb.itps";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_appropriate, incorrect_input_units_19)
+{
+    DefineUnits units;
+    units.category = "rate";
+    units.have_unit = "mp-s";
+    units.want_unit = "km-h";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_appropriate, incorrect_input_units_20)
+{
+    DefineUnits units;
+    units.category = "data-ra/te";
+    units.have_unit = "tbbit,ps";
+    units.want_unit = "tbbit.ps";
+
+    ListNode* list;
+    list = data_file_parser();
+    ASSERT_NOT_NULL(list);
+
+    const bool real = is_appropriate(list, &units);
+    ASSERT_FALSE(real);
+}
+
+CTEST(is_appropriate, incorrect_input_units_21)
+{
+    DefineUnits units;
+    units.category = "data-ra/te";
+    units.have_unit = "tbbitps";
+    units.want_unit = "tbbitps";
+
     ListNode* list;
     list = data_file_parser();
     ASSERT_NOT_NULL(list);
