@@ -71,10 +71,6 @@ void output_error(int n)
         printf("The value you entered is too large. Try to enter a value "
                "less!\n");
         break;
-    case -5:
-        printf("Could not open or create file. Make sure to enter the correct "
-               "path!\n");
-        break;
     default:
         printf("Unable to open file with unit data. Try to run the app from "
                "the root of the repository with \'./bin/converter.exe\'\n");

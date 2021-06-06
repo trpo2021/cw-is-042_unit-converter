@@ -1,6 +1,6 @@
 #pragma once
 
-#include <libconverter/input.h>
+#include <libconverter/converter.h>
 
 typedef enum {
     ErrorTypeSyntax = -1,
