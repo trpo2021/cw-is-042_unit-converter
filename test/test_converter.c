@@ -215,3 +215,123 @@ CTEST(data_file_parser, successful_parcing)
     const ListNode* real = data_file_parser();
     ASSERT_NOT_NULL(real);
 }
+
+CTEST(to_lower_string, equal_string_1)
+{
+    const char exp[] = "f";
+
+    char real[] = "F";
+    to_lower_string(real);
+
+    ASSERT_STR(exp, real);
+}
+
+CTEST(to_lower_string, equal_string_2)
+{
+    const char exp[] = "data-rate";
+
+    char real[] = "DaTa-RATE";
+    to_lower_string(real);
+
+    ASSERT_STR(exp, real);
+}
+
+CTEST(to_lower_string, equal_string_3)
+{
+    const char exp[] = "foot";
+
+    char real[] = "FoOT";
+    to_lower_string(real);
+
+    ASSERT_STR(exp, real);
+}
+
+CTEST(to_lower_string, equal_string_4)
+{
+    const char exp[] = "seconds";
+
+    char real[] = "SEConds";
+    to_lower_string(real);
+
+    ASSERT_STR(exp, real);
+}
+
+CTEST(to_lower_string, equal_string_5)
+{
+    const char exp[] = "yard";
+
+    char real[] = "YARD";
+    to_lower_string(real);
+
+    ASSERT_STR(exp, real);
+}
+
+CTEST(to_lower_string, equal_string_6)
+{
+    const char exp[] = "time";
+
+    char real[] = "TIME";
+    to_lower_string(real);
+
+    ASSERT_STR(exp, real);
+}
+
+CTEST(to_lower_string, equal_string_7)
+{
+    const char exp[] = "nanoseconds";
+
+    char real[] = "NANOSECOnds";
+    to_lower_string(real);
+
+    ASSERT_STR(exp, real);
+}
+
+CTEST(to_lower_string, equal_string_8)
+{
+    const char exp[] = "minute";
+
+    char real[] = "MINUTE";
+    to_lower_string(real);
+
+    ASSERT_STR(exp, real);
+}
+
+CTEST(to_lower_string, equal_string_9)
+{
+    const char exp[] = "rate";
+
+    char real[] = "RaTe";
+    to_lower_string(real);
+
+    ASSERT_STR(exp, real);
+}
+
+CTEST(to_lower_string, equal_string_10)
+{
+    const char exp[] = "gbbitps";
+
+    char real[] = "gBBITPS";
+    to_lower_string(real);
+
+    ASSERT_STR(exp, real);
+}
+
+CTEST(to_lower_string, equal_string_11)
+{
+    const char exp[] = "sus";
+
+    char real[] = "SUS";
+    to_lower_string(real);
+
+    ASSERT_STR(exp, real);
+}
+
+CTEST(to_lower_string, equal_string_12)
+{
+    const char exp[] = "slava_marlay";
+
+    char real[] = "SLAVA_MARLAY";
+    to_lower_string(real);
+
+    ASSERT_STR(exp, real);
+}

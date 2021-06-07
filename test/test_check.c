@@ -9816,7 +9816,7 @@ CTEST(is_appropriate, incorrect_input_units_10)
     units.category = "Never-gonna-give-you-up";
     units.have_unit = "Never-gonna-let-you-down";
     units.want_unit = "Never-gonna-turn-around";
-    // and hurt you
+
     ListNode* list;
     list = data_file_parser();
     ASSERT_NOT_NULL(list);
