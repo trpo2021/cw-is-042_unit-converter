@@ -115,14 +115,11 @@ void output_error(int n)
                "--syntax\'.\n");
         break;
     case -2:
-        printf("Failed to allocate memory\n");
-        break;
-    case -3:
         printf("Unexpected command line argument!\nTry using \'./converter.exe "
                "--help\' to find out how to successfully launch the "
                "application.\n");
         break;
-    case -4:
+    case -3:
         printf("The value you entered is too large. Try to enter a value "
                "less!\n");
         break;
