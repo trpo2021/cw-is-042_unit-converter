@@ -13,7 +13,7 @@ const char* HELP_CALL
           "output will be conversion factors to get the result by multiplying "
           "or dividing)"
           "\n\t./converter --syntax (Information about categories of "
-          "measurement is issued)\n"
+          "measurement is issued)"
           "\n\t./converter --syntax <category> (Information about units of "
           "measurement from a specific category is issued)\n";
 
