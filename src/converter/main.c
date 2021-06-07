@@ -34,7 +34,11 @@ int main(int argc, char* argv[])
     }
     int convert_status = convert_units(&units);
     if (convert_status == 0) {
-        output_data(&units);
+        if (argc == 5) {
+            output_data(&units);
+        } else {
+            output_factor(&units);
+        }
     } else {
         output_error(convert_status);
     }

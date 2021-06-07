@@ -42,6 +42,11 @@ void output_data(DefineUnits* units)
     printf("Result: %0.8lf %s\n", units->want_value, units->want_unit);
 }
 
+void output_factor(DefineUnits* units)
+{
+    printf("For conversion, you can use the following factors:\n\t* %0.8lf\n\t/ %0.8lf\n", units->factor, 1 / units->factor);
+}
+
 void call_help(char* help)
 {
     if (strcmp(help, "--help") == 0) {
