@@ -12,4 +12,5 @@ typedef enum {
 void output_data(DefineUnits* units);
 void output_factor(DefineUnits* units);
 void call_help(char* help);
+void output_syntax(char* category);
 void output_error(int n);

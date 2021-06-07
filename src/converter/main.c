@@ -10,10 +10,12 @@
 int main(int argc, char* argv[])
 {
     DefineUnits units;
-    if (argc == 2
-        && (strcmp(argv[1], "--help") == 0
-            || strcmp(argv[1], "--syntax") == 0)) {
+    if (argc == 2) {
         call_help(argv[1]);
+        return 0;
+    }
+    if (argc == 3 && strcmp(argv[1], "--syntax") == 0) {
+        output_syntax(argv[2]);
         return 0;
     }
     if (argc == 4 && is_alpha(argv[1]) && is_alpha(argv[2])
