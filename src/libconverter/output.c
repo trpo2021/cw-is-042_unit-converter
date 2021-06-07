@@ -8,10 +8,10 @@ const char* HELP_CALL
           "<double> <have-unit> <want-unit> (The input "
           "data is read from the keyboard, the output data is output to the "
           "terminal)"
+          "\n\t./converter.exe <category> "
+          "<have-unit> <want-unit> (Analogous to the first input, but the output will be conversion factors to get the result by multiplying or dividing)"
           "\n\t./converter.exe --syntax (Information about categories and "
-          "units of measurement is issued)"
-          "\n\t./converter.exe --path <input-file-path> --path "
-          "<output-file-path> (The input and output data are files)\n";
+          "units of measurement is issued)\n";
 
 const char* SYNTAX_CALL
         = "There's a syntax of Unit Converter. In brackets you can see the "
