@@ -12,20 +12,58 @@ const char* HELP_CALL
           "<have-unit> <want-unit> (Analogous to the first input, but the "
           "output will be conversion factors to get the result by multiplying "
           "or dividing)"
-          "\n\t./converter --syntax (Information about categories of measurement is issued)\n"
-          "\n\t./converter --syntax <category> (Information about units of measurement from a specific category is issued)\n";
+          "\n\t./converter --syntax (Information about categories of "
+          "measurement is issued)\n"
+          "\n\t./converter --syntax <category> (Information about units of "
+          "measurement from a specific category is issued)\n";
 
-const char* SYNTAX_CALL = "There's a syntax of available categories in Unit Converter:\nLength    Time    Rate    Data-Size    Data-Rate\nTo learn about the syntax for units from a specific category, enter: ./converter --syntax <category>\n";
+const char* SYNTAX_CALL
+        = "There's a syntax of available categories in Unit Converter:\nLength "
+          "   Time    Rate    Data-Size    Data-Rate\nTo learn about the "
+          "syntax for units from a specific category, enter: ./converter "
+          "--syntax <category>\n";
 
-const char* LENGTH_SYNTAX = "There's a syntax for units of the 'Length' category in Unit Converter, represented as <unit-name> -> <converter-unit-name>:\ncentimeter -> cm    mile -> mile    kilometer -> km        foot -> ft\nmicrometer -> um    yard -> yard    nanometer -> nm        meter -> m\nmillimeter -> mm    inch -> inch    nautical mile -> nmi\n";
+const char* LENGTH_SYNTAX
+        = "There's a syntax for units of the 'Length' category in Unit "
+          "Converter, represented as <unit-name> -> "
+          "<converter-unit-name>:\ncentimeter -> cm    mile -> mile    "
+          "kilometer -> km        foot -> ft\nmicrometer -> um    yard -> yard "
+          "   nanometer -> nm        meter -> m\nmillimeter -> mm    inch -> "
+          "inch    nautical mile -> nmi\n";
 
-const char* TIME_SYNTAX = "There's a syntax for units of the 'Time' category in Unit Converter, represented as <unit-name> -> <converter-unit-name>:\nmillisecond -> ms    hour -> hour    second -> sec    decade -> decade\nmicrosecond -> us    week ->week     minute -> min    century->century\nnanosecond -> ns     year -> year    month -> month   day -> day\n";
+const char* TIME_SYNTAX
+        = "There's a syntax for units of the 'Time' category in Unit "
+          "Converter, represented as <unit-name> -> "
+          "<converter-unit-name>:\nmillisecond -> ms    hour -> hour    second "
+          "-> sec    decade -> decade\nmicrosecond -> us    week ->week     "
+          "minute -> min    century->century\nnanosecond -> ns     year -> "
+          "year    month -> month   day -> day\n";
 
-const char* RATE_SYNTAX = "There's a syntax for units of the 'Rate' category in Unit Converter, represented as <unit-name> -> <converter-unit-name>:\nmeter per second -> mps    kilometer per hour -> kmph\nfoot per second -> fps     knot -> kt\nmile per hour -> mph\n";
+const char* RATE_SYNTAX
+        = "There's a syntax for units of the 'Rate' category in Unit "
+          "Converter, represented as <unit-name> -> "
+          "<converter-unit-name>:\nmeter per second -> mps    kilometer per "
+          "hour -> kmph\nfoot per second -> fps     knot -> kt\nmile per hour "
+          "-> mph\n";
 
-const char* DATA_SIZE_SYNTAX = "There's a syntax for units of the 'Data-Size' category in Unit Converter, represented as <unit-name> -> <converter-unit-name>:\nkilobit -> kbit    terabit -> tbit    kilobyte -> kb    petabyte -> pb\nmegabit -> mbit    petabit -> pbit    gigabyte -> gb    bit -> bit\ngigabit -> gbit    megabyte -> mb     terabyte -> tb    byte -> b\n";
+const char* DATA_SIZE_SYNTAX
+        = "There's a syntax for units of the 'Data-Size' category in Unit "
+          "Converter, represented as <unit-name> -> "
+          "<converter-unit-name>:\nkilobit -> kbit    terabit -> tbit    "
+          "kilobyte -> kb    petabyte -> pb\nmegabit -> mbit    petabit -> "
+          "pbit    gigabyte -> gb    bit -> bit\ngigabit -> gbit    megabyte "
+          "-> mb     terabyte -> tb    byte -> b\n";
 
-const char* DATA_RATE_SYNTAX = "There's a syntax for units of the 'Data-Rate' category in Unit Converter, represented as <unit-name> -> <converter-unit-name>:\nkebibit per second -> kbbitps    mebibit per second -> mbbitps    gebibit per second -> gbbitps    tebibit per second -> tbbitps\nkilobit per second -> kbitps     megabit per second -> mbitps     gigabit per second -> gbitps     terabit per second -> tbitps\nkilobyte per second -> kbps      megabyte per second -> mbps      gigabyte per second -> gbps      terabyte per second -> tbps\n";
+const char* DATA_RATE_SYNTAX
+        = "There's a syntax for units of the 'Data-Rate' category in Unit "
+          "Converter, represented as <unit-name> -> "
+          "<converter-unit-name>:\nkebibit per second -> kbbitps    mebibit "
+          "per second -> mbbitps    gebibit per second -> gbbitps    tebibit "
+          "per second -> tbbitps\nkilobit per second -> kbitps     megabit per "
+          "second -> mbitps     gigabit per second -> gbitps     terabit per "
+          "second -> tbitps\nkilobyte per second -> kbps      megabyte per "
+          "second -> mbps      gigabyte per second -> gbps      terabyte per "
+          "second -> tbps\n";
 
 void output_data(DefineUnits* units)
 {
