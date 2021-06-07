@@ -20,5 +20,6 @@ typedef struct {
 } DefineUnits;
 
 ListNode* data_file_parser();
+char* to_lower_string(char* string);
 DefineUnits* init_units_struct(DefineUnits* units, int argc, char* argv[]);
 int convert_units(DefineUnits* units);

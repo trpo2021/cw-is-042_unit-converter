@@ -8,7 +8,7 @@
 
 const char* units_data_file_path = "units/units.csv";
 
-static char* to_lower_string(char* string)
+char* to_lower_string(char* string)
 {
     for (int i = 0; string[i]; ++i) {
         string[i] = tolower(string[i]);

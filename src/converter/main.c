@@ -12,7 +12,7 @@ int main(int argc, char* argv[])
         return 0;
     }
     if (argc == 3 && strcmp(argv[1], "--syntax") == 0) {
-        output_syntax(argv[2]);
+        output_syntax(to_lower_string(argv[2]));
         return 0;
     }
     if (argc == 4 && is_alpha(argv[1]) && is_alpha(argv[2])
