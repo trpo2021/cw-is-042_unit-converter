@@ -1,14 +1,15 @@
 #pragma once
 
-#include <libconverter/input.h>
+#include <libconverter/converter.h>
 
 typedef enum {
     ErrorTypeSyntax = -1,
-    ErrorTypeMemory = -2,
-    ErrorTypeArgument = -3,
-    ErrorTypeLargeValue = -4
+    ErrorTypeArgument = -2,
+    ErrorTypeLargeValue = -3
 } ErrorType;
 
 void output_data(DefineUnits* units);
+void output_factor(DefineUnits* units);
 void call_help(char* help);
+void output_syntax(char* category);
 void output_error(int n);

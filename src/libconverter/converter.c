@@ -20,15 +20,14 @@ static double get_factor(ListNode* list, DefineUnits* units)
 {
     ListNode* first_node;
     ListNode* second_node;
-    double factor;
 
     first_node = list_lookup(list, units->category, units->have_unit);
     second_node = list_lookup(list, units->category, units->want_unit);
     if (first_node == NULL || second_node == NULL) {
         return -1;
     }
-    factor = first_node->factor / second_node->factor;
-    return factor;
+    units->factor = first_node->factor / second_node->factor;
+    return units->factor;
 }
 
 ListNode* data_file_parser()
@@ -107,15 +106,15 @@ int convert_units(DefineUnits* units)
         return 1;
     }
     if (is_appropriate(list, units) == 0) {
-        free(list);
+        freelist(list);
         return -1;
     }
-    double factor = get_factor(list, units);
-    if (factor < 0) {
-        free(list);
+    units->factor = get_factor(list, units);
+    if (units->factor < 0) {
+        freelist(list);
         return -1;
     }
-    units->want_value = units->have_value * factor;
-    free(list);
+    units->want_value = units->have_value * units->factor;
+    freelist(list);
     return 0;
 }

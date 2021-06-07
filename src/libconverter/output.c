@@ -4,42 +4,78 @@
 #include <string.h>
 
 const char* HELP_CALL
-        = "Welcome to Unit Converter!\nUsage:\n\t./converter.exe <category> "
+        = "Welcome to Unit Converter!\nUsage:\n\t./converter <category> "
           "<double> <have-unit> <want-unit> (The input "
           "data is read from the keyboard, the output data is output to the "
           "terminal)"
-          "\n\t./converter.exe --syntax (Information about categories and "
-          "units of measurement is issued)"
-          "\n\t./converter.exe --path <input-file-path> --path "
-          "<output-file-path> (The input and output data are files)\n";
+          "\n\t./converter <category> "
+          "<have-unit> <want-unit> (Analogous to the first input, but the "
+          "output will be conversion factors to get the result by multiplying "
+          "or dividing)"
+          "\n\t./converter --syntax (Information about categories of "
+          "measurement is issued)\n"
+          "\n\t./converter --syntax <category> (Information about units of "
+          "measurement from a specific category is issued)\n";
 
 const char* SYNTAX_CALL
-        = "There's a syntax of Unit Converter. In brackets you can see the "
-          "names of the units for using "
-          "in Unit Converter.\nAvailble categories and their units:"
-          "\n1. Length ----> kilometer(km), meter(m), centimeter(cm), "
-          "millimeter(mm), micrometer(um), nanometer(nm), mile(mile), "
-          "foot(ft), "
-          "yard(yard), inch(inch), nautical mile(nmi)"
-          "\n2. Time ----> nanosecond(ns), microsecond(us), millisecond(ms), "
-          "second(sec), minute(min), hour(hour), day(day), week(week), "
-          "month(month), year(year), decade(decade), century(century)"
-          "\n3. Rate ----> kilometer per hour(kmph), meter per second(mps), "
-          "mile per hour(mph), foot per second(fps), knot(kt)"
-          "\n4. Data size ----> bit(bit), kilobit(kbit), megabit(mbit), "
-          "gigabit(gbit), terabit(tbit), petabit(pbit), byte(b), kilobyte(kb), "
-          "megabyte(mb), gigabyte(gb), terabyte(tb), petabyte(pb)"
-          "\n5. Data-rate ----> bit per second(bitps), kilobit per second "
-          "(kbitps),kebibit per second(kbbitps), megabit per second(mbitps) "
-          "mebibit per second(mbbitps), gigabit per second(gbitps), gebibit "
-          "per second(gbbitps), terabit per second(tbitps), tebibit per "
-          "second(tbbitps), kilobyte per second(kbps), megabyte per "
-          "second(mbps), gigabyte per second(gbps), terabyte per "
-          "second(tbps)\n";
+        = "There's a syntax of available categories in Unit Converter:\nLength "
+          "   Time    Rate    Data-Size    Data-Rate\nTo learn about the "
+          "syntax for units from a specific category, enter: ./converter "
+          "--syntax <category>\n";
+
+const char* LENGTH_SYNTAX
+        = "There's a syntax for units of the 'Length' category in Unit "
+          "Converter, represented as <unit-name> -> "
+          "<converter-unit-name>:\ncentimeter -> cm    mile -> mile    "
+          "kilometer -> km        foot -> ft\nmicrometer -> um    yard -> yard "
+          "   nanometer -> nm        meter -> m\nmillimeter -> mm    inch -> "
+          "inch    nautical mile -> nmi\n";
+
+const char* TIME_SYNTAX
+        = "There's a syntax for units of the 'Time' category in Unit "
+          "Converter, represented as <unit-name> -> "
+          "<converter-unit-name>:\nmillisecond -> ms    hour -> hour    second "
+          "-> sec    decade -> decade\nmicrosecond -> us    week ->week     "
+          "minute -> min    century->century\nnanosecond -> ns     year -> "
+          "year    month -> month   day -> day\n";
+
+const char* RATE_SYNTAX
+        = "There's a syntax for units of the 'Rate' category in Unit "
+          "Converter, represented as <unit-name> -> "
+          "<converter-unit-name>:\nmeter per second -> mps    kilometer per "
+          "hour -> kmph\nfoot per second -> fps     knot -> kt\nmile per hour "
+          "-> mph\n";
+
+const char* DATA_SIZE_SYNTAX
+        = "There's a syntax for units of the 'Data-Size' category in Unit "
+          "Converter, represented as <unit-name> -> "
+          "<converter-unit-name>:\nkilobit -> kbit    terabit -> tbit    "
+          "kilobyte -> kb    petabyte -> pb\nmegabit -> mbit    petabit -> "
+          "pbit    gigabyte -> gb    bit -> bit\ngigabit -> gbit    megabyte "
+          "-> mb     terabyte -> tb    byte -> b\n";
+
+const char* DATA_RATE_SYNTAX
+        = "There's a syntax for units of the 'Data-Rate' category in Unit "
+          "Converter, represented as <unit-name> -> "
+          "<converter-unit-name>:\nkebibit per second -> kbbitps    mebibit "
+          "per second -> mbbitps    gebibit per second -> gbbitps    tebibit "
+          "per second -> tbbitps\nkilobit per second -> kbitps     megabit per "
+          "second -> mbitps     gigabit per second -> gbitps     terabit per "
+          "second -> tbitps\nkilobyte per second -> kbps      megabyte per "
+          "second -> mbps      gigabyte per second -> gbps      terabyte per "
+          "second -> tbps\n";
 
 void output_data(DefineUnits* units)
 {
     printf("Result: %0.8lf %s\n", units->want_value, units->want_unit);
+}
+
+void output_factor(DefineUnits* units)
+{
+    printf("For conversion, you can use the following factors:\n\t* "
+           "%0.8lf\n\t/ %0.8lf\n",
+           units->factor,
+           1 / units->factor);
 }
 
 void call_help(char* help)
@@ -48,6 +84,25 @@ void call_help(char* help)
         printf("%s", HELP_CALL);
     } else if (strcmp(help, "--syntax") == 0) {
         printf("%s", SYNTAX_CALL);
+    } else {
+        output_error(ErrorTypeArgument);
+    }
+}
+
+void output_syntax(char* category)
+{
+    if (strcmp(category, "length") == 0) {
+        printf("%s", LENGTH_SYNTAX);
+    } else if (strcmp(category, "time") == 0) {
+        printf("%s", TIME_SYNTAX);
+    } else if (strcmp(category, "rate") == 0) {
+        printf("%s", RATE_SYNTAX);
+    } else if (strcmp(category, "data-size") == 0) {
+        printf("%s", DATA_SIZE_SYNTAX);
+    } else if (strcmp(category, "data-rate") == 0) {
+        printf("%s", DATA_RATE_SYNTAX);
+    } else {
+        printf("Unknown category, try using \'./converter.exe --syntax\'.\n");
     }
 }
 
@@ -60,20 +115,13 @@ void output_error(int n)
                "--syntax\'.\n");
         break;
     case -2:
-        printf("Failed to allocate memory\n");
-        break;
-    case -3:
         printf("Unexpected command line argument!\nTry using \'./converter.exe "
                "--help\' to find out how to successfully launch the "
                "application.\n");
         break;
-    case -4:
+    case -3:
         printf("The value you entered is too large. Try to enter a value "
                "less!\n");
-        break;
-    case -5:
-        printf("Could not open or create file. Make sure to enter the correct "
-               "path!\n");
         break;
     default:
         printf("Unable to open file with unit data. Try to run the app from "
