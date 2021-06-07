@@ -9,7 +9,9 @@ const char* HELP_CALL
           "data is read from the keyboard, the output data is output to the "
           "terminal)"
           "\n\t./converter.exe <category> "
-          "<have-unit> <want-unit> (Analogous to the first input, but the output will be conversion factors to get the result by multiplying or dividing)"
+          "<have-unit> <want-unit> (Analogous to the first input, but the "
+          "output will be conversion factors to get the result by multiplying "
+          "or dividing)"
           "\n\t./converter.exe --syntax (Information about categories and "
           "units of measurement is issued)\n";
 
@@ -44,7 +46,10 @@ void output_data(DefineUnits* units)
 
 void output_factor(DefineUnits* units)
 {
-    printf("For conversion, you can use the following factors:\n\t* %0.8lf\n\t/ %0.8lf\n", units->factor, 1 / units->factor);
+    printf("For conversion, you can use the following factors:\n\t* "
+           "%0.8lf\n\t/ %0.8lf\n",
+           units->factor,
+           1 / units->factor);
 }
 
 void call_help(char* help)
